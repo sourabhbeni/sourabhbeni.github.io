@@ -389,11 +389,58 @@
       padding: 26px 0 calc(26px + env(safe-area-inset-bottom));
       border-top: 1px solid var(--line);
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       gap: 20px;
       color: var(--muted);
       font: 500 11px/1.5 "IBM Plex Mono", monospace;
     }
+    .visitor-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 32px;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--cyan);
+      white-space: nowrap;
+    }
+    .visitor-counter::before { content: "LIVE TRAFFIC //"; }
+    .visitor-counter img { display: block; width: auto; height: 20px; max-width: 100%; }
+
+    .cyber-pet {
+      --pet-line: var(--signal);
+      --pet-fill: var(--surface);
+      position: fixed;
+      left: 18px;
+      top: calc(100svh - 92px);
+      z-index: 20;
+      width: 72px;
+      height: 58px;
+      pointer-events: none;
+      filter: drop-shadow(5px 6px 0 var(--shadow));
+      transition: left 5.4s cubic-bezier(.45, .05, .55, .95), top 5.4s cubic-bezier(.45, .05, .55, .95);
+      will-change: left, top;
+    }
+    .cyber-pet svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      transform-origin: center;
+      transition: transform .2s ease;
+    }
+    .cyber-pet.facing-left svg { transform: scaleX(-1); }
+    .cyber-pet .pet-shell { fill: var(--pet-fill); stroke: var(--pet-line); stroke-width: 2.5; }
+    .cyber-pet .pet-detail { fill: none; stroke: var(--pet-line); stroke-width: 2.5; stroke-linecap: square; stroke-linejoin: miter; }
+    .cyber-pet .pet-eye { fill: var(--pet-line); animation: pet-blink 4.8s steps(1) infinite; }
+    .cyber-pet .pet-foot { animation: pet-step .42s steps(2) infinite; transform-origin: center; }
+    .cyber-pet .pet-signal { fill: var(--amber); animation: pet-signal 1.4s ease-in-out infinite; transform-origin: center; }
+    @keyframes pet-blink { 0%, 45%, 49%, 100% { transform: scaleY(1); } 47% { transform: scaleY(.1); } }
+    @keyframes pet-step { 50% { transform: translateY(-2px); } }
+    @keyframes pet-signal { 50% { opacity: .3; transform: scale(.75); } }
 
     @media (max-width: 800px) {
       .site-nav { width: min(100% - 28px, 1180px); min-height: 62px; }
@@ -420,6 +467,7 @@
       .process-step::before { margin-bottom: 34px; }
       .outro-grid { grid-template-columns: 1fr; gap: 42px; }
       footer { flex-direction: column; }
+      .cyber-pet { width: 60px; height: 49px; }
     }
     @media (max-width: 470px) {
       h1 { font-size: clamp(48px, 15.6vw, 66px); }
@@ -439,8 +487,9 @@
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .cursor, .terminal::before, .scan-sweep { animation: none; }
-      .node, .signal-bars i { transition: none; }
+      .cursor, .terminal::before, .scan-sweep, .cyber-pet .pet-eye, .cyber-pet .pet-foot, .cyber-pet .pet-signal { animation: none; }
+      .node, .signal-bars i, .cyber-pet { transition: none; }
+      .cyber-pet { left: auto; right: 18px; top: auto; bottom: 18px; }
     }
   </style>
 </head>
@@ -578,8 +627,25 @@
 
   <footer>
     <span>SAURABH / CYBERSECURITY / 2026</span>
+    <span class="visitor-counter"><img src="https://hits.sh/sourabhbeni.github.io.svg" alt="Total site visits" /></span>
     <span>BUILD → BREAK SAFELY → LEARN → REPEAT</span>
   </footer>
+
+  <div class="cyber-pet" id="cyber-pet" aria-hidden="true">
+    <svg viewBox="0 0 96 72" role="presentation">
+      <path class="pet-detail" d="M23 45H12l-6-8 5-8" />
+      <rect class="pet-shell" x="20" y="27" width="45" height="29" />
+      <path class="pet-shell" d="M58 24V10l9 7 10-7v14c0 10-6 16-14 16s-13-6-13-16z" />
+      <rect class="pet-eye" x="59" y="25" width="4" height="5" />
+      <rect class="pet-eye" x="69" y="25" width="4" height="5" />
+      <path class="pet-detail" d="M65 34h3M76 34h12M76 38h10" />
+      <path class="pet-detail pet-foot" d="M28 56v9h10M55 56v9h10" />
+      <path class="pet-detail" d="M35 36h15M35 42h9" />
+      <circle class="pet-signal" cx="45" cy="49" r="3" />
+      <path class="pet-detail" d="M63 11V5h7" />
+      <circle class="pet-signal" cx="72" cy="5" r="3" />
+    </svg>
+  </div>
 
   <script>
     (function () {
@@ -670,6 +736,33 @@
           nodeCopy.textContent = data.copy;
         });
       });
+
+      var pet = document.getElementById("cyber-pet");
+      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      var petTimer;
+      var lastPetX = 18;
+
+      function roam() {
+        if (reduceMotion.matches || !pet) return;
+        var petWidth = pet.offsetWidth;
+        var petHeight = pet.offsetHeight;
+        var margin = 16;
+        var maxX = Math.max(margin, window.innerWidth - petWidth - margin);
+        var maxY = Math.max(margin, window.innerHeight - petHeight - margin);
+        var nextX = Math.round(margin + Math.random() * (maxX - margin));
+        var nextY = Math.round(margin + Math.random() * (maxY - margin));
+        pet.classList.toggle("facing-left", nextX < lastPetX);
+        pet.style.left = nextX + "px";
+        pet.style.top = nextY + "px";
+        lastPetX = nextX;
+        window.clearTimeout(petTimer);
+        petTimer = window.setTimeout(roam, 5700);
+      }
+
+      if (!reduceMotion.matches) {
+        petTimer = window.setTimeout(roam, 700);
+        window.addEventListener("resize", roam);
+      }
     })();
   </script>
 </body>
