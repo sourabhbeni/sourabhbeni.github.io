@@ -500,11 +500,10 @@
   var grid = document.getElementById("projects-grid");
   var status = document.getElementById("projects-status");
   var statRepos = document.getElementById("stat-repos");
-  var want = ["WZML", "BeniwalApp-iOS", "sourabhbeni.github.io"];
   var fallback = [
-    { name: "WZML", language: "Python", description: "Telegram mirror/leech bot — synced 184 upstream commits, repaired startup for the wzgram 3.x era.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/WZML" },
-    { name: "BeniwalApp-iOS", language: "Swift", description: "Native iOS wrapper for beniwal.me — WKWebView shell, ready for Xcode signing.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/BeniwalApp-iOS" },
-    { name: "sourabhbeni.github.io", language: "HTML", description: "This site — hand-built Liquid Glass, no framework, live from the API.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/sourabhbeni.github.io" }
+    { name: "lantern", language: "Python", description: "Attack-surface mapper — subdomains, open ports, security headers, TLS posture. Zero dependencies.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/lantern" },
+    { name: "stratus", language: "Python", description: "AWS misconfiguration scanner — S3 exposure, open security groups, IAM hygiene, CloudTrail.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/stratus" },
+    { name: "WZML", language: "Python", description: "Telegram mirror/leech bot — synced 184 upstream commits, repaired startup for the wzgram 3.x era.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/WZML" }
   ];
   function card(r, i) {
     var upd = r.updated_at ? new Date(r.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) : "—";
@@ -523,11 +522,11 @@
   fetch("https://api.github.com/users/sourabhbeni/repos?per_page=100&sort=updated")
     .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
     .then(function (all) {
-      var pick = want.map(function (n) {
-        return all.find(function (r) { return r.name.toLowerCase() === n.toLowerCase(); });
-      }).filter(Boolean);
+      var fresh = all.filter(function (r) { return !r.fork && !r.archived; })
+        .sort(function (a, b) { return new Date(b.updated_at) - new Date(a.updated_at); })
+        .slice(0, 3);
       var nonForks = all.filter(function (r) { return !r.fork; }).length;
-      render(pick.length ? pick : fallback, pick.length > 0, nonForks || pick.length);
+      render(fresh.length ? fresh : fallback, fresh.length > 0, nonForks || fresh.length);
     })
     .catch(function () { render(fallback, false, null); });
 })();
