@@ -491,12 +491,42 @@
       .node, .signal-bars i, .cyber-pet { transition: none; }
       .cyber-pet { left: auto; right: 18px; top: auto; bottom: 18px; }
     }
+  
+    /* --- DYNAMIC ADDITIONS --- */
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .live-clock { font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .06em; display:flex; align-items:center; gap:8px; }
+    .live-clock .pulse { width:7px; height:7px; border-radius:50%; background: var(--signal); animation: pulse 2s infinite; }
+    @keyframes pulse { 50% { opacity:.35; } }
+    .theme-toggle { background: var(--surface); border:1px solid var(--line); color: var(--text); width:34px; height:34px; display:grid; place-items:center; cursor:pointer; font-size:15px; border-radius:6px; }
+    .theme-toggle:hover { border-color: var(--signal); }
+    /* reveal on scroll */
+    .reveal { opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+    /* interactive terminal */
+    .term-input-row { display:flex; align-items:center; gap:8px; margin-top:6px; }
+    .term-input { background:transparent; border:0; outline:0; color:var(--text); font:inherit; flex:1; min-width:0; }
+    .term-hint { font-size:10.5px; color:var(--muted); opacity:.8; margin-top:10px; }
+    /* projects */
+    .projects-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:36px; }
+    .project-card { background: var(--surface); border:1px solid var(--line); padding:22px; display:flex; flex-direction:column; gap:12px; min-height:230px; position:relative; transition: transform .25s ease, border-color .25s ease; }
+    .project-card:hover { transform: translateY(-4px); border-color: var(--signal); }
+    .project-card .proj-lang { font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing:.08em; color: var(--cyan); }
+    .project-card h3 { margin:0; font-size:19px; }
+    .project-card p { margin:0; color: var(--muted); font-size:13.5px; flex:1; }
+    .project-meta { display:flex; gap:14px; font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); }
+    .project-card a.proj-link { text-decoration:none; font: 600 12px/1 "IBM Plex Mono", monospace; color: var(--signal); }
+    .projects-status { font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); margin-top:14px; }
+    .typing-cursor::after { content:"▋"; animation: blink 1s steps(1) infinite; color: var(--signal); }
+    @keyframes blink { 50% { opacity:0; } }
+    @media (max-width: 800px) { .projects-grid { grid-template-columns:1fr; } .live-clock { display:none; } }
+
   </style>
 </head>
 <body>
   <nav class="site-nav" aria-label="Page navigation">
     <div class="nav-id"><span class="status-dot" aria-hidden="true"></span><span>SAURABH / CYBERSECURITY</span></div>
-    <div class="nav-links"><a href="#learning">Learning</a><a href="#range">Cyber range</a><a href="#method">Method</a><a href="#direction">Direction</a></div>
+    <div class="nav-right"><div class="live-clock"><span class="pulse"></span><span id="live-clock">--:--:--</span></div><div class="nav-links"><a href="#learning">Learning</a><a href="#range">Cyber range</a><a href="#work">Work</a><a href="#method">Method</a><a href="#direction">Direction</a></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">◐</button></div>
   </nav>
 
   <main>
@@ -529,7 +559,9 @@
             <div class="term-output">network fundamentals<br />Linux &amp; scripting<br />web security concepts<br />cloud foundations</div>
             <p class="term-line"><span class="prompt">$</span> <span class="command">echo $MINDSET</span></p>
             <div class="term-output"><b>Always learning. Always testing.</b></div>
-            <p class="term-line"><span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></p>
+            <div class="term-output" id="term-dynamic"></div>
+            <p class="term-line term-input-row"><span class="prompt">$</span><input class="term-input mono" id="term-input" autocomplete="off" spellcheck="false" placeholder="try: help" aria-label="Terminal input" /><span class="cursor" aria-hidden="true"></span></p>
+            <p class="term-hint mono">interactive — try <b>help</b>, <b>whoami</b>, <b>skills</b>, <b>projects</b>, <b>clear</b></p>
           </div>
         </div>
       </div>
@@ -537,7 +569,7 @@
 
     <section class="section" id="learning" aria-labelledby="learning-title">
       <div class="section-inner">
-        <header class="section-head">
+        <header class="section-head reveal">
           <span class="section-no">01 / learning stack</span>
           <h2 id="learning-title">Skills in progress,<br />not boxes checked.</h2>
           <p class="section-lede">I’m building depth across the core layers of security. Select an area to see the questions guiding my practice.</p>
@@ -564,7 +596,7 @@
 
     <section class="section range" id="range" aria-labelledby="range-title">
       <div class="section-inner">
-        <header class="section-head">
+        <header class="section-head reveal">
           <span class="section-no">02 / cyber range</span>
           <h2 id="range-title">Probe the learning<br />environment.</h2>
           <p class="section-lede">A controlled visualization of the layers I’m learning to observe. Select a signal node to inspect the thinking behind each layer.</p>
@@ -597,7 +629,7 @@
 
     <section class="section process" id="method" aria-labelledby="method-title">
       <div class="section-inner">
-        <header class="section-head">
+        <header class="section-head reveal">
           <span class="section-no">03 / practice loop</span>
           <h2 id="method-title">A method for turning<br />curiosity into skill.</h2>
           <p class="section-lede">Security rewards careful thinking. My process keeps the work grounded, repeatable, and focused on what the evidence actually shows.</p>
@@ -611,10 +643,25 @@
       </div>
     </section>
 
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-inner">
+        <header class="section-head reveal">
+          <span class="section-no">04 / field work</span>
+          <h2 id="work-title">Shipped work,<br />live from GitHub.</h2>
+          <p class="section-lede">Real repositories, pulled live from the GitHub API. No hard-coded stats — this section updates itself.</p>
+        </header>
+        <div class="projects-grid" id="projects-grid" aria-live="polite">
+          <article class="project-card reveal"><span class="proj-lang">LOADING</span><h3>Connecting…</h3><p>Fetching live repository data.</p></article>
+        </div>
+        <p class="projects-status mono" id="projects-status">◌ syncing with api.github.com …</p>
+      </div>
+    </section>
+
     <section class="section outro" id="direction" aria-labelledby="direction-title">
       <div class="section-inner outro-grid">
         <div>
-          <span class="section-no">04 / direction</span>
+          <span class="section-no">05 / direction</span>
           <h2 id="direction-title">Building the judgment to protect what matters.</h2>
         </div>
         <div class="outro-copy">
@@ -626,7 +673,7 @@
   </main>
 
   <footer>
-    <span>SAURABH / CYBERSECURITY / 2026</span>
+    <span>SAURABH / CYBERSECURITY / <span id="dyn-year">2026</span></span>
     <span class="visitor-counter"><img src="https://hits.sh/sourabhbeni.github.io.svg" alt="Total site visits" /></span>
     <span>BUILD → BREAK SAFELY → LEARN → REPEAT</span>
   </footer>
@@ -765,5 +812,122 @@
       }
     })();
   </script>
+
+  <script>
+    (function () {
+      /* ---------- THEME TOGGLE ---------- */
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      function applyTheme(t) {
+        root.setAttribute("data-theme", t);
+        try { localStorage.setItem("beniwal-theme", t); } catch (e) {}
+        document.getElementById("theme-toggle").textContent = t === "dark" ? "☀" : "◐";
+      }
+      // init from storage or system
+      var saved = null;
+      try { saved = localStorage.getItem("beniwal-theme"); } catch (e) {}
+      if (saved) { applyTheme(saved); }
+      // inject theme override CSS
+      var st = document.createElement("style");
+      st.textContent = '[data-theme="dark"]{--bg:#10130f;--surface:#181d17;--surface-2:#20261f;--text:#f0f3ea;--muted:#adb6a6;--line:#384137;--strong-line:#6c7768;--signal:#58ffb5;--signal-ink:#06130c;--cyan:#55e6f3;--cyan-soft:rgba(85,230,243,.12);--amber:#ff9c55;--danger:#ff6675;--grid:rgba(206,221,200,.06);--shadow:rgba(0,0,0,.32);color-scheme:dark;}'
+        + '[data-theme="light"]{--bg:#f2f3ed;--surface:#ffffff;--surface-2:#e7e9e0;--text:#171a16;--muted:#535a50;--line:#b9beb2;--strong-line:#777e71;--signal:#006f4d;--signal-ink:#effff8;--cyan:#006d79;--cyan-soft:rgba(0,109,121,.12);--amber:#a94200;--danger:#a12b36;--grid:rgba(23,26,22,.075);--shadow:rgba(21,27,20,.14);color-scheme:light;}';
+      document.head.appendChild(st);
+      if (toggle) toggle.addEventListener("click", function () {
+        var cur = root.getAttribute("data-theme");
+        if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        applyTheme(cur === "dark" ? "light" : "dark");
+      });
+
+      /* ---------- LIVE CLOCK ---------- */
+      var clock = document.getElementById("live-clock");
+      function tick() {
+        if (!clock) return;
+        var d = new Date();
+        var p = function(n){ return String(n).padStart(2,"0"); };
+        clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()) + " LOCAL";
+      }
+      tick(); setInterval(tick, 1000);
+
+      /* ---------- DYNAMIC YEAR ---------- */
+      var y = document.getElementById("dyn-year");
+      if (y) y.textContent = new Date().getFullYear();
+
+      /* ---------- SCROLL REVEAL ---------- */
+      var revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add("visible"); });
+      }
+
+      /* ---------- INTERACTIVE TERMINAL ---------- */
+      var input = document.getElementById("term-input");
+      var dyn = document.getElementById("term-dynamic");
+      function printLine(cmd, out) {
+        var row = document.createElement("div");
+        row.innerHTML = '<p class="term-line"><span class="prompt">$</span> <span class="command"></span></p><div class="term-output"></div>';
+        row.querySelector(".command").textContent = cmd;
+        row.querySelector(".term-output").innerHTML = out;
+        dyn.appendChild(row);
+        row.scrollIntoView({ block: "nearest" });
+      }
+      var commands = {
+        help: "available: <b>whoami</b> · <b>skills</b> · <b>projects</b> · <b>contact</b> · <b>date</b> · <b>clear</b>",
+        whoami: "<b>Saurabh</b><br/>Master's cybersecurity student<br/>Westcliff University · Irvine, CA",
+        skills: "network fundamentals<br/>Linux &amp; scripting<br/>web security concepts<br/>cloud foundations",
+        projects: "see <b>#work</b> below — pulled live from GitHub ↑",
+        contact: 'GitHub: <b>sourabhbeni</b><br/>web: <b>beniwal.me</b>',
+        date: new Date().toString(),
+        sudo: "nice try. this terminal respects least privilege. 🔒"
+      };
+      if (input) input.addEventListener("keydown", function (ev) {
+        if (ev.key !== "Enter") return;
+        var cmd = input.value.trim().toLowerCase();
+        if (!cmd) return;
+        if (cmd === "clear") { dyn.innerHTML = ""; input.value = ""; return; }
+        var out = commands[cmd] || ("command not found: " + cmd + " — try <b>help</b>");
+        printLine(input.value.trim(), out);
+        input.value = "";
+        if (cmd === "projects") document.getElementById("work").scrollIntoView({ behavior: "smooth" });
+      });
+
+      /* ---------- LIVE GITHUB PROJECTS ---------- */
+      var grid = document.getElementById("projects-grid");
+      var status = document.getElementById("projects-status");
+      var repos = ["WZML", "BeniwalApp-iOS", "sourabhbeni.github.io"];
+      var fallback = [
+        { name: "WZML", language: "Python", description: "Telegram mirror/leech bot — synced 184 upstream commits, fixed startup for wzgram 3.x.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/WZML" },
+        { name: "BeniwalApp-iOS", language: "Swift", description: "Native iOS wrapper for beniwal.me — WKWebView shell, App Store ready.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/BeniwalApp-iOS" },
+        { name: "sourabhbeni.github.io", language: "HTML", description: "This site — hand-built, no framework, live visitor counter.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/sourabhbeni.github.io" }
+      ];
+      function card(r) {
+        var updated = r.updated_at ? new Date(r.updated_at).toLocaleDateString() : "—";
+        return '<article class="project-card reveal visible">'
+          + '<span class="proj-lang">' + ((r.language || "CODE").toUpperCase()) + '</span>'
+          + '<h3>' + r.name + '</h3>'
+          + '<p>' + ((r.description || "Shipped and maintained.").replace(/</g,"&lt;")) + '</p>'
+          + '<div class="project-meta"><span>★ ' + (r.stargazers_count || 0) + '</span><span>updated ' + updated + '</span></div>'
+          + '<a class="proj-link" href="' + r.html_url + '" target="_blank" rel="noopener">view repo →</a>'
+          + '</article>';
+      }
+      function render(list, live) {
+        grid.innerHTML = list.map(card).join("");
+        status.textContent = live ? "● live — synced just now from api.github.com" : "◌ offline — showing cached snapshot";
+      }
+      fetch("https://api.github.com/users/sourabhbeni/repos?per_page=100&sort=updated")
+        .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
+        .then(function (all) {
+          var pick = repos.map(function (n) { return all.find(function (r) { return r.name.toLowerCase() === n.toLowerCase(); }); }).filter(Boolean);
+          render(pick.length ? pick : fallback, pick.length > 0);
+        })
+        .catch(function () { render(fallback, false); });
+    })();
+  </script>
+
 </body>
 </html>
