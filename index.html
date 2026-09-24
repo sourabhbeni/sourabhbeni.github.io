@@ -1,933 +1,536 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#10130f" media="(prefers-color-scheme: dark)" />
-  <meta name="theme-color" content="#f2f3ed" media="(prefers-color-scheme: light)" />
-  <link rel="icon" href="data:," />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <title>Cybersecurity Student — Learning in Public</title>
-  <style>
-    :root {
-      color-scheme: light dark;
-      --bg: #f2f3ed;
-      --surface: #ffffff;
-      --surface-2: #e7e9e0;
-      --text: #171a16;
-      --muted: #535a50;
-      --line: #b9beb2;
-      --strong-line: #777e71;
-      --signal: #006f4d;
-      --signal-ink: #effff8;
-      --cyan: #006d79;
-      --cyan-soft: rgba(0, 109, 121, .12);
-      --amber: #a94200;
-      --danger: #a12b36;
-      --grid: rgba(23, 26, 22, .075);
-      --shadow: rgba(21, 27, 20, .14);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #10130f;
-        --surface: #181d17;
-        --surface-2: #20261f;
-        --text: #f0f3ea;
-        --muted: #adb6a6;
-        --line: #384137;
-        --strong-line: #6c7768;
-        --signal: #58ffb5;
-        --signal-ink: #06130c;
-        --cyan: #55e6f3;
-        --cyan-soft: rgba(85, 230, 243, .12);
-        --amber: #ff9c55;
-        --danger: #ff6675;
-        --grid: rgba(206, 221, 200, .06);
-        --shadow: rgba(0, 0, 0, .32);
-      }
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark light" />
+<meta name="description" content="Saurabh — master's student in cybersecurity at Westcliff University, Irvine. Learn. Test. Defend." />
+<title>Saurabh — Learn. Test. Defend.</title>
+<style>
+  :root {
+    --blue: #0071e3;
+    --blue-hover: #0077ed;
+    --ink: #1d1d1f;
+    --gray: #6e6e73;
+    --gray-2: #86868b;
+    --bg-light: #f5f5f7;
+    --bg-dark: #000000;
+    --card-light: rgba(255, 255, 255, 0.72);
+    --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg-dark);
+    color: #f5f5f7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--blue); color: #fff; }
+  a { color: inherit; }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-width: 0;
-      background-color: var(--bg);
-      background-image:
-        linear-gradient(var(--grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-      background-size: 42px 42px;
-      color: var(--text);
-      font-family: "IBM Plex Sans", sans-serif;
-      line-height: 1.55;
-    }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    a { color: inherit; }
-    .mono { font-family: "IBM Plex Mono", monospace; }
+  /* ============ AURORA — liquid glass atmosphere ============ */
+  .aurora {
+    position: fixed; inset: 0; z-index: 0; overflow: hidden;
+    background: #000; pointer-events: none;
+  }
+  .aurora i {
+    position: absolute; border-radius: 50%;
+    filter: blur(90px); opacity: 0.55;
+    will-change: transform;
+  }
+  .aurora i:nth-child(1) { width: 55vmax; height: 55vmax; left: -12vmax; top: -14vmax;
+    background: radial-gradient(circle, #0a84ff 0%, transparent 65%);
+    animation: drift1 22s ease-in-out infinite alternate; }
+  .aurora i:nth-child(2) { width: 48vmax; height: 48vmax; right: -10vmax; top: 22vh;
+    background: radial-gradient(circle, #a259ff 0%, transparent 65%);
+    animation: drift2 26s ease-in-out infinite alternate; }
+  .aurora i:nth-child(3) { width: 42vmax; height: 42vmax; left: 22vw; bottom: -16vmax;
+    background: radial-gradient(circle, #00d4aa 0%, transparent 65%); opacity: 0.38;
+    animation: drift3 30s ease-in-out infinite alternate; }
+  .aurora i:nth-child(4) { width: 30vmax; height: 30vmax; left: 55vw; top: -8vmax;
+    background: radial-gradient(circle, #ff5e8a 0%, transparent 65%); opacity: 0.28;
+    animation: drift1 34s ease-in-out infinite alternate-reverse; }
+  @keyframes drift1 { to { transform: translate(9vmax, 7vmax) scale(1.15); } }
+  @keyframes drift2 { to { transform: translate(-8vmax, -6vmax) scale(1.1); } }
+  @keyframes drift3 { to { transform: translate(-6vmax, 8vmax) scale(1.2); } }
 
-    .site-nav {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      border-bottom: 1px solid var(--line);
-      font: 500 12px/1 "IBM Plex Mono", monospace;
-      letter-spacing: .04em;
-      position: relative;
-    }
-    .site-nav::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: -1px;
-      width: 17%; height: 1px;
-      background: var(--signal);
-      box-shadow: 0 0 14px var(--signal);
-    }
-    .nav-id { display: flex; gap: 10px; align-items: center; color: var(--muted); }
-    .status-dot {
-      width: 8px; height: 8px; border-radius: 50%; background: var(--signal);
-      box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 16%, transparent);
-    }
-    .nav-links { display: flex; gap: 22px; }
-    .nav-links a { text-decoration: none; color: var(--muted); }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+  /* ============ LIQUID GLASS PRIMITIVES ============ */
+  .glass {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04) 55%, rgba(255,255,255,0.09));
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.22);
+    border-radius: 28px;
+    box-shadow:
+      0 12px 40px rgba(0,0,0,0.35),
+      inset 0 1px 0 rgba(255,255,255,0.35),
+      inset 0 -1px 0 rgba(255,255,255,0.08);
+    overflow: hidden;
+  }
+  /* specular highlight that follows the pointer — light bending on glass */
+  .glass::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(560px circle at var(--mx, 50%) var(--my, -20%),
+      rgba(255,255,255,0.22), rgba(255,255,255,0.05) 42%, transparent 65%);
+    opacity: 0; transition: opacity 0.45s ease; pointer-events: none;
+  }
+  .glass:hover::before { opacity: 1; }
+  .glass-light {
+    background: linear-gradient(135deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.9);
+    box-shadow:
+      0 10px 34px rgba(0,0,0,0.08),
+      inset 0 1px 0 rgba(255,255,255,1);
+    color: var(--ink);
+  }
+  .glass-light::before {
+    background: radial-gradient(560px circle at var(--mx, 50%) var(--my, -20%),
+      rgba(255,255,255,0.9), rgba(255,255,255,0.15) 45%, transparent 65%);
+  }
 
-    main { overflow: clip; }
-    .hero {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      min-height: calc(100svh - 72px);
-      padding: clamp(58px, 8vw, 112px) 0 60px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr);
-      gap: clamp(50px, 8vw, 110px);
-      align-items: center;
-    }
-    .hero-copy { min-width: 0; }
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--signal);
-      font: 600 13px/1.35 "IBM Plex Mono", monospace;
-    }
-    h1 {
-      margin: 0;
-      max-width: 820px;
-      font-size: clamp(52px, 8.4vw, 118px);
-      line-height: .88;
-      letter-spacing: -.065em;
-      font-weight: 600;
-    }
-    h1 span { display: block; }
-    h1 .outline {
-      color: transparent;
-      -webkit-text-stroke: 1.5px var(--text);
-      text-stroke: 1.5px var(--text);
-    }
-    .hero-intro {
-      max-width: 650px;
-      margin: 34px 0 0;
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-    .hero-intro .index { color: var(--amber); font: 500 13px/1.6 "IBM Plex Mono", monospace; }
-    .hero-intro p { margin: 0; color: var(--muted); font-size: clamp(17px, 2vw, 21px); }
-    .hero-intro strong { color: var(--text); font-weight: 600; }
-    .identity-strip {
-      margin: 24px 0 0 72px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font: 500 11px/1 "IBM Plex Mono", monospace;
-    }
-    .identity-chip {
-      padding: 8px 10px;
-      border: 1px solid var(--line);
-      background: color-mix(in srgb, var(--surface) 82%, transparent);
-    }
-    .identity-chip::before { content: "// "; color: var(--signal); }
-    .hero-actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; padding-left: 72px; }
-    .button {
-      min-height: 48px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 0 20px;
-      text-decoration: none;
-      font: 600 13px/1 "IBM Plex Mono", monospace;
-      border: 1px solid var(--strong-line);
-      background: var(--surface);
-    }
-    .button.primary { background: var(--signal); color: var(--signal-ink); border-color: var(--signal); }
-    .button:hover, .button:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
+  /* ============ NAV — floating glass pill ============ */
+  .nav {
+    position: fixed; top: 14px; left: 50%; transform: translateX(-50%);
+    z-index: 100; display: flex; align-items: center; gap: 4px;
+    padding: 8px 10px 8px 20px; border-radius: 980px;
+    background: linear-gradient(135deg, rgba(28,28,32,0.55), rgba(28,28,32,0.32));
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.22);
+    font-size: 13px; white-space: nowrap;
+    max-width: calc(100vw - 28px);
+  }
+  .nav .brand { font-weight: 700; letter-spacing: -0.01em; margin-right: 10px; font-size: 14px; }
+  .nav .brand span { color: var(--gray-2); font-weight: 500; }
+  .nav a.nl { text-decoration: none; color: rgba(245,245,247,0.82); padding: 8px 13px; border-radius: 980px; transition: background 0.25s, color 0.25s; }
+  .nav a.nl:hover { background: rgba(255,255,255,0.12); color: #fff; }
+  .nav .clock {
+    font-family: var(--mono); font-size: 11px; color: var(--gray-2);
+    border-left: 1px solid rgba(255,255,255,0.14); padding-left: 12px; margin-left: 6px;
+    display: flex; align-items: center; gap: 7px;
+  }
+  .nav .clock b { width: 7px; height: 7px; border-radius: 50%; background: #30d158; box-shadow: 0 0 8px #30d158; animation: pulse 2s infinite; }
+  @keyframes pulse { 50% { opacity: 0.35; } }
 
-    .terminal-wrap { position: relative; isolation: isolate; }
-    .terminal-wrap::before {
-      content: "";
-      position: absolute;
-      width: 150px; height: 150px;
-      border: 1px solid var(--line);
-      top: -30px; right: -32px;
-      z-index: -1;
-    }
-    .terminal-wrap::after {
-      content: "SECURE_CHANNEL // 256";
-      position: absolute;
-      right: 12px; bottom: -28px;
-      color: var(--cyan);
-      font: 500 9px/1 "IBM Plex Mono", monospace;
-      letter-spacing: .12em;
-    }
-    .terminal {
-      position: relative;
-      overflow: hidden;
-      background: var(--surface);
-      border: 1px solid var(--strong-line);
-      box-shadow: 14px 14px 0 var(--shadow);
-    }
-    .terminal::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(transparent 0 48%, var(--cyan-soft) 50%, transparent 52%);
-      background-size: 100% 8px;
-      opacity: .45;
-    }
-    .terminal::before {
-      content: "";
-      position: absolute;
-      left: 0; right: 0; top: -30%;
-      height: 20%;
-      background: linear-gradient(transparent, color-mix(in srgb, var(--signal) 12%, transparent), transparent);
-      animation: terminal-scan 7s linear infinite;
-      pointer-events: none;
-      z-index: 2;
-    }
-    @keyframes terminal-scan { to { transform: translateY(760%); } }
-    .term-top {
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font: 500 11px/1 "IBM Plex Mono", monospace;
-      color: var(--muted);
-    }
-    .term-dots { display: flex; gap: 6px; }
-    .term-dots i { display: block; width: 7px; height: 7px; border: 1px solid var(--strong-line); border-radius: 50%; }
-    .term-body { padding: 22px; font: 400 13px/1.85 "IBM Plex Mono", monospace; min-height: 330px; }
-    .term-line { margin: 0; color: var(--muted); }
-    .prompt { color: var(--signal); }
-    .command { color: var(--text); }
-    .term-output { padding-left: 18px; border-left: 1px solid var(--line); margin: 8px 0 16px; }
-    .term-output b { color: var(--text); font-weight: 500; }
-    .cursor { display: inline-block; width: 8px; height: 16px; margin-left: 4px; background: var(--signal); vertical-align: -3px; animation: blink 1.1s steps(1) infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+  /* ============ HERO ============ */
+  .hero {
+    position: relative; z-index: 1;
+    min-height: 100svh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    padding: 130px 22px 70px;
+  }
+  .eyebrow {
+    font-size: 15px; font-weight: 600; color: rgba(245,245,247,0.72);
+    letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 22px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow .dot { width: 9px; height: 9px; border-radius: 50%; background: #30d158; box-shadow: 0 0 12px #30d158; animation: pulse 2s infinite; }
+  h1.hero-title {
+    font-size: clamp(52px, 9vw, 108px); font-weight: 700;
+    letter-spacing: -0.028em; line-height: 1.04; max-width: 900px;
+  }
+  h1 .grad {
+    background: linear-gradient(100deg, #7dc4ff 0%, #a259ff 38%, #ff8ab8 68%, #7dc4ff 100%);
+    background-size: 220% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: sheen 9s linear infinite;
+  }
+  @keyframes sheen { to { background-position: 220% center; } }
+  .hero-sub {
+    margin-top: 26px; font-size: 21px; line-height: 1.45; color: rgba(245,245,247,0.72);
+    max-width: 640px; font-weight: 400; letter-spacing: -0.01em;
+  }
+  .hero-ctas { display: flex; gap: 14px; margin-top: 42px; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 17px; font-weight: 500; text-decoration: none;
+    padding: 14px 32px; border-radius: 980px; cursor: pointer; border: 0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 8px 28px rgba(0,113,227,0.45); }
+  .btn-blue:hover { background: var(--blue-hover); box-shadow: 0 10px 34px rgba(0,113,227,0.6); transform: translateY(-1px); }
+  .btn-glass {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05));
+    -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .btn-glass:hover { background: linear-gradient(135deg, rgba(255,255,255,0.24), rgba(255,255,255,0.1)); transform: translateY(-1px); }
+  .scroll-hint { position: absolute; bottom: 26px; color: rgba(245,245,247,0.4); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(7px); } }
 
-    .section {
-      border-top: 1px solid var(--line);
-      background: color-mix(in srgb, var(--bg) 92%, transparent);
-    }
-    .section-inner { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: clamp(72px, 10vw, 130px) 0; }
-    .section-head {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 36px;
-      align-items: end;
-      margin-bottom: 50px;
-    }
-    .section-no { color: var(--amber); font: 500 13px/1.4 "IBM Plex Mono", monospace; }
-    h2 { margin: 0; font-size: clamp(34px, 5vw, 66px); line-height: 1; letter-spacing: -.045em; font-weight: 500; }
-    .section-lede { grid-column: 2; max-width: 620px; margin: 0; color: var(--muted); font-size: 18px; }
+  /* ============ SECTION RHYTHM (Apple binary: dark / light) ============ */
+  section.block { position: relative; z-index: 1; padding: 130px 22px; }
+  .wrap { max-width: 980px; margin: 0 auto; }
+  .wrap-wide { max-width: 1120px; margin: 0 auto; }
+  .kicker { font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+  .on-dark .kicker { color: #7dc4ff; }
+  h2.stitle {
+    font-size: clamp(38px, 5.4vw, 60px); font-weight: 700;
+    letter-spacing: -0.022em; line-height: 1.08; max-width: 800px;
+  }
+  .lede { margin-top: 20px; font-size: 19px; line-height: 1.5; max-width: 640px; color: var(--gray); letter-spacing: -0.005em; }
+  .on-dark .lede { color: rgba(245,245,247,0.66); }
+  .light { background: var(--bg-light); color: var(--ink); border-radius: 36px 36px 0 0; }
+  .light + .light { border-radius: 0; }
 
-    .skill-lab { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr); border-top: 1px solid var(--strong-line); border-bottom: 1px solid var(--strong-line); }
-    .skill-list { border-right: 1px solid var(--strong-line); padding: 16px 0; }
-    .skill-tab {
-      appearance: none;
-      width: 100%;
-      padding: 17px 20px;
-      border: 0;
-      text-align: left;
-      background: transparent;
-      color: var(--muted);
-      font: 500 14px/1.35 "IBM Plex Mono", monospace;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-    }
-    .skill-tab:hover { background: var(--surface-2); color: var(--text); }
-    .skill-tab[aria-selected="true"] { background: var(--signal); color: var(--signal-ink); }
-    .skill-tab .tab-num { opacity: .7; }
-    .skill-panel { padding: clamp(28px, 5vw, 64px); min-height: 370px; display: flex; flex-direction: column; justify-content: space-between; }
-    .skill-meta { display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 500 12px/1.5 "IBM Plex Mono", monospace; }
-    .skill-panel h3 { margin: 30px 0 14px; font-size: clamp(30px, 4vw, 52px); line-height: 1; letter-spacing: -.035em; font-weight: 500; }
-    .skill-panel p { max-width: 600px; margin: 0; font-size: 18px; color: var(--muted); }
-    .skill-tags { margin-top: 44px; display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag { border: 1px solid var(--line); padding: 7px 10px; font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--text); }
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 64px; }
+  .stat { padding: 30px 28px; border-radius: 24px; text-align: left; }
+  .stat b { display: block; font-size: 44px; font-weight: 700; letter-spacing: -0.02em; }
+  .stat span { font-size: 14px; color: var(--gray-2); }
+  .on-dark .stat span { color: rgba(245,245,247,0.55); }
+  .stat .live-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#30d158; margin-right:7px; box-shadow:0 0 8px #30d158; animation: pulse 2s infinite; }
 
-    .range { background: var(--surface); }
-    .range-shell {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr);
-      border: 1px solid var(--strong-line);
-      min-height: 470px;
-      box-shadow: 12px 12px 0 var(--shadow);
-    }
-    .range-map {
-      position: relative;
-      overflow: hidden;
-      min-height: 470px;
-      background-color: #07110d;
-      background-image:
-        radial-gradient(circle, rgba(88, 255, 181, .22) 1px, transparent 1px),
-        linear-gradient(rgba(88, 255, 181, .08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(88, 255, 181, .08) 1px, transparent 1px);
-      background-size: 22px 22px, 66px 66px, 66px 66px;
-      color: #d9ffeb;
-    }
-    .range-map::before, .range-map::after {
-      content: "";
-      position: absolute;
-      inset: 50% auto auto 50%;
-      transform: translate(-50%, -50%);
-      border: 1px solid rgba(88, 255, 181, .26);
-      border-radius: 50%;
-      width: 340px; height: 340px;
-      pointer-events: none;
-    }
-    .range-map::after { width: 180px; height: 180px; }
-    .range-axis-x, .range-axis-y { position: absolute; background: rgba(88, 255, 181, .2); pointer-events: none; }
-    .range-axis-x { height: 1px; left: 0; right: 0; top: 50%; }
-    .range-axis-y { width: 1px; top: 0; bottom: 0; left: 50%; }
-    .scan-sweep {
-      position: absolute;
-      left: 50%; top: 50%;
-      width: 170px; height: 170px;
-      transform-origin: left top;
-      background: conic-gradient(from 260deg, rgba(88, 255, 181, .3), transparent 28deg);
-      border-radius: 100% 0 0 0;
-      animation: sweep 6s linear infinite;
-      pointer-events: none;
-    }
-    @keyframes sweep { to { transform: rotate(360deg); } }
-    .node {
-      position: absolute;
-      width: 18px; height: 18px;
-      border: 1px solid #58ffb5;
-      background: #07110d;
-      transform: rotate(45deg);
-      cursor: pointer;
-      transition: background .18s ease, box-shadow .18s ease;
-      z-index: 3;
-    }
-    .node::after { content: ""; position: absolute; inset: 5px; background: #58ffb5; }
-    .node:hover, .node:focus-visible, .node.active { background: #58ffb5; box-shadow: 0 0 0 7px rgba(88, 255, 181, .16), 0 0 24px rgba(88, 255, 181, .7); outline: none; }
-    .node.active::after { background: #07110d; }
-    .node-1 { left: 20%; top: 24%; }
-    .node-2 { left: 66%; top: 18%; }
-    .node-3 { left: 72%; top: 66%; }
-    .node-4 { left: 29%; top: 72%; }
-    .range-label {
-      position: absolute;
-      left: 18px; top: 16px;
-      margin: 0;
-      color: #58ffb5;
-      font: 500 10px/1.4 "IBM Plex Mono", monospace;
-      letter-spacing: .08em;
-    }
-    .range-readout {
-      padding: clamp(28px, 5vw, 52px);
-      border-left: 1px solid var(--strong-line);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--surface);
-    }
-    .readout-kicker { margin: 0; color: var(--signal); font: 600 11px/1.4 "IBM Plex Mono", monospace; }
-    .range-readout h3 { margin: 18px 0 14px; font-size: clamp(30px, 4vw, 48px); line-height: 1; letter-spacing: -.035em; font-weight: 500; }
-    .range-readout p { color: var(--muted); margin: 0; font-size: 16px; }
-    .signal-bars { display: flex; gap: 5px; align-items: end; height: 54px; margin-top: 38px; }
-    .signal-bars i { display: block; width: 9px; background: var(--line); transition: height .22s ease, background .22s ease; }
-    .signal-bars i:nth-child(1) { height: 18%; }
-    .signal-bars i:nth-child(2) { height: 34%; }
-    .signal-bars i:nth-child(3) { height: 52%; }
-    .signal-bars i:nth-child(4) { height: 70%; }
-    .signal-bars i:nth-child(5) { height: 92%; }
-    .signal-bars.active i { background: var(--signal); }
-    .range-hint { margin-top: 24px; color: var(--muted); font: 500 11px/1.5 "IBM Plex Mono", monospace; }
+  /* focus cards */
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 60px; }
+  .card { padding: 38px 34px; border-radius: 26px; min-height: 250px; display: flex; flex-direction: column; gap: 14px; transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1), box-shadow 0.35s; }
+  .card:hover { transform: translateY(-6px) scale(1.01); }
+  .card .icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; font-size: 22px;
+    background: linear-gradient(135deg, var(--blue), #6e56cf); color: #fff; box-shadow: 0 6px 18px rgba(0,113,227,0.4); }
+  .card h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; }
+  .card p { font-size: 16px; line-height: 1.55; color: var(--gray); }
+  .card .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 8px; }
+  .card .tags i { font-style: normal; font-size: 12.5px; font-weight: 500; padding: 7px 14px; border-radius: 980px;
+    background: rgba(0,113,227,0.1); color: var(--blue); border: 1px solid rgba(0,113,227,0.16); }
 
-    .process { background: var(--text); color: var(--bg); }
-    .process .section-inner { padding-bottom: clamp(80px, 11vw, 144px); }
-    .process .section-no { color: var(--amber); }
-    .process .section-lede { color: color-mix(in srgb, var(--bg) 72%, transparent); }
-    .process-steps { counter-reset: process; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); }
-    .process-step { counter-increment: process; padding: 32px 24px 8px 0; border-right: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); }
-    .process-step + .process-step { padding-left: 24px; }
-    .process-step:last-child { border-right: 0; }
-    .process-step::before { content: "0" counter(process); display: block; margin-bottom: 74px; color: var(--signal); font: 500 13px/1 "IBM Plex Mono", monospace; }
-    .process-step h3 { margin: 0 0 12px; font-size: 24px; font-weight: 500; }
-    .process-step p { margin: 0; color: color-mix(in srgb, var(--bg) 68%, transparent); font-size: 15px; }
+  /* terminal */
+  .term-shell { margin-top: 60px; border-radius: 26px; }
+  .term-bar { display: flex; align-items: center; gap: 8px; padding: 16px 22px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .term-bar i { width: 12px; height: 12px; border-radius: 50%; }
+  .term-bar i:nth-child(1){ background:#ff5f57; } .term-bar i:nth-child(2){ background:#febc2e; } .term-bar i:nth-child(3){ background:#28c840; }
+  .term-bar span { margin-left: 8px; font-size: 13px; color: rgba(245,245,247,0.5); font-family: var(--mono); }
+  .term-body { padding: 28px; font-family: var(--mono); font-size: 14.5px; line-height: 1.75; min-height: 340px; }
+  .term-body .p { color: #7dc4ff; } .term-body .c { color: #f5f5f7; } .term-body .o { color: rgba(245,245,247,0.72); }
+  .term-body .o b { color: #fff; }
+  .term-input-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .term-input { flex: 1; background: transparent; border: 0; outline: 0; color: #fff; font: inherit; caret-color: var(--blue); }
+  .term-input::placeholder { color: rgba(245,245,247,0.3); }
+  .cursor { display: inline-block; width: 9px; height: 18px; background: #7dc4ff; vertical-align: -3px; animation: blink 1.1s steps(1) infinite; border-radius: 2px; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .term-hint { margin-top: 14px; font-size: 12px; color: rgba(245,245,247,0.38); }
+  .term-hint b { color: rgba(245,245,247,0.6); font-weight: 600; }
 
-    .outro-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 70px; align-items: start; }
-    .outro h2 { max-width: 760px; }
-    .outro-copy { border-top: 1px solid var(--strong-line); padding-top: 20px; }
-    .outro-copy p { margin: 0 0 26px; color: var(--muted); font-size: 18px; }
-    .availability { display: flex; gap: 12px; align-items: center; font: 600 12px/1.4 "IBM Plex Mono", monospace; color: var(--signal); }
-    footer {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 26px 0 calc(26px + env(safe-area-inset-bottom));
-      border-top: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      color: var(--muted);
-      font: 500 11px/1.5 "IBM Plex Mono", monospace;
-    }
-    .visitor-counter {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      min-height: 32px;
-      padding: 5px 8px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--cyan);
-      white-space: nowrap;
-    }
-    .visitor-counter::before { content: "LIVE TRAFFIC //"; }
-    .visitor-counter img { display: block; width: auto; height: 20px; max-width: 100%; }
+  /* work cards */
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 60px; }
+  .work { padding: 32px 28px; border-radius: 26px; display: flex; flex-direction: column; gap: 12px; min-height: 300px; transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1); text-decoration: none; }
+  .work:hover { transform: translateY(-6px) scale(1.015); }
+  .work .lang { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--blue); }
+  .work h3 { font-size: 23px; font-weight: 700; letter-spacing: -0.015em; }
+  .work p { font-size: 15px; line-height: 1.55; color: var(--gray); flex: 1; }
+  .work .meta { display: flex; gap: 14px; font-size: 13px; color: var(--gray-2); font-family: var(--mono); }
+  .work .go { font-size: 15px; font-weight: 500; color: var(--blue); }
+  .work .go::after { content: " ›"; transition: margin 0.2s; }
+  .work:hover .go::after { margin-left: 4px; }
+  .work-status { margin-top: 22px; font-family: var(--mono); font-size: 12.5px; color: var(--gray-2); }
 
-    .cyber-pet {
-      --pet-line: var(--signal);
-      --pet-fill: var(--surface);
-      position: fixed;
-      left: 18px;
-      top: calc(100svh - 92px);
-      z-index: 20;
-      width: 72px;
-      height: 58px;
-      pointer-events: none;
-      filter: drop-shadow(5px 6px 0 var(--shadow));
-      transition: left 5.4s cubic-bezier(.45, .05, .55, .95), top 5.4s cubic-bezier(.45, .05, .55, .95);
-      will-change: left, top;
-    }
-    .cyber-pet svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-      transform-origin: center;
-      transition: transform .2s ease;
-    }
-    .cyber-pet.facing-left svg { transform: scaleX(-1); }
-    .cyber-pet .pet-shell { fill: var(--pet-fill); stroke: var(--pet-line); stroke-width: 2.5; }
-    .cyber-pet .pet-detail { fill: none; stroke: var(--pet-line); stroke-width: 2.5; stroke-linecap: square; stroke-linejoin: miter; }
-    .cyber-pet .pet-eye { fill: var(--pet-line); animation: pet-blink 4.8s steps(1) infinite; }
-    .cyber-pet .pet-foot { animation: pet-step .42s steps(2) infinite; transform-origin: center; }
-    .cyber-pet .pet-signal { fill: var(--amber); animation: pet-signal 1.4s ease-in-out infinite; transform-origin: center; }
-    @keyframes pet-blink { 0%, 45%, 49%, 100% { transform: scaleY(1); } 47% { transform: scaleY(.1); } }
-    @keyframes pet-step { 50% { transform: translateY(-2px); } }
-    @keyframes pet-signal { 50% { opacity: .3; transform: scale(.75); } }
+  /* method */
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 60px; }
+  .step { padding: 30px 26px; border-radius: 24px; }
+  .step .n { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: 0.08em; margin-bottom: 14px; }
+  .on-dark .step .n { color: #7dc4ff; }
+  .step h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .step p { font-size: 14.5px; line-height: 1.55; color: var(--gray-2); }
+  .on-dark .step p { color: rgba(245,245,247,0.6); }
 
-    @media (max-width: 800px) {
-      .site-nav { width: min(100% - 28px, 1180px); min-height: 62px; }
-      .nav-links a:not(:last-child) { display: none; }
-      .hero { width: min(100% - 28px, 1180px); min-height: auto; grid-template-columns: 1fr; padding: 68px 0 82px; gap: 72px; }
-      h1 { font-size: clamp(52px, 16vw, 78px); }
-      .hero-intro { grid-template-columns: 36px 1fr; }
-      .identity-strip, .hero-actions { margin-left: 54px; padding-left: 0; }
-      .terminal-wrap { width: calc(100% - 12px); }
-      .terminal-wrap::before { right: -18px; }
-      .section-inner, footer { width: min(100% - 28px, 1180px); }
-      .section-head { grid-template-columns: 46px 1fr; gap: 14px; align-items: start; }
-      .section-lede { grid-column: 2; }
-      .skill-lab { grid-template-columns: 1fr; }
-      .skill-list { border-right: 0; border-bottom: 1px solid var(--strong-line); display: grid; grid-template-columns: 1fr 1fr; padding: 8px 0; }
-      .skill-tab { padding: 13px 10px; font-size: 12px; }
-      .skill-panel { min-height: 340px; padding: 30px 18px; }
-      .range-shell { grid-template-columns: 1fr; }
-      .range-map { min-height: 390px; }
-      .range-readout { min-height: 310px; border-left: 0; border-top: 1px solid var(--strong-line); }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      .process-step:nth-child(2) { border-right: 0; }
-      .process-step:nth-child(n+3) { border-top: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); }
-      .process-step::before { margin-bottom: 34px; }
-      .outro-grid { grid-template-columns: 1fr; gap: 42px; }
-      footer { flex-direction: column; }
-      .cyber-pet { width: 60px; height: 49px; }
-    }
-    @media (max-width: 470px) {
-      h1 { font-size: clamp(48px, 15.6vw, 66px); }
-      .hero-intro { display: block; }
-      .hero-intro .index { display: block; margin-bottom: 8px; }
-      .identity-strip, .hero-actions { margin-left: 0; padding-left: 0; }
-      .button { width: 100%; }
-      .term-body { font-size: 11.5px; padding: 18px; min-height: 310px; }
-      .section-head { display: block; }
-      .section-no { display: block; margin-bottom: 14px; }
-      .section-lede { margin-top: 18px; }
-      .skill-list { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .process-step, .process-step + .process-step { padding: 24px 0; border-right: 0; border-top: 1px solid color-mix(in srgb, var(--bg) 30%, transparent); }
-      .process-step:first-child { border-top: 0; }
-      .process-step::before { margin-bottom: 18px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .cursor, .terminal::before, .scan-sweep, .cyber-pet .pet-eye, .cyber-pet .pet-foot, .cyber-pet .pet-signal { animation: none; }
-      .node, .signal-bars i, .cyber-pet { transition: none; }
-      .cyber-pet { left: auto; right: 18px; top: auto; bottom: 18px; }
-    }
-  
-    /* --- DYNAMIC ADDITIONS --- */
-    .nav-right { display: flex; align-items: center; gap: 16px; }
-    .live-clock { font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .06em; display:flex; align-items:center; gap:8px; }
-    .live-clock .pulse { width:7px; height:7px; border-radius:50%; background: var(--signal); animation: pulse 2s infinite; }
-    @keyframes pulse { 50% { opacity:.35; } }
-    .theme-toggle { background: var(--surface); border:1px solid var(--line); color: var(--text); width:34px; height:34px; display:grid; place-items:center; cursor:pointer; font-size:15px; border-radius:6px; }
-    .theme-toggle:hover { border-color: var(--signal); }
-    /* reveal on scroll */
-    .reveal { opacity:0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity:1; transform:none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
-    /* interactive terminal */
-    .term-input-row { display:flex; align-items:center; gap:8px; margin-top:6px; }
-    .term-input { background:transparent; border:0; outline:0; color:var(--text); font:inherit; flex:1; min-width:0; }
-    .term-hint { font-size:10.5px; color:var(--muted); opacity:.8; margin-top:10px; }
-    /* projects */
-    .projects-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top:36px; }
-    .project-card { background: var(--surface); border:1px solid var(--line); padding:22px; display:flex; flex-direction:column; gap:12px; min-height:230px; position:relative; transition: transform .25s ease, border-color .25s ease; }
-    .project-card:hover { transform: translateY(-4px); border-color: var(--signal); }
-    .project-card .proj-lang { font: 600 10px/1 "IBM Plex Mono", monospace; letter-spacing:.08em; color: var(--cyan); }
-    .project-card h3 { margin:0; font-size:19px; }
-    .project-card p { margin:0; color: var(--muted); font-size:13.5px; flex:1; }
-    .project-meta { display:flex; gap:14px; font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); }
-    .project-card a.proj-link { text-decoration:none; font: 600 12px/1 "IBM Plex Mono", monospace; color: var(--signal); }
-    .projects-status { font: 500 11px/1 "IBM Plex Mono", monospace; color: var(--muted); margin-top:14px; }
-    .typing-cursor::after { content:"▋"; animation: blink 1s steps(1) infinite; color: var(--signal); }
-    @keyframes blink { 50% { opacity:0; } }
-    @media (max-width: 800px) { .projects-grid { grid-template-columns:1fr; } .live-clock { display:none; } }
+  /* CTA */
+  .cta { text-align: center; padding: 150px 22px; position: relative; z-index: 1; overflow: hidden; }
+  .cta h2 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.06; max-width: 820px; margin: 0 auto; }
+  .cta h2 .grad { background: linear-gradient(100deg, #7dc4ff, #a259ff 45%, #ff8ab8 75%, #7dc4ff); background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent; animation: sheen 9s linear infinite; }
+  .cta p { margin: 24px auto 0; font-size: 19px; color: rgba(245,245,247,0.66); max-width: 560px; line-height: 1.5; }
+  .cta .hero-ctas { margin-top: 40px; }
+  .orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.5; pointer-events: none; }
+  .orb.o1 { width: 380px; height: 380px; left: 8%; top: 10%; background: radial-gradient(circle, #0a84ff, transparent 65%); animation: drift2 18s ease-in-out infinite alternate; }
+  .orb.o2 { width: 320px; height: 320px; right: 10%; bottom: 5%; background: radial-gradient(circle, #a259ff, transparent 65%); animation: drift1 22s ease-in-out infinite alternate; }
 
-  </style>
+  /* footer */
+  footer { position: relative; z-index: 1; border-top: 1px solid rgba(255,255,255,0.1); padding: 34px 22px 46px; font-size: 12.5px; color: rgba(245,245,247,0.42); }
+  footer .wrap-wide { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  footer .visits { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 980px;
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+  footer .visits img { height: 18px; display: block; }
+
+  /* scroll narrative */
+  .reveal { opacity: 0; transform: translateY(34px) scale(0.985); transition: opacity 0.9s cubic-bezier(0.2,0.7,0.2,1), transform 0.9s cubic-bezier(0.2,0.7,0.2,1); }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal[data-d="1"] { transition-delay: 0.1s; } .reveal[data-d="2"] { transition-delay: 0.2s; }
+  .reveal[data-d="3"] { transition-delay: 0.3s; } .reveal[data-d="4"] { transition-delay: 0.4s; }
+
+  @media (max-width: 860px) {
+    .nav a.nl { display: none; } .nav a.nl.keep { display: block; }
+    .stats, .cards, .work-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    section.block { padding: 90px 20px; }
+    .term-body { font-size: 12.5px; padding: 20px; }
+  }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } .nav .clock { display: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .aurora i, .orb, .scroll-hint, .cursor, h1 .grad, .cta h2 .grad { animation: none !important; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .glass::before, .glass-light::before { display: none; }
+  }
+</style>
 </head>
 <body>
-  <nav class="site-nav" aria-label="Page navigation">
-    <div class="nav-id"><span class="status-dot" aria-hidden="true"></span><span>SAURABH / CYBERSECURITY</span></div>
-    <div class="nav-right"><div class="live-clock"><span class="pulse"></span><span id="live-clock">--:--:--</span></div><div class="nav-links"><a href="#learning">Learning</a><a href="#range">Cyber range</a><a href="#work">Work</a><a href="#method">Method</a><a href="#direction">Direction</a></div><button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">◐</button></div>
-  </nav>
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">profile loaded — saurabh / cybersecurity student</p>
-        <h1 id="hero-title"><span>LEARN.</span><span class="outline">TEST.</span><span>DEFEND.</span></h1>
-        <div class="hero-intro">
-          <span class="index">00 /</span>
-          <p>I’m <strong>Saurabh</strong>, currently in California and pursuing my <strong>master’s in cybersecurity at Westcliff University in Irvine.</strong> I’m turning security theory into practical skill through labs, careful testing, and continuous learning.</p>
-        </div>
-        <div class="identity-strip" aria-label="Profile details">
-          <span class="identity-chip">Westcliff University</span>
-          <span class="identity-chip">Irvine, California</span>
-          <span class="identity-chip">Master’s in Cybersecurity</span>
-        </div>
-        <div class="hero-actions">
-          <a class="button primary" href="#learning">Explore my learning path <span aria-hidden="true">↓</span></a>
-          <a class="button" href="#method">How I work</a>
-        </div>
-      </div>
+<nav class="nav" aria-label="Primary">
+  <span class="brand">Saurabh <span>/ security</span></span>
+  <a class="nl keep" href="#focus">Focus</a>
+  <a class="nl" href="#lab">Lab</a>
+  <a class="nl" href="#work">Work</a>
+  <a class="nl" href="#method">Method</a>
+  <span class="clock"><b></b><span id="live-clock">--:--:--</span></span>
+</nav>
 
-      <div class="terminal-wrap" aria-label="Terminal-style student profile">
-        <div class="terminal">
-          <div class="term-top"><span>student_profile.sh</span><span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-          <div class="term-body">
-            <p class="term-line"><span class="prompt">$</span> <span class="command">whoami --profile</span></p>
-            <div class="term-output"><b>Saurabh</b><br />Master’s cybersecurity student<br />Westcliff University · Irvine, CA</div>
-            <p class="term-line"><span class="prompt">$</span> <span class="command">cat current-focus.txt</span></p>
-            <div class="term-output">network fundamentals<br />Linux &amp; scripting<br />web security concepts<br />cloud foundations</div>
-            <p class="term-line"><span class="prompt">$</span> <span class="command">echo $MINDSET</span></p>
-            <div class="term-output"><b>Always learning. Always testing.</b></div>
-            <div class="term-output" id="term-dynamic"></div>
-            <p class="term-line term-input-row"><span class="prompt">$</span><input class="term-input mono" id="term-input" autocomplete="off" spellcheck="false" placeholder="try: help" aria-label="Terminal input" /><span class="cursor" aria-hidden="true"></span></p>
-            <p class="term-hint mono">interactive — try <b>help</b>, <b>whoami</b>, <b>skills</b>, <b>projects</b>, <b>clear</b></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="learning" aria-labelledby="learning-title">
-      <div class="section-inner">
-        <header class="section-head reveal">
-          <span class="section-no">01 / learning stack</span>
-          <h2 id="learning-title">Skills in progress,<br />not boxes checked.</h2>
-          <p class="section-lede">I’m building depth across the core layers of security. Select an area to see the questions guiding my practice.</p>
-        </header>
-
-        <div class="skill-lab">
-          <div class="skill-list" role="tablist" aria-label="Learning areas">
-            <button class="skill-tab" type="button" role="tab" aria-selected="true" aria-controls="skill-panel" data-skill="network"><span>Network security</span><span class="tab-num">01</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="linux"><span>Linux &amp; scripting</span><span class="tab-num">02</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="web"><span>Web security</span><span class="tab-num">03</span></button>
-            <button class="skill-tab" type="button" role="tab" aria-selected="false" aria-controls="skill-panel" data-skill="cloud"><span>Cloud foundations</span><span class="tab-num">04</span></button>
-          </div>
-          <article class="skill-panel" id="skill-panel" role="tabpanel" aria-live="polite">
-            <div>
-              <div class="skill-meta"><span id="skill-mode">MODE: PRACTICING</span><span id="skill-code">AREA_01</span></div>
-              <h3 id="skill-title">Network security</h3>
-              <p id="skill-copy">Learning how traffic moves, where trust breaks down, and how segmentation, visibility, and careful configuration reduce risk.</p>
-            </div>
-            <div class="skill-tags" id="skill-tags" aria-label="Topics"><span class="tag">TCP/IP</span><span class="tag">DNS</span><span class="tag">packet analysis</span><span class="tag">firewalls</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section range" id="range" aria-labelledby="range-title">
-      <div class="section-inner">
-        <header class="section-head reveal">
-          <span class="section-no">02 / cyber range</span>
-          <h2 id="range-title">Probe the learning<br />environment.</h2>
-          <p class="section-lede">A controlled visualization of the layers I’m learning to observe. Select a signal node to inspect the thinking behind each layer.</p>
-        </header>
-        <div class="range-shell">
-          <div class="range-map" aria-label="Interactive security learning map">
-            <p class="range-label">TRAINING_NETWORK // PASSIVE_VIEW</p>
-            <span class="range-axis-x" aria-hidden="true"></span>
-            <span class="range-axis-y" aria-hidden="true"></span>
-            <span class="scan-sweep" aria-hidden="true"></span>
-            <button class="node node-1 active" type="button" data-node="observe" aria-label="Inspect Observe signal" aria-pressed="true"></button>
-            <button class="node node-2" type="button" data-node="model" aria-label="Inspect Model signal" aria-pressed="false"></button>
-            <button class="node node-3" type="button" data-node="harden" aria-label="Inspect Harden signal" aria-pressed="false"></button>
-            <button class="node node-4" type="button" data-node="verify" aria-label="Inspect Verify signal" aria-pressed="false"></button>
-          </div>
-          <aside class="range-readout" aria-live="polite">
-            <div>
-              <p class="readout-kicker" id="node-code">NODE_01 // OBSERVE</p>
-              <h3 id="node-title">Read the signal.</h3>
-              <p id="node-copy">Before acting, understand normal behavior. Logs, packets, and system state turn assumptions into evidence.</p>
-            </div>
-            <div>
-              <div class="signal-bars active" id="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-              <p class="range-hint">SELECT A NODE TO CHANGE THE READOUT</p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="section process" id="method" aria-labelledby="method-title">
-      <div class="section-inner">
-        <header class="section-head reveal">
-          <span class="section-no">03 / practice loop</span>
-          <h2 id="method-title">A method for turning<br />curiosity into skill.</h2>
-          <p class="section-lede">Security rewards careful thinking. My process keeps the work grounded, repeatable, and focused on what the evidence actually shows.</p>
-        </header>
-        <div class="process-steps">
-          <article class="process-step"><h3>Understand</h3><p>Start with the system, protocol, or code—not the tool.</p></article>
-          <article class="process-step"><h3>Test safely</h3><p>Use controlled labs to ask precise questions and inspect behavior.</p></article>
-          <article class="process-step"><h3>Document</h3><p>Capture commands, evidence, mistakes, and the reasoning behind a fix.</p></article>
-          <article class="process-step"><h3>Rebuild</h3><p>Apply the lesson again until the workflow becomes clear and repeatable.</p></article>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="section-inner">
-        <header class="section-head reveal">
-          <span class="section-no">04 / field work</span>
-          <h2 id="work-title">Shipped work,<br />live from GitHub.</h2>
-          <p class="section-lede">Real repositories, pulled live from the GitHub API. No hard-coded stats — this section updates itself.</p>
-        </header>
-        <div class="projects-grid" id="projects-grid" aria-live="polite">
-          <article class="project-card reveal"><span class="proj-lang">LOADING</span><h3>Connecting…</h3><p>Fetching live repository data.</p></article>
-        </div>
-        <p class="projects-status mono" id="projects-status">◌ syncing with api.github.com …</p>
-      </div>
-    </section>
-
-    <section class="section outro" id="direction" aria-labelledby="direction-title">
-      <div class="section-inner outro-grid">
-        <div>
-          <span class="section-no">05 / direction</span>
-          <h2 id="direction-title">Building the judgment to protect what matters.</h2>
-        </div>
-        <div class="outro-copy">
-          <p>I’m developing the technical foundation, communication habits, and investigative mindset needed to contribute to real security work.</p>
-          <div class="availability"><span class="status-dot" aria-hidden="true"></span><span>Learning in progress</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>SAURABH / CYBERSECURITY / <span id="dyn-year">2026</span></span>
-    <span class="visitor-counter"><img src="https://hits.sh/sourabhbeni.github.io.svg" alt="Total site visits" /></span>
-    <span>BUILD → BREAK SAFELY → LEARN → REPEAT</span>
-  </footer>
-
-  <div class="cyber-pet" id="cyber-pet" aria-hidden="true">
-    <svg viewBox="0 0 96 72" role="presentation">
-      <path class="pet-detail" d="M23 45H12l-6-8 5-8" />
-      <rect class="pet-shell" x="20" y="27" width="45" height="29" />
-      <path class="pet-shell" d="M58 24V10l9 7 10-7v14c0 10-6 16-14 16s-13-6-13-16z" />
-      <rect class="pet-eye" x="59" y="25" width="4" height="5" />
-      <rect class="pet-eye" x="69" y="25" width="4" height="5" />
-      <path class="pet-detail" d="M65 34h3M76 34h12M76 38h10" />
-      <path class="pet-detail pet-foot" d="M28 56v9h10M55 56v9h10" />
-      <path class="pet-detail" d="M35 36h15M35 42h9" />
-      <circle class="pet-signal" cx="45" cy="49" r="3" />
-      <path class="pet-detail" d="M63 11V5h7" />
-      <circle class="pet-signal" cx="72" cy="5" r="3" />
-    </svg>
+<header class="hero">
+  <p class="eyebrow reveal"><span class="dot"></span> Saurabh — Cybersecurity Student</p>
+  <h1 class="hero-title reveal" data-d="1">Learn. <span class="grad">Test.</span> Defend.</h1>
+  <p class="hero-sub reveal" data-d="2">Master's student in cybersecurity at Westcliff University, Irvine — turning theory into practice, in the open.</p>
+  <div class="hero-ctas reveal" data-d="3">
+    <a class="btn btn-blue" href="#work">Explore my work</a>
+    <a class="btn btn-glass" href="#lab">Enter the lab</a>
   </div>
+  <span class="scroll-hint">Scroll</span>
+</header>
 
-  <script>
-    (function () {
-      var skills = {
-        network: {
-          mode: "MODE: PRACTICING", code: "AREA_01", title: "Network security",
-          copy: "Learning how traffic moves, where trust breaks down, and how segmentation, visibility, and careful configuration reduce risk.",
-          tags: ["TCP/IP", "DNS", "packet analysis", "firewalls"]
-        },
-        linux: {
-          mode: "MODE: BUILDING", code: "AREA_02", title: "Linux & scripting",
-          copy: "Getting fluent at the command line, automating repeatable tasks, and understanding the permissions and processes behind a secure system.",
-          tags: ["shell", "Python", "permissions", "automation"]
-        },
-        web: {
-          mode: "MODE: EXPLORING", code: "AREA_03", title: "Web security",
-          copy: "Studying how browsers, servers, sessions, and user input interact—and how secure design prevents common application weaknesses.",
-          tags: ["HTTP", "authentication", "input handling", "OWASP concepts"]
-        },
-        cloud: {
-          mode: "MODE: FOUNDATIONS", code: "AREA_04", title: "Cloud foundations",
-          copy: "Understanding shared responsibility, identity, networking, and configuration so cloud environments begin with strong security assumptions.",
-          tags: ["IAM", "networking", "logging", "least privilege"]
-        }
-      };
-      var tabs = Array.prototype.slice.call(document.querySelectorAll(".skill-tab"));
-      var panel = document.getElementById("skill-panel");
-      var mode = document.getElementById("skill-mode");
-      var code = document.getElementById("skill-code");
-      var title = document.getElementById("skill-title");
-      var copy = document.getElementById("skill-copy");
-      var tags = document.getElementById("skill-tags");
+<section class="block on-dark" id="overview">
+  <div class="wrap">
+    <p class="kicker reveal">Overview</p>
+    <h2 class="stitle reveal" data-d="1">Security is a practice,<br />not a credential.</h2>
+    <p class="lede reveal" data-d="2">I'm building depth across the layers that matter — networks, systems, applications, and cloud — through labs, careful testing, and honest documentation.</p>
+    <div class="stats">
+      <div class="stat glass reveal" data-d="1"><b><span class="live-dot"></span><span id="stat-repos">–</span></b><span>Shipped repositories · live from GitHub</span></div>
+      <div class="stat glass reveal" data-d="2"><b>04</b><span>Focus areas in active practice</span></div>
+      <div class="stat glass reveal" data-d="3"><b id="stat-uptime">–</b><span>On this page · session time</span></div>
+    </div>
+  </div>
+</section>
 
-      function activate(tab) {
-        var data = skills[tab.getAttribute("data-skill")];
-        tabs.forEach(function (item) { item.setAttribute("aria-selected", item === tab ? "true" : "false"); });
-        mode.textContent = data.mode;
-        code.textContent = data.code;
-        title.textContent = data.title;
-        copy.textContent = data.copy;
-        tags.innerHTML = "";
-        data.tags.forEach(function (label) {
-          var span = document.createElement("span");
-          span.className = "tag";
-          span.textContent = label;
-          tags.appendChild(span);
-        });
-      }
+<section class="block light" id="focus">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Focus</p>
+    <h2 class="stitle reveal" data-d="1">Skills in progress,<br />not boxes checked.</h2>
+    <p class="lede reveal" data-d="2">Four layers, one mindset: understand the system before reaching for the tool.</p>
+    <div class="cards">
+      <article class="card glass glass-light reveal" data-d="1">
+        <div class="icon">◈</div>
+        <h3>Network Security</h3>
+        <p>Learning how traffic moves, where trust breaks down, and how segmentation, visibility, and careful configuration reduce risk.</p>
+        <div class="tags"><i>TCP/IP</i><i>DNS</i><i>Packet analysis</i><i>Firewalls</i></div>
+      </article>
+      <article class="card glass glass-light reveal" data-d="2">
+        <div class="icon">▣</div>
+        <h3>Linux &amp; Scripting</h3>
+        <p>Getting fluent at the command line, automating repeatable tasks, and understanding the permissions and processes behind a secure system.</p>
+        <div class="tags"><i>Shell</i><i>Python</i><i>Permissions</i><i>Automation</i></div>
+      </article>
+      <article class="card glass glass-light reveal" data-d="3">
+        <div class="icon">⬢</div>
+        <h3>Web Security</h3>
+        <p>Studying how browsers, servers, sessions, and user input interact — and how secure design prevents common application weaknesses.</p>
+        <div class="tags"><i>HTTP</i><i>Auth</i><i>Input handling</i><i>OWASP</i></div>
+      </article>
+      <article class="card glass glass-light reveal" data-d="4">
+        <div class="icon">⬣</div>
+        <h3>Cloud Foundations</h3>
+        <p>Understanding shared responsibility, identity, networking, and configuration so cloud environments start from strong assumptions.</p>
+        <div class="tags"><i>IAM</i><i>Networking</i><i>Logging</i><i>Least privilege</i></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-      tabs.forEach(function (tab, index) {
-        tab.addEventListener("click", function () { activate(tab); });
-        tab.addEventListener("keydown", function (event) {
-          var next;
-          if (event.key === "ArrowDown" || event.key === "ArrowRight") next = (index + 1) % tabs.length;
-          if (event.key === "ArrowUp" || event.key === "ArrowLeft") next = (index - 1 + tabs.length) % tabs.length;
-          if (typeof next === "number") {
-            event.preventDefault();
-            tabs[next].focus();
-            activate(tabs[next]);
-          }
-        });
+<section class="block on-dark" id="lab">
+  <div class="wrap">
+    <p class="kicker reveal">The Lab</p>
+    <h2 class="stitle reveal" data-d="1">A terminal that<br />talks back.</h2>
+    <p class="lede reveal" data-d="2">This isn't a screenshot. Type below — the page is listening.</p>
+    <div class="term-shell glass reveal" data-d="3">
+      <div class="term-bar"><i></i><i></i><i></i><span>saurabh@beniwal — zsh</span></div>
+      <div class="term-body" id="term-body">
+        <div><span class="p">$</span> <span class="c">whoami --profile</span></div>
+        <div class="o"><b>Saurabh</b><br />Master's cybersecurity student<br />Westcliff University · Irvine, CA</div>
+        <div><span class="p">$</span> <span class="c">cat current-focus.txt</span></div>
+        <div class="o">network fundamentals<br />Linux &amp; scripting<br />web security concepts<br />cloud foundations</div>
+        <div><span class="p">$</span> <span class="c">echo $MINDSET</span></div>
+        <div class="o"><b>Always learning. Always testing.</b></div>
+        <div id="term-dynamic"></div>
+        <div class="term-input-row"><span class="p">$</span><input class="term-input" id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="try: help" aria-label="Terminal input" /><span class="cursor"></span></div>
+        <div class="term-hint">Try <b>help</b> · <b>whoami</b> · <b>skills</b> · <b>projects</b> · <b>contact</b> · <b>clear</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block light" id="work">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Work</p>
+    <h2 class="stitle reveal" data-d="1">Shipped work,<br />live from GitHub.</h2>
+    <p class="lede reveal" data-d="2">Real repositories, pulled from the GitHub API every visit. No hard-coded stats — this section updates itself.</p>
+    <div class="work-grid" id="projects-grid">
+      <article class="work glass glass-light reveal"><span class="lang">LOADING</span><h3>Connecting…</h3><p>Fetching live repository data.</p></article>
+    </div>
+    <p class="work-status" id="projects-status">◌ syncing with api.github.com …</p>
+  </div>
+</section>
+
+<section class="block on-dark" id="method">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Method</p>
+    <h2 class="stitle reveal" data-d="1">A loop for turning<br />curiosity into skill.</h2>
+    <p class="lede reveal" data-d="2">Security rewards careful thinking. The process stays grounded, repeatable, and honest about what the evidence shows.</p>
+    <div class="steps">
+      <div class="step glass reveal" data-d="1"><div class="n">01</div><h3>Understand</h3><p>Start with the system, protocol, or code — not the tool.</p></div>
+      <div class="step glass reveal" data-d="2"><div class="n">02</div><h3>Test safely</h3><p>Use controlled labs to ask precise questions and inspect behavior.</p></div>
+      <div class="step glass reveal" data-d="3"><div class="n">03</div><h3>Document</h3><p>Capture commands, evidence, mistakes, and the reasoning behind a fix.</p></div>
+      <div class="step glass reveal" data-d="4"><div class="n">04</div><h3>Rebuild</h3><p>Apply the lesson again until the workflow becomes repeatable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="orb o1" aria-hidden="true"></div>
+  <div class="orb o2" aria-hidden="true"></div>
+  <p class="kicker reveal" style="text-align:center">Direction</p>
+  <h2 class="reveal" data-d="1">Building the judgment to <span class="grad">protect what matters.</span></h2>
+  <p class="reveal" data-d="2">Developing the technical foundation, communication habits, and investigative mindset needed for real security work.</p>
+  <div class="hero-ctas reveal" data-d="3">
+    <a class="btn btn-blue" href="https://github.com/sourabhbeni" target="_blank" rel="noopener">GitHub — sourabhbeni</a>
+    <a class="btn btn-glass" href="#overview">Back to top ↑</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide">
+    <span>© <span id="dyn-year">2026</span> Saurabh · Irvine, California</span>
+    <span class="visits">◌ <img src="https://hits.sh/sourabhbeni.github.io.svg" alt="Total site visits" /></span>
+    <span>Learn → Test → Defend · Built with curiosity</span>
+  </div>
+</footer>
+<script>
+(function () {
+  "use strict";
+
+  /* ---- Liquid Glass: specular highlight follows pointer ---- */
+  document.addEventListener("pointermove", function (e) {
+    var el = e.target.closest && e.target.closest(".glass");
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    el.style.setProperty("--mx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+    el.style.setProperty("--my", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+  }, { passive: true });
+
+  /* ---- Live clock ---- */
+  var clock = document.getElementById("live-clock");
+  function tick() {
+    if (!clock) return;
+    var d = new Date(), p = function (n) { return String(n).padStart(2, "0"); };
+    clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds());
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---- Session timer ---- */
+  var t0 = Date.now(), upEl = document.getElementById("stat-uptime");
+  setInterval(function () {
+    if (!upEl) return;
+    var s = Math.floor((Date.now() - t0) / 1000);
+    upEl.textContent = Math.floor(s / 60) + "m " + (s % 60) + "s";
+  }, 1000);
+
+  /* ---- Dynamic year ---- */
+  var y = document.getElementById("dyn-year");
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---- Scroll narrative: staged reveals ---- */
+  var els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("visible"); io.unobserve(en.target); }
       });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add("visible"); }); }
 
-      var nodeData = {
-        observe: { code: "NODE_01 // OBSERVE", title: "Read the signal.", copy: "Before acting, understand normal behavior. Logs, packets, and system state turn assumptions into evidence." },
-        model: { code: "NODE_02 // MODEL", title: "Map the trust.", copy: "Trace identities, boundaries, data flow, and dependencies to see where a system expects trust—and where that trust could fail." },
-        harden: { code: "NODE_03 // HARDEN", title: "Reduce the surface.", copy: "Apply least privilege, safe defaults, segmentation, and careful configuration to remove unnecessary paths to compromise." },
-        verify: { code: "NODE_04 // VERIFY", title: "Test the defense.", copy: "Re-run the scenario, inspect the evidence, and document the result. A control is only useful when its behavior can be verified." }
-      };
-      var nodes = Array.prototype.slice.call(document.querySelectorAll(".node"));
-      var nodeCode = document.getElementById("node-code");
-      var nodeTitle = document.getElementById("node-title");
-      var nodeCopy = document.getElementById("node-copy");
-      var signalBars = document.getElementById("signal-bars");
+  /* ---- Interactive terminal ---- */
+  var input = document.getElementById("term-input");
+  var dyn = document.getElementById("term-dynamic");
+  var body = document.getElementById("term-body");
+  function esc(s) { return s.replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function print(cmd, outHtml) {
+    var row = document.createElement("div");
+    row.innerHTML = '<div><span class="p">$</span> <span class="c">' + esc(cmd) + '</span></div><div class="o">' + outHtml + "</div>";
+    dyn.appendChild(row);
+    body.scrollTop = body.scrollHeight;
+  }
+  var cmds = {
+    help: "available — <b>whoami</b> · <b>skills</b> · <b>projects</b> · <b>contact</b> · <b>date</b> · <b>clear</b>",
+    whoami: "<b>Saurabh</b><br />Master's cybersecurity student<br />Westcliff University · Irvine, CA",
+    skills: "network fundamentals<br />Linux &amp; scripting<br />web security concepts<br />cloud foundations",
+    projects: "scroll to <b>#work</b> — pulled live from GitHub ↑",
+    contact: "GitHub — <b>sourabhbeni</b><br />web — <b>beniwal.me</b>",
+    date: esc(new Date().toString()),
+    sudo: "nice try. this terminal respects <b>least privilege</b>."
+  };
+  if (input) input.addEventListener("keydown", function (ev) {
+    if (ev.key !== "Enter") return;
+    var raw = input.value.trim();
+    if (!raw) return;
+    var cmd = raw.toLowerCase();
+    if (cmd === "clear") { dyn.innerHTML = ""; input.value = ""; return; }
+    print(raw, cmds[cmd] || ("command not found: " + esc(cmd) + " — try <b>help</b>"));
+    input.value = "";
+    if (cmd === "projects") document.getElementById("work").scrollIntoView({ behavior: "smooth" });
+  });
 
-      nodes.forEach(function (node) {
-        node.addEventListener("click", function () {
-          var data = nodeData[node.getAttribute("data-node")];
-          nodes.forEach(function (item) {
-            var isActive = item === node;
-            item.classList.toggle("active", isActive);
-            item.setAttribute("aria-pressed", isActive ? "true" : "false");
-          });
-          signalBars.classList.remove("active");
-          window.requestAnimationFrame(function () { signalBars.classList.add("active"); });
-          nodeCode.textContent = data.code;
-          nodeTitle.textContent = data.title;
-          nodeCopy.textContent = data.copy;
-        });
-      });
-
-      var pet = document.getElementById("cyber-pet");
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      var petTimer;
-      var lastPetX = 18;
-
-      function roam() {
-        if (reduceMotion.matches || !pet) return;
-        var petWidth = pet.offsetWidth;
-        var petHeight = pet.offsetHeight;
-        var margin = 16;
-        var maxX = Math.max(margin, window.innerWidth - petWidth - margin);
-        var maxY = Math.max(margin, window.innerHeight - petHeight - margin);
-        var nextX = Math.round(margin + Math.random() * (maxX - margin));
-        var nextY = Math.round(margin + Math.random() * (maxY - margin));
-        pet.classList.toggle("facing-left", nextX < lastPetX);
-        pet.style.left = nextX + "px";
-        pet.style.top = nextY + "px";
-        lastPetX = nextX;
-        window.clearTimeout(petTimer);
-        petTimer = window.setTimeout(roam, 5700);
-      }
-
-      if (!reduceMotion.matches) {
-        petTimer = window.setTimeout(roam, 700);
-        window.addEventListener("resize", roam);
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
-      /* ---------- THEME TOGGLE ---------- */
-      var root = document.documentElement;
-      var toggle = document.getElementById("theme-toggle");
-      function applyTheme(t) {
-        root.setAttribute("data-theme", t);
-        try { localStorage.setItem("beniwal-theme", t); } catch (e) {}
-        document.getElementById("theme-toggle").textContent = t === "dark" ? "☀" : "◐";
-      }
-      // init from storage or system
-      var saved = null;
-      try { saved = localStorage.getItem("beniwal-theme"); } catch (e) {}
-      if (saved) { applyTheme(saved); }
-      // inject theme override CSS
-      var st = document.createElement("style");
-      st.textContent = '[data-theme="dark"]{--bg:#10130f;--surface:#181d17;--surface-2:#20261f;--text:#f0f3ea;--muted:#adb6a6;--line:#384137;--strong-line:#6c7768;--signal:#58ffb5;--signal-ink:#06130c;--cyan:#55e6f3;--cyan-soft:rgba(85,230,243,.12);--amber:#ff9c55;--danger:#ff6675;--grid:rgba(206,221,200,.06);--shadow:rgba(0,0,0,.32);color-scheme:dark;}'
-        + '[data-theme="light"]{--bg:#f2f3ed;--surface:#ffffff;--surface-2:#e7e9e0;--text:#171a16;--muted:#535a50;--line:#b9beb2;--strong-line:#777e71;--signal:#006f4d;--signal-ink:#effff8;--cyan:#006d79;--cyan-soft:rgba(0,109,121,.12);--amber:#a94200;--danger:#a12b36;--grid:rgba(23,26,22,.075);--shadow:rgba(21,27,20,.14);color-scheme:light;}';
-      document.head.appendChild(st);
-      if (toggle) toggle.addEventListener("click", function () {
-        var cur = root.getAttribute("data-theme");
-        if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-        applyTheme(cur === "dark" ? "light" : "dark");
-      });
-
-      /* ---------- LIVE CLOCK ---------- */
-      var clock = document.getElementById("live-clock");
-      function tick() {
-        if (!clock) return;
-        var d = new Date();
-        var p = function(n){ return String(n).padStart(2,"0"); };
-        clock.textContent = p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds()) + " LOCAL";
-      }
-      tick(); setInterval(tick, 1000);
-
-      /* ---------- DYNAMIC YEAR ---------- */
-      var y = document.getElementById("dyn-year");
-      if (y) y.textContent = new Date().getFullYear();
-
-      /* ---------- SCROLL REVEAL ---------- */
-      var revealEls = document.querySelectorAll(".reveal");
-      if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); }
-          });
-        }, { threshold: 0.12 });
-        revealEls.forEach(function (el) { io.observe(el); });
-      } else {
-        revealEls.forEach(function (el) { el.classList.add("visible"); });
-      }
-
-      /* ---------- INTERACTIVE TERMINAL ---------- */
-      var input = document.getElementById("term-input");
-      var dyn = document.getElementById("term-dynamic");
-      function printLine(cmd, out) {
-        var row = document.createElement("div");
-        row.innerHTML = '<p class="term-line"><span class="prompt">$</span> <span class="command"></span></p><div class="term-output"></div>';
-        row.querySelector(".command").textContent = cmd;
-        row.querySelector(".term-output").innerHTML = out;
-        dyn.appendChild(row);
-        row.scrollIntoView({ block: "nearest" });
-      }
-      var commands = {
-        help: "available: <b>whoami</b> · <b>skills</b> · <b>projects</b> · <b>contact</b> · <b>date</b> · <b>clear</b>",
-        whoami: "<b>Saurabh</b><br/>Master's cybersecurity student<br/>Westcliff University · Irvine, CA",
-        skills: "network fundamentals<br/>Linux &amp; scripting<br/>web security concepts<br/>cloud foundations",
-        projects: "see <b>#work</b> below — pulled live from GitHub ↑",
-        contact: 'GitHub: <b>sourabhbeni</b><br/>web: <b>beniwal.me</b>',
-        date: new Date().toString(),
-        sudo: "nice try. this terminal respects least privilege. 🔒"
-      };
-      if (input) input.addEventListener("keydown", function (ev) {
-        if (ev.key !== "Enter") return;
-        var cmd = input.value.trim().toLowerCase();
-        if (!cmd) return;
-        if (cmd === "clear") { dyn.innerHTML = ""; input.value = ""; return; }
-        var out = commands[cmd] || ("command not found: " + cmd + " — try <b>help</b>");
-        printLine(input.value.trim(), out);
-        input.value = "";
-        if (cmd === "projects") document.getElementById("work").scrollIntoView({ behavior: "smooth" });
-      });
-
-      /* ---------- LIVE GITHUB PROJECTS ---------- */
-      var grid = document.getElementById("projects-grid");
-      var status = document.getElementById("projects-status");
-      var repos = ["WZML", "BeniwalApp-iOS", "sourabhbeni.github.io"];
-      var fallback = [
-        { name: "WZML", language: "Python", description: "Telegram mirror/leech bot — synced 184 upstream commits, fixed startup for wzgram 3.x.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/WZML" },
-        { name: "BeniwalApp-iOS", language: "Swift", description: "Native iOS wrapper for beniwal.me — WKWebView shell, App Store ready.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/BeniwalApp-iOS" },
-        { name: "sourabhbeni.github.io", language: "HTML", description: "This site — hand-built, no framework, live visitor counter.", stargazers_count: 0, html_url: "https://github.com/sourabhbeni/sourabhbeni.github.io" }
-      ];
-      function card(r) {
-        var updated = r.updated_at ? new Date(r.updated_at).toLocaleDateString() : "—";
-        return '<article class="project-card reveal visible">'
-          + '<span class="proj-lang">' + ((r.language || "CODE").toUpperCase()) + '</span>'
-          + '<h3>' + r.name + '</h3>'
-          + '<p>' + ((r.description || "Shipped and maintained.").replace(/</g,"&lt;")) + '</p>'
-          + '<div class="project-meta"><span>★ ' + (r.stargazers_count || 0) + '</span><span>updated ' + updated + '</span></div>'
-          + '<a class="proj-link" href="' + r.html_url + '" target="_blank" rel="noopener">view repo →</a>'
-          + '</article>';
-      }
-      function render(list, live) {
-        grid.innerHTML = list.map(card).join("");
-        status.textContent = live ? "● live — synced just now from api.github.com" : "◌ offline — showing cached snapshot";
-      }
-      fetch("https://api.github.com/users/sourabhbeni/repos?per_page=100&sort=updated")
-        .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
-        .then(function (all) {
-          var pick = repos.map(function (n) { return all.find(function (r) { return r.name.toLowerCase() === n.toLowerCase(); }); }).filter(Boolean);
-          render(pick.length ? pick : fallback, pick.length > 0);
-        })
-        .catch(function () { render(fallback, false); });
-    })();
-  </script>
-
+  /* ---- Live GitHub: projects + repo count ---- */
+  var grid = document.getElementById("projects-grid");
+  var status = document.getElementById("projects-status");
+  var statRepos = document.getElementById("stat-repos");
+  var want = ["WZML", "BeniwalApp-iOS", "sourabhbeni.github.io"];
+  var fallback = [
+    { name: "WZML", language: "Python", description: "Telegram mirror/leech bot — synced 184 upstream commits, repaired startup for the wzgram 3.x era.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/WZML" },
+    { name: "BeniwalApp-iOS", language: "Swift", description: "Native iOS wrapper for beniwal.me — WKWebView shell, ready for Xcode signing.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/BeniwalApp-iOS" },
+    { name: "sourabhbeni.github.io", language: "HTML", description: "This site — hand-built Liquid Glass, no framework, live from the API.", stargazers_count: 0, updated_at: null, html_url: "https://github.com/sourabhbeni/sourabhbeni.github.io" }
+  ];
+  function card(r, i) {
+    var upd = r.updated_at ? new Date(r.updated_at).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) : "—";
+    return '<a class="work glass glass-light reveal visible" data-d="' + (i + 1) + '" href="' + r.html_url + '" target="_blank" rel="noopener">'
+      + '<span class="lang">' + esc((r.language || "code").toUpperCase()) + '</span>'
+      + "<h3>" + esc(r.name) + "</h3>"
+      + "<p>" + esc(r.description || "Shipped and maintained.") + "</p>"
+      + '<div class="meta"><span>★ ' + (r.stargazers_count || 0) + "</span><span>" + upd + "</span></div>"
+      + '<span class="go">View repository</span></a>';
+  }
+  function render(list, live, total) {
+    grid.innerHTML = list.map(card).join("");
+    status.textContent = live ? "● live — synced just now from api.github.com" : "◌ offline — showing cached snapshot";
+    if (statRepos && typeof total === "number") statRepos.textContent = String(total).padStart(2, "0");
+  }
+  fetch("https://api.github.com/users/sourabhbeni/repos?per_page=100&sort=updated")
+    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
+    .then(function (all) {
+      var pick = want.map(function (n) {
+        return all.find(function (r) { return r.name.toLowerCase() === n.toLowerCase(); });
+      }).filter(Boolean);
+      var nonForks = all.filter(function (r) { return !r.fork; }).length;
+      render(pick.length ? pick : fallback, pick.length > 0, nonForks || pick.length);
+    })
+    .catch(function () { render(fallback, false, null); });
+})();
+</script>
 </body>
 </html>
