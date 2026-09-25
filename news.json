@@ -2,12 +2,12 @@
   "updated": "2026-09-25",
   "items": [
     {
-      "title": "CISA: ransomware gangs now exploiting critical TeamCity flaw",
-      "summary": "CVE-2026-63077 (CVSS 9.8) is an unauthenticated RCE via the TeamCity agent polling protocol. Patched July 25, added to CISA's KEV catalog, now used in ransomware campaigns.",
-      "source": "SC Media",
-      "url": "https://www.scworld.com/news/critical-jetbrains-teamcity-rce-exploited-by-ransomware-says-cisa",
-      "published": "2026-09-24",
-      "tag": "RANSOMWARE"
+      "title": "N-able N-Central hotfix addresses critical RCE flaw (CVE-2026-86218)",
+      "summary": "N-able released an emergency hotfix for a critical remote code execution vulnerability in N-Central affecting on-prem instances.",
+      "source": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/09/07/n-able-n-central-hotfix-cve-2026-86218/",
+      "published": "2026-09-07",
+      "tag": "VULNERABILITY"
     },
     {
       "title": "F5 patches critical BIG-IP APM zero-day under active exploitation",
@@ -26,12 +26,12 @@
       "tag": "PATCH"
     },
     {
-      "title": "Astrana Health breach via vishing, SEC filing in 24 hours",
-      "summary": "Attackers spoofed the company's main phone number to breach a subsidiary's servers. Private data accessed; systems rebuilt from clean backups, credentials rotated.",
-      "source": "DeafNews",
-      "url": "https://deafnews.it/en/news/cybersecurity/astrana-health-breach-via-vishing-sec-filing-in-24-hours-patients-still-in-the-dark",
-      "published": "2026-09-23",
-      "tag": "BREACH"
+      "title": "September 2026 Patch Tuesday: fixes for two zero-days among ~1,000 updates",
+      "summary": "Microsoft's September Patch Tuesday fixed two zero-day flaws plus hundreds of other vulnerabilities across Windows and services.",
+      "source": "CSO Online",
+      "url": "https://www.csoonline.com/article/4219846/september-2026-patch-tuesday-roundup-plugs-for-two-zero-day-holes-among-almost-1000-fixes-in-windows.html",
+      "published": "2026-09-25",
+      "tag": "PATCH"
     },
     {
       "title": "Check Point patches critical pre-auth root RCE in management servers",
