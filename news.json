@@ -1,45 +1,53 @@
 {
-  "updated": "2026-09-25",
-  "items": [
-    {
-      "title": "N-able N-Central hotfix addresses critical RCE flaw (CVE-2026-86218)",
-      "summary": "N-able released an emergency hotfix for a critical remote code execution vulnerability in N-Central affecting on-prem instances.",
-      "source": "Help Net Security",
-      "url": "https://www.helpnetsecurity.com/2026/09/07/n-able-n-central-hotfix-cve-2026-86218/",
-      "published": "2026-09-07",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "F5 patches critical BIG-IP APM zero-day under active exploitation",
-      "summary": "CVE-2026-94127 (CVSS 9.3) is a heap-based buffer overflow in BIG-IP APM OAuth setups. CISA added it to the KEV catalog with a Friday patch deadline for federal agencies.",
-      "source": "SC Media",
-      "url": "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
-      "published": "2026-09-24",
-      "tag": "ZERO-DAY"
-    },
-    {
-      "title": "GitLab critical patch release fixes 11 flaws, two CVSS 9.9 RCEs",
-      "summary": "CVE-2026-89078 and CVE-2026-93577 allow authenticated RCE via malformed regex. Self-managed admins urged to upgrade to 19.4.1, 19.3.3, or 19.2.7 immediately.",
-      "source": "SecurityOnline",
-      "url": "https://securityonline.info/gitlab-critical-patch-release-rce/",
-      "published": "2026-09-23",
-      "tag": "PATCH"
-    },
-    {
-      "title": "September 2026 Patch Tuesday: fixes for two zero-days among ~1,000 updates",
-      "summary": "Microsoft's September Patch Tuesday fixed two zero-day flaws plus hundreds of other vulnerabilities across Windows and services.",
-      "source": "CSO Online",
-      "url": "https://www.csoonline.com/article/4219846/september-2026-patch-tuesday-roundup-plugs-for-two-zero-day-holes-among-almost-1000-fixes-in-windows.html",
-      "published": "2026-09-25",
-      "tag": "PATCH"
-    },
-    {
-      "title": "Check Point patches critical pre-auth root RCE in management servers",
-      "summary": "CVE-2026-91843 (CVSS 9.8) is a stack overflow in the Security Management Server login parser. Fifth management-plane auth bypass at Check Point since July.",
-      "source": "Abit",
-      "url": "https://abit.ee/en/cybersecurity/vulnerabilities/check-point-cve-2026-91843-vulnerability-security-management-server-cybersecurity-en",
-      "published": "2026-09-18",
-      "tag": "VULNERABILITY"
-    }
-  ]
+ "updated": "2026-09-25",
+ "items": [
+  {
+   "title": "CISA adds actively exploited WSO2 and Adobe Commerce flaws to KEV catalog",
+   "summary": "CVE-2026-5430 (CVSS 9.8, WSO2 products, file upload leading to RCE) and CVE-2026-71362 (CVSS 9.1, Adobe Commerce/Magento account takeover) are under active attack; federal agencies must patch by September 27.",
+   "source": "The Hacker News",
+   "url": "http://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
+   "published": "2026-09-25",
+   "tag": "VULNERABILITY"
+  },
+  {
+   "title": "F5 patches critical BIG-IP APM zero-day under active exploitation",
+   "summary": "CVE-2026-94127 (CVSS 9.8) is a heap-based buffer overflow in BIG-IP APM OAuth setups. CISA added it to the KEV catalog with a Friday patch deadline for federal agencies.",
+   "source": "SC Media",
+   "url": "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
+   "published": "2026-09-24",
+   "tag": "ZERO-DAY"
+  },
+  {
+   "title": "September 2026 Patch Tuesday: fixes for two zero-days among ~1,000 updates",
+   "summary": "Microsoft's September Patch Tuesday fixed two zero-day flaws plus hundreds of other vulnerabilities across Windows and services.",
+   "source": "CSO Online",
+   "url": "https://www.csoonline.com/article/4219846/september-2026-patch-tuesday-roundup-plugs-for-two-zero-day-holes-among-almost-1000-fixes-in-windows.html",
+   "published": "2026-09-25",
+   "tag": "PATCH"
+  },
+  {
+   "title": "GitLab critical patch release fixes 11 flaws, two CVSS 9.9 RCEs",
+   "summary": "CVE-2026-89078 and CVE-2026-93577 allow authenticated RCE via malformed regex. Self-managed admins urged to upgrade to 19.4.1, 19.3.3, or 19.2.7 immediately.",
+   "source": "SecurityOnline",
+   "url": "https://securityonline.info/gitlab-critical-patch-release-rce/",
+   "published": "2026-09-23",
+   "tag": "PATCH"
+  },
+  {
+   "title": "Check Point patches zero-day CVE-2026-93616 exploited in July attacks",
+   "summary": "CVSS 9.8 unauthenticated remote code execution in the Security Management Server, abused via path traversal and file upload. LivePatch does not fix it \u2014 a full security hotfix is required.",
+   "source": "DeafNews",
+   "url": "https://deafnews.it/en/news/cybersecurity/check-point-patches-zero-day-cve-2026-93616-in-management-server-cvss-98",
+   "published": "2026-09-22",
+   "tag": "ZERO-DAY"
+  },
+  {
+   "title": "ShinyHunters hacked the Clop ransomware leak site",
+   "summary": "The extortion group breached Clop's Tor data-leak site via a Grav CMS file-upload flaw, defaced it, and claims to have stolen server data including the site's onion private keys \u2014 enabling long-term impersonation of the rival gang.",
+   "source": "CyberRecaps",
+   "url": "https://cyberrecaps.com/news/cybersecurity-news-september-20-2026",
+   "published": "2026-09-20",
+   "tag": "RANSOMWARE"
+  }
+ ]
 }
