@@ -286,9 +286,14 @@
   .fnote { border-radius: 24px; padding: clamp(28px, 4vw, 48px); margin-top: 44px; }
   .fnote-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.08em; color: var(--gray-2); margin-bottom: 22px; }
   .fnote-meta strong { color: var(--blue); font-weight: 700; }
-  .fnote blockquote { font-size: clamp(22px, 3vw, 30px); line-height: 1.35; letter-spacing: -0.01em; font-weight: 600; margin: 0 0 20px; }
-  .fnote > p { font-size: 16px; line-height: 1.6; color: var(--gray); max-width: 680px; }
-  .fnote-q { margin-top: 22px !important; font-family: var(--mono); font-size: 13px; color: var(--blue); }
+  .news-item { display: block; padding: 18px 0; border-top: 1px solid rgba(0,0,0,.08); text-decoration: none; color: inherit; }
+  .news-item:first-child { border-top: none; padding-top: 0; }
+  .news-item:hover .news-title { color: var(--blue); }
+  .news-title { font-size: clamp(18px, 2.2vw, 22px); font-weight: 650; letter-spacing: -0.01em; line-height: 1.35; margin: 0 0 8px; transition: color .2s; }
+  .news-summary { font-size: 15px; line-height: 1.6; color: var(--gray); margin: 0 0 10px; }
+  .news-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--gray-2); }
+  .news-tag { background: rgba(0,113,227,.12); color: var(--blue); font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+  .fnote-loading, .fnote-error { font-family: var(--mono); font-size: 13px; color: var(--gray-2); padding: 12px 0; }
 </style>
 </head>
 <body>
@@ -414,13 +419,11 @@
 <section class="block light" id="field-note">
   <div class="wrap-wide">
     <p class="kicker reveal">Daily field note</p>
-    <h2 class="stitle reveal" data-d="1">One thought to carry<br />into the lab.</h2>
-    <p class="lede reveal" data-d="2">A short reflection from today's learning &mdash; less about collecting tools, more about sharpening judgment.</p>
+    <h2 class="stitle reveal" data-d="1">Today's cyber brief.</h2>
+    <p class="lede reveal" data-d="2">Fresh cybersecurity headlines, refreshed every morning &mdash; what broke, what patched, what to watch.</p>
     <div class="fnote glass-light reveal" data-d="3">
-      <div class="fnote-meta"><strong>FIELD_NOTE_001</strong><span>25 SEP 2026 &middot; TOPIC: VERIFICATION</span></div>
-      <blockquote>&ldquo;A security control is only as trustworthy as the evidence that it works when assumptions fail.&rdquo;</blockquote>
-      <p>Today's practice: after changing a configuration, test the failure path &mdash; not just the expected one. Capture the before state, make one deliberate change, then verify the result from a second point of view.</p>
-      <p class="fnote-q">QUESTION &rarr; What evidence would prove this control is actually working?</p>
+      <div class="fnote-meta"><strong>CYBER_BRIEF</strong><span id="fnote-date">LOADING</span></div>
+      <div id="fnote-news"><p class="fnote-loading">Fetching today's headlines&hellip;</p></div>
     </div>
   </div>
 </section>
@@ -553,6 +556,54 @@
       render(fresh.length ? fresh : fallback, fresh.length > 0, nonForks || fresh.length);
     })
     .catch(function () { render(fallback, false, null); });
+})();
+</script>
+<script>
+(function () {
+  var box = document.getElementById("fnote-news");
+  var dateEl = document.getElementById("fnote-date");
+  if (!box) return;
+  var FALLBACK = [{
+    title: "F5 patches critical zero-day flaw exploited in BIG-IP APM",
+    summary: "F5 disclosed a critical BIG-IP APM flaw already seeing exploitation in the wild and shipped emergency patches.",
+    source: "SC Media", url: "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
+    published: "2026-09-25", tag: "ZERO-DAY"
+  }, {
+    title: "GitLab releases critical patch fixing remote code execution flaw",
+    summary: "GitLab's latest release fixes a critical RCE vulnerability affecting self-managed instances; upgrade urged.",
+    source: "SecurityOnline", url: "https://securityonline.info/gitlab-critical-patch-release-rce/",
+    published: "2026-09-25", tag: "PATCH"
+  }];
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function render(items) {
+    box.innerHTML = "";
+    items.slice(0, 6).forEach(function (it) {
+      var a = el("a", "news-item");
+      a.href = it.url; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.appendChild(el("h3", "news-title", it.title));
+      a.appendChild(el("p", "news-summary", it.summary));
+      var row = el("div", "news-row");
+      row.appendChild(el("span", "news-tag", it.tag || "NEWS"));
+      row.appendChild(el("span", null, (it.source || "") + "  ·  " + (it.published || "")));
+      a.appendChild(row);
+      box.appendChild(a);
+    });
+  }
+  fetch("news.json", { cache: "no-store" })
+    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
+    .then(function (data) {
+      if (dateEl && data.updated) dateEl.textContent = "UPDATED " + data.updated;
+      render(data.items && data.items.length ? data.items : FALLBACK);
+    })
+    .catch(function () {
+      if (dateEl) dateEl.textContent = "OFFLINE SNAPSHOT";
+      render(FALLBACK);
+    });
 })();
 </script>
 </body>
