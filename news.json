@@ -1,0 +1,45 @@
+{
+  "updated": "2026-09-25",
+  "items": [
+    {
+      "title": "CISA: ransomware gangs now exploiting critical TeamCity flaw",
+      "summary": "CVE-2026-63077 (CVSS 9.8) is an unauthenticated RCE via the TeamCity agent polling protocol. Patched July 25, added to CISA's KEV catalog, now used in ransomware campaigns.",
+      "source": "SC Media",
+      "url": "https://www.scworld.com/news/critical-jetbrains-teamcity-rce-exploited-by-ransomware-says-cisa",
+      "published": "2026-09-24",
+      "tag": "RANSOMWARE"
+    },
+    {
+      "title": "F5 patches critical BIG-IP APM zero-day under active exploitation",
+      "summary": "CVE-2026-94127 (CVSS 9.3) is a heap-based buffer overflow in BIG-IP APM OAuth setups. CISA added it to the KEV catalog with a Friday patch deadline for federal agencies.",
+      "source": "SC Media",
+      "url": "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
+      "published": "2026-09-24",
+      "tag": "ZERO-DAY"
+    },
+    {
+      "title": "GitLab critical patch release fixes 11 flaws, two CVSS 9.9 RCEs",
+      "summary": "CVE-2026-89078 and CVE-2026-93577 allow authenticated RCE via malformed regex. Self-managed admins urged to upgrade to 19.4.1, 19.3.3, or 19.2.7 immediately.",
+      "source": "SecurityOnline",
+      "url": "https://securityonline.info/gitlab-critical-patch-release-rce/",
+      "published": "2026-09-23",
+      "tag": "PATCH"
+    },
+    {
+      "title": "Astrana Health breach via vishing, SEC filing in 24 hours",
+      "summary": "Attackers spoofed the company's main phone number to breach a subsidiary's servers. Private data accessed; systems rebuilt from clean backups, credentials rotated.",
+      "source": "DeafNews",
+      "url": "https://deafnews.it/en/news/cybersecurity/astrana-health-breach-via-vishing-sec-filing-in-24-hours-patients-still-in-the-dark",
+      "published": "2026-09-23",
+      "tag": "BREACH"
+    },
+    {
+      "title": "Check Point patches critical pre-auth root RCE in management servers",
+      "summary": "CVE-2026-91843 (CVSS 9.8) is a stack overflow in the Security Management Server login parser. Fifth management-plane auth bypass at Check Point since July.",
+      "source": "Abit",
+      "url": "https://abit.ee/en/cybersecurity/vulnerabilities/check-point-cve-2026-91843-vulnerability-security-management-server-cybersecurity-en",
+      "published": "2026-09-18",
+      "tag": "VULNERABILITY"
+    }
+  ]
+}
