@@ -357,6 +357,13 @@
     .pr-grid, .wu-grid { grid-template-columns: 1fr; }
     .wu-sheet { padding: 38px 26px 30px; }
   }
+
+  .on-dark .card h3 { color: #f5f5f7; }
+  .on-dark .card p { color: rgba(245,245,247,0.62); }
+  .cards a.card { text-decoration: none; color: inherit; }
+  .x-go { font-size: 16px; font-weight: 600; color: #7dc4ff; margin-top: auto; padding-top: 10px; }
+  .brand-link { text-decoration: none; color: inherit; }
+  .page-back { margin-top: 56px; }
 </style>
 </head>
 <body>
@@ -367,7 +374,7 @@
   <a class="nl keep" href="#focus">Focus</a>
   <a class="nl" href="#lab">Lab</a>
   <a class="nl" href="#work">Work</a>
-  <a class="nl" href="#contributions">Proof</a>
+  <a class="nl" href="proof.html">Proof</a>
   <a class="nl" href="#method">Method</a>
   <a class="nl" href="#field-note">Notes</a>
   <span class="clock"><b></b><span id="live-clock">--:--:--</span></span>
@@ -492,37 +499,27 @@
   </div>
 </section>
 
-<section class="block on-dark" id="contributions">
+<section class="block on-dark" id="explore">
   <div class="wrap-wide">
-    <p class="kicker reveal">Proof</p>
-    <h2 class="stitle reveal" data-d="1">Fixing real bugs,<br />in the open.</h2>
-    <p class="lede reveal" data-d="2">Pull requests to open-source projects people actually use &mdash; the merged ones landed, the open ones are under review. Synced live from GitHub.</p>
-    <div class="pr-grid" id="pr-grid">
-      <article class="pr glass reveal"><div class="pr-top"><span class="pr-repo">LOADING</span></div><h3>Connecting&hellip;</h3><div class="meta"><span>fetching live PR data</span></div></article>
+    <p class="kicker reveal">Go deeper</p>
+    <h2 class="stitle reveal" data-d="1">The work,<br />up close.</h2>
+    <p class="lede reveal" data-d="2">Two pages with the receipts &mdash; every fix linked, every bug explained.</p>
+    <div class="cards">
+      <a class="card glass reveal" data-d="1" href="proof.html">
+        <div class="icon">&#9670;</div>
+        <h3>Proof</h3>
+        <p>Pull requests to open-source projects people actually use &mdash; merged contributions and open ones under review, synced live from GitHub.</p>
+        <span class="x-go">View contributions &#8250;</span>
+      </a>
+      <a class="card glass reveal" data-d="2" href="writeups.html">
+        <div class="icon">&#9672;</div>
+        <h3>Write-ups</h3>
+        <p>Short technical notes on real bugs I&apos;ve found and fixed &mdash; what broke, why, and what the patch looked like.</p>
+        <span class="x-go">Read write-ups &#8250;</span>
+      </a>
     </div>
-    <p class="work-status" id="pr-status">&#9678; syncing with api.github.com &hellip;</p>
   </div>
 </section>
-
-<section class="block light" id="writeups">
-  <div class="wrap-wide">
-    <p class="kicker reveal">Write-ups</p>
-    <h2 class="stitle reveal" data-d="1">Bugs, dissected.</h2>
-    <p class="lede reveal" data-d="2">Short technical notes on real bugs I&apos;ve found and fixed &mdash; what broke, why, and what the patch looked like.</p>
-    <div class="wu-grid" id="wu-grid"></div>
-  </div>
-</section>
-
-<div class="wu-modal" id="wu-modal" hidden role="dialog" aria-modal="true" aria-labelledby="wu-modal-title">
-  <div class="wu-sheet glass">
-    <button class="wu-close" id="wu-close" aria-label="Close article">&#10005;</button>
-    <p class="wu-date" id="wu-modal-date"></p>
-    <h2 id="wu-modal-title"></h2>
-    <div class="wu-tags" id="wu-modal-tags"></div>
-    <div class="wu-body" id="wu-modal-body"></div>
-    <a class="wu-pr" id="wu-modal-pr" href="#" target="_blank" rel="noopener">View the pull request &#8250;</a>
-  </div>
-</div>
 
 <section class="cta" id="contact">
   <div class="orb o1" aria-hidden="true"></div>
@@ -700,120 +697,6 @@
       if (dateEl) dateEl.textContent = "OFFLINE SNAPSHOT";
       render(FALLBACK);
     });
-})();
-</script>
-<script>
-(function () {
-  var grid = document.getElementById("pr-grid");
-  var status = document.getElementById("pr-status");
-  if (!grid) return;
-  function esc(s) { return String(s).replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
-  var FALLBACK = [
-    { repo: "EDM115/unzip-bot", number: 472, title: "fix: delete _temp file after sending split parts", merged: true, date: "2026-09-24" },
-    { repo: "Y0oshi/Project-Deep-Focus", number: 4, title: "Fix/fingerprint version wipe", merged: true, date: "2026-09-24" },
-    { repo: "anasty17/mirror-leech-telegram-bot", number: 1945, title: "tests: drop stale -bh flag tests", merged: false, date: "2026-09-25" },
-    { repo: "SilentDemonSD/WZML-X", number: 598, title: "fix: use selected files size for qbit limit check after file selection", merged: false, date: "2026-09-24" },
-    { repo: "LISA-KOREA/UPLOADER-BOT-V4", number: 57, title: "fix: add missing enums import in plugins/script.py", merged: false, date: "2026-09-24" },
-    { repo: "yashmahamulkar/openports", number: 8, title: "fix: include UDP listeners in Windows netstat parsing", merged: false, date: "2026-09-24" },
-    { repo: "yashmahamulkar/openports", number: 9, title: "fix: define psutil attribute when psutil is not installed", merged: false, date: "2026-09-24" },
-    { repo: "UMEssen/Body-and-Organ-Analysis", number: 57, title: "Fix/trailing dot folder names", merged: false, date: "2026-09-24" },
-    { repo: "DigitalBotz/Digital-Rename-Bot", number: 32, title: "fix: NameError in remove_premium (user_type -> type)", merged: false, date: "2026-09-24" }
-  ];
-  FALLBACK.forEach(function (p) { p.url = "https://github.com/" + p.repo + "/pull/" + p.number; });
-  function card(p) {
-    return '<a class="pr glass reveal visible" href="' + p.url + '" target="_blank" rel="noopener">'
-      + '<div class="pr-top"><span class="pr-repo">' + esc(p.repo) + '</span>'
-      + '<span class="pr-badge ' + (p.merged ? "merged" : "open") + '">' + (p.merged ? "MERGED" : "OPEN") + "</span></div>"
-      + "<h3>" + esc(p.title) + "</h3>"
-      + '<div class="meta"><span>#' + p.number + "</span><span>" + esc(p.date) + "</span></div>"
-      + '<span class="go">View pull request</span></a>';
-  }
-  function render(list, live) {
-    grid.innerHTML = list.map(card).join("");
-    if (status) status.textContent = live ? "\u25cf live \u2014 synced just now from api.github.com" : "\u25cc offline \u2014 showing cached snapshot";
-  }
-  fetch("https://api.github.com/search/issues?q=author%3Asourabhbeni+type%3Apr&per_page=30&sort=updated&order=desc")
-    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
-    .then(function (data) {
-      var items = (data.items || []).filter(function (it) {
-        var repo = it.repository_url.replace("https://api.github.com/repos/", "");
-        if (/^sourabhbeni\//i.test(repo)) return false;
-        if (/^(update|heroku)\s*$/i.test(it.title.trim())) return false;
-        return true;
-      }).map(function (it) {
-        return {
-          repo: it.repository_url.replace("https://api.github.com/repos/", ""),
-          number: it.number, title: it.title, url: it.html_url,
-          merged: !!(it.pull_request && it.pull_request.merged_at),
-          date: ((it.pull_request && it.pull_request.merged_at) || it.created_at || "").slice(0, 10)
-        };
-      });
-      items.sort(function (a, b) { return (b.merged - a.merged) || (b.date < a.date ? -1 : 1); });
-      render(items.length ? items : FALLBACK, items.length > 0);
-    })
-    .catch(function () { render(FALLBACK, false); });
-})();
-</script>
-<script>
-(function () {
-  var grid = document.getElementById("wu-grid");
-  var modal = document.getElementById("wu-modal");
-  if (!grid || !modal) return;
-  var mDate = document.getElementById("wu-modal-date");
-  var mTitle = document.getElementById("wu-modal-title");
-  var mTags = document.getElementById("wu-modal-tags");
-  var mBody = document.getElementById("wu-modal-body");
-  var mPr = document.getElementById("wu-modal-pr");
-  var closeBtn = document.getElementById("wu-close");
-  function el(tag, cls, text) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-  function openWu(w) {
-    mDate.textContent = w.date || "";
-    mTitle.textContent = w.title || "";
-    mTags.innerHTML = "";
-    (w.tags || []).forEach(function (t) { mTags.appendChild(el("i", null, t)); });
-    mBody.innerHTML = "";
-    (w.body || []).forEach(function (para) { mBody.appendChild(el("p", null, para)); });
-    if (w.pr) { mPr.href = w.pr; mPr.style.display = ""; } else { mPr.style.display = "none"; }
-    modal.hidden = false;
-    document.body.style.overflow = "hidden";
-  }
-  function closeWu() { modal.hidden = true; document.body.style.overflow = ""; }
-  closeBtn.addEventListener("click", closeWu);
-  modal.addEventListener("click", function (e) { if (e.target === modal) closeWu(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) closeWu(); });
-  var FALLBACK = [{
-    title: "The temp file that overstayed",
-    date: "2026-09-24",
-    summary: "The bot left its _temp file behind after sending split archive parts. Added cleanup at both call sites.",
-    tags: ["Python", "Bug fix", "Merged"],
-    body: ["Cleanup fix for the unzip bot."],
-    pr: "https://github.com/EDM115/unzip-bot/pull/472"
-  }];
-  function render(items) {
-    grid.innerHTML = "";
-    items.forEach(function (w) {
-      var b = el("button", "wu-card glass glass-light reveal visible");
-      b.type = "button";
-      b.appendChild(el("p", "wu-date", w.date || ""));
-      b.appendChild(el("h3", null, w.title || ""));
-      b.appendChild(el("p", null, w.summary || ""));
-      var tags = el("div", "wu-tags");
-      (w.tags || []).forEach(function (t) { tags.appendChild(el("i", null, t)); });
-      b.appendChild(tags);
-      b.appendChild(el("span", "wu-read", "Read the write-up \u203a"));
-      b.addEventListener("click", function () { openWu(w); });
-      grid.appendChild(b);
-    });
-  }
-  fetch("writeups.json", { cache: "no-store" })
-    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
-    .then(function (data) { render(data.items && data.items.length ? data.items : FALLBACK); })
-    .catch(function () { render(FALLBACK); });
 })();
 </script>
 </body>
