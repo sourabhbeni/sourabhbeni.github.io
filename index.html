@@ -13,9 +13,14 @@
 <meta property="og:title" content="Saurabh — Learn. Test. Defend." />
 <meta property="og:description" content="Master's student in cybersecurity at Westcliff University, Irvine. Security tools, lab notes, and open-source contributions." />
 <meta property="og:url" content="https://beniwal.me/" />
-<meta name="twitter:card" content="summary" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Saurabh — Learn. Test. Defend." />
 <meta name="twitter:description" content="Master's student in cybersecurity at Westcliff University, Irvine. Security tools, lab notes, and open-source contributions." />
+<meta property="og:image" content="https://beniwal.me/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Saurabh — Cybersecurity, Westcliff University" />
+<meta name="twitter:image" content="https://beniwal.me/og-image.png" />
 <title>Saurabh — Learn. Test. Defend.</title>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Saurabh","jobTitle":"Master's student in cybersecurity","affiliation":{"@type":"CollegeOrUniversity","name":"Westcliff University"},"address":{"@type":"PostalAddress","addressLocality":"Irvine","addressRegion":"CA","addressCountry":"US"},"url":"https://beniwal.me/","sameAs":["https://github.com/sourabhbeni"]}
@@ -308,6 +313,50 @@
   .news-row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; color: var(--gray-2); }
   .news-tag { background: rgba(0,113,227,.12); color: var(--blue); font-weight: 700; padding: 3px 10px; border-radius: 999px; }
   .fnote-loading, .fnote-error { font-family: var(--mono); font-size: 13px; color: var(--gray-2); padding: 12px 0; }
+
+  /* ---- Contributions: live upstream PRs ---- */
+  .pr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 60px; }
+  .pr { padding: 30px 28px; border-radius: 26px; display: flex; flex-direction: column; gap: 12px; min-height: 250px; text-decoration: none; color: inherit; transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1); }
+  .pr:hover { transform: translateY(-6px) scale(1.015); }
+  .pr-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pr-repo { font-family: var(--mono); font-size: 12px; letter-spacing: 0.05em; color: #7dc4ff; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .pr-badge { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; padding: 4px 12px; border-radius: 999px; white-space: nowrap; }
+  .pr-badge.merged { background: rgba(48,209,88,0.16); color: #30d158; }
+  .pr-badge.open { background: rgba(0,113,227,0.22); color: #7dc4ff; }
+  .pr h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.4; color: #f5f5f7; }
+  .pr .meta { display: flex; gap: 14px; font-size: 13px; color: rgba(245,245,247,0.45); font-family: var(--mono); margin-top: auto; }
+  .pr .go { font-size: 15px; font-weight: 500; color: #7dc4ff; }
+  .pr .go::after { content: " \203a"; transition: margin 0.2s; }
+  .pr:hover .go::after { margin-left: 4px; }
+
+  /* ---- Write-ups ---- */
+  .wu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 60px; }
+  .wu-card { padding: 34px 32px; border-radius: 26px; cursor: pointer; display: flex; flex-direction: column; gap: 12px; text-align: left; font: inherit; color: inherit; border: none; transition: transform 0.35s cubic-bezier(0.2,0.8,0.2,1); }
+  .wu-card:hover { transform: translateY(-6px); }
+  .wu-date { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--gray-2); }
+  .wu-card h3 { font-size: 23px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3; }
+  .wu-card p { font-size: 15px; line-height: 1.6; color: var(--gray); flex: 1; }
+  .wu-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .wu-tags i { font-style: normal; font-size: 12px; font-weight: 600; background: rgba(0,113,227,0.1); color: var(--blue); padding: 4px 12px; border-radius: 999px; }
+  .wu-read { font-size: 15px; font-weight: 600; color: var(--blue); }
+
+  /* ---- Write-up reader modal ---- */
+  .wu-modal { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .wu-modal[hidden] { display: none; }
+  .wu-sheet { position: relative; max-width: 700px; width: 100%; max-height: 84vh; overflow-y: auto; border-radius: 28px; padding: 46px 46px 38px; background: rgba(24,24,28,0.94); color: #f5f5f7; }
+  .wu-close { position: absolute; top: 18px; right: 20px; width: 36px; height: 36px; border-radius: 50%; border: none; background: rgba(255,255,255,0.12); color: #f5f5f7; font-size: 16px; cursor: pointer; }
+  .wu-close:hover { background: rgba(255,255,255,0.22); }
+  .wu-sheet .wu-date { color: rgba(245,245,247,0.5); }
+  .wu-sheet h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; margin: 10px 0 12px; }
+  .wu-sheet .wu-tags { margin-bottom: 8px; }
+  .wu-sheet .wu-body p { font-size: 16px; line-height: 1.75; color: rgba(245,245,247,0.84); margin: 14px 0; }
+  .wu-pr { display: inline-block; margin-top: 18px; font-size: 15px; font-weight: 600; color: #7dc4ff; text-decoration: none; }
+  .wu-pr:hover { text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .pr-grid, .wu-grid { grid-template-columns: 1fr; }
+    .wu-sheet { padding: 38px 26px 30px; }
+  }
 </style>
 </head>
 <body>
@@ -318,6 +367,7 @@
   <a class="nl keep" href="#focus">Focus</a>
   <a class="nl" href="#lab">Lab</a>
   <a class="nl" href="#work">Work</a>
+  <a class="nl" href="#contributions">Proof</a>
   <a class="nl" href="#method">Method</a>
   <a class="nl" href="#field-note">Notes</a>
   <span class="clock"><b></b><span id="live-clock">--:--:--</span></span>
@@ -442,12 +492,44 @@
   </div>
 </section>
 
-<section class="cta">
+<section class="block on-dark" id="contributions">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Proof</p>
+    <h2 class="stitle reveal" data-d="1">Fixing real bugs,<br />in the open.</h2>
+    <p class="lede reveal" data-d="2">Pull requests to open-source projects people actually use &mdash; the merged ones landed, the open ones are under review. Synced live from GitHub.</p>
+    <div class="pr-grid" id="pr-grid">
+      <article class="pr glass reveal"><div class="pr-top"><span class="pr-repo">LOADING</span></div><h3>Connecting&hellip;</h3><div class="meta"><span>fetching live PR data</span></div></article>
+    </div>
+    <p class="work-status" id="pr-status">&#9678; syncing with api.github.com &hellip;</p>
+  </div>
+</section>
+
+<section class="block light" id="writeups">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Write-ups</p>
+    <h2 class="stitle reveal" data-d="1">Bugs, dissected.</h2>
+    <p class="lede reveal" data-d="2">Short technical notes on real bugs I&apos;ve found and fixed &mdash; what broke, why, and what the patch looked like.</p>
+    <div class="wu-grid" id="wu-grid"></div>
+  </div>
+</section>
+
+<div class="wu-modal" id="wu-modal" hidden role="dialog" aria-modal="true" aria-labelledby="wu-modal-title">
+  <div class="wu-sheet glass">
+    <button class="wu-close" id="wu-close" aria-label="Close article">&#10005;</button>
+    <p class="wu-date" id="wu-modal-date"></p>
+    <h2 id="wu-modal-title"></h2>
+    <div class="wu-tags" id="wu-modal-tags"></div>
+    <div class="wu-body" id="wu-modal-body"></div>
+    <a class="wu-pr" id="wu-modal-pr" href="#" target="_blank" rel="noopener">View the pull request &#8250;</a>
+  </div>
+</div>
+
+<section class="cta" id="contact">
   <div class="orb o1" aria-hidden="true"></div>
   <div class="orb o2" aria-hidden="true"></div>
-  <p class="kicker reveal" style="text-align:center">Direction</p>
-  <h2 class="reveal" data-d="1">Building the judgment to <span class="grad">protect what matters.</span></h2>
-  <p class="reveal" data-d="2">Developing the technical foundation, communication habits, and investigative mindset needed for real security work.</p>
+  <p class="kicker reveal" style="text-align:center">Contact</p>
+  <h2 class="reveal" data-d="1">Let&apos;s talk <span class="grad">security.</span></h2>
+  <p class="reveal" data-d="2">Open to internships, junior security roles, and interesting problems. The fastest way to reach me is below &mdash; I read everything.</p>
   <div class="hero-ctas reveal" data-d="3">
     <a class="btn btn-blue" href="https://github.com/sourabhbeni" target="_blank" rel="noopener">GitHub — sourabhbeni</a>
     <a class="btn btn-glass" href="#overview">Back to top ↑</a>
@@ -618,6 +700,120 @@
       if (dateEl) dateEl.textContent = "OFFLINE SNAPSHOT";
       render(FALLBACK);
     });
+})();
+</script>
+<script>
+(function () {
+  var grid = document.getElementById("pr-grid");
+  var status = document.getElementById("pr-status");
+  if (!grid) return;
+  function esc(s) { return String(s).replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  var FALLBACK = [
+    { repo: "EDM115/unzip-bot", number: 472, title: "fix: delete _temp file after sending split parts", merged: true, date: "2026-09-24" },
+    { repo: "Y0oshi/Project-Deep-Focus", number: 4, title: "Fix/fingerprint version wipe", merged: true, date: "2026-09-24" },
+    { repo: "anasty17/mirror-leech-telegram-bot", number: 1945, title: "tests: drop stale -bh flag tests", merged: false, date: "2026-09-25" },
+    { repo: "SilentDemonSD/WZML-X", number: 598, title: "fix: use selected files size for qbit limit check after file selection", merged: false, date: "2026-09-24" },
+    { repo: "LISA-KOREA/UPLOADER-BOT-V4", number: 57, title: "fix: add missing enums import in plugins/script.py", merged: false, date: "2026-09-24" },
+    { repo: "yashmahamulkar/openports", number: 8, title: "fix: include UDP listeners in Windows netstat parsing", merged: false, date: "2026-09-24" },
+    { repo: "yashmahamulkar/openports", number: 9, title: "fix: define psutil attribute when psutil is not installed", merged: false, date: "2026-09-24" },
+    { repo: "UMEssen/Body-and-Organ-Analysis", number: 57, title: "Fix/trailing dot folder names", merged: false, date: "2026-09-24" },
+    { repo: "DigitalBotz/Digital-Rename-Bot", number: 32, title: "fix: NameError in remove_premium (user_type -> type)", merged: false, date: "2026-09-24" }
+  ];
+  FALLBACK.forEach(function (p) { p.url = "https://github.com/" + p.repo + "/pull/" + p.number; });
+  function card(p) {
+    return '<a class="pr glass reveal visible" href="' + p.url + '" target="_blank" rel="noopener">'
+      + '<div class="pr-top"><span class="pr-repo">' + esc(p.repo) + '</span>'
+      + '<span class="pr-badge ' + (p.merged ? "merged" : "open") + '">' + (p.merged ? "MERGED" : "OPEN") + "</span></div>"
+      + "<h3>" + esc(p.title) + "</h3>"
+      + '<div class="meta"><span>#' + p.number + "</span><span>" + esc(p.date) + "</span></div>"
+      + '<span class="go">View pull request</span></a>';
+  }
+  function render(list, live) {
+    grid.innerHTML = list.map(card).join("");
+    if (status) status.textContent = live ? "\u25cf live \u2014 synced just now from api.github.com" : "\u25cc offline \u2014 showing cached snapshot";
+  }
+  fetch("https://api.github.com/search/issues?q=author%3Asourabhbeni+type%3Apr&per_page=30&sort=updated&order=desc")
+    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
+    .then(function (data) {
+      var items = (data.items || []).filter(function (it) {
+        var repo = it.repository_url.replace("https://api.github.com/repos/", "");
+        if (/^sourabhbeni\//i.test(repo)) return false;
+        if (/^(update|heroku)\s*$/i.test(it.title.trim())) return false;
+        return true;
+      }).map(function (it) {
+        return {
+          repo: it.repository_url.replace("https://api.github.com/repos/", ""),
+          number: it.number, title: it.title, url: it.html_url,
+          merged: !!(it.pull_request && it.pull_request.merged_at),
+          date: ((it.pull_request && it.pull_request.merged_at) || it.created_at || "").slice(0, 10)
+        };
+      });
+      items.sort(function (a, b) { return (b.merged - a.merged) || (b.date < a.date ? -1 : 1); });
+      render(items.length ? items : FALLBACK, items.length > 0);
+    })
+    .catch(function () { render(FALLBACK, false); });
+})();
+</script>
+<script>
+(function () {
+  var grid = document.getElementById("wu-grid");
+  var modal = document.getElementById("wu-modal");
+  if (!grid || !modal) return;
+  var mDate = document.getElementById("wu-modal-date");
+  var mTitle = document.getElementById("wu-modal-title");
+  var mTags = document.getElementById("wu-modal-tags");
+  var mBody = document.getElementById("wu-modal-body");
+  var mPr = document.getElementById("wu-modal-pr");
+  var closeBtn = document.getElementById("wu-close");
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function openWu(w) {
+    mDate.textContent = w.date || "";
+    mTitle.textContent = w.title || "";
+    mTags.innerHTML = "";
+    (w.tags || []).forEach(function (t) { mTags.appendChild(el("i", null, t)); });
+    mBody.innerHTML = "";
+    (w.body || []).forEach(function (para) { mBody.appendChild(el("p", null, para)); });
+    if (w.pr) { mPr.href = w.pr; mPr.style.display = ""; } else { mPr.style.display = "none"; }
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+  function closeWu() { modal.hidden = true; document.body.style.overflow = ""; }
+  closeBtn.addEventListener("click", closeWu);
+  modal.addEventListener("click", function (e) { if (e.target === modal) closeWu(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) closeWu(); });
+  var FALLBACK = [{
+    title: "The temp file that overstayed",
+    date: "2026-09-24",
+    summary: "The bot left its _temp file behind after sending split archive parts. Added cleanup at both call sites.",
+    tags: ["Python", "Bug fix", "Merged"],
+    body: ["Cleanup fix for the unzip bot."],
+    pr: "https://github.com/EDM115/unzip-bot/pull/472"
+  }];
+  function render(items) {
+    grid.innerHTML = "";
+    items.forEach(function (w) {
+      var b = el("button", "wu-card glass glass-light reveal visible");
+      b.type = "button";
+      b.appendChild(el("p", "wu-date", w.date || ""));
+      b.appendChild(el("h3", null, w.title || ""));
+      b.appendChild(el("p", null, w.summary || ""));
+      var tags = el("div", "wu-tags");
+      (w.tags || []).forEach(function (t) { tags.appendChild(el("i", null, t)); });
+      b.appendChild(tags);
+      b.appendChild(el("span", "wu-read", "Read the write-up \u203a"));
+      b.addEventListener("click", function () { openWu(w); });
+      grid.appendChild(b);
+    });
+  }
+  fetch("writeups.json", { cache: "no-store" })
+    .then(function (res) { if (!res.ok) throw new Error("http " + res.status); return res.json(); })
+    .then(function (data) { render(data.items && data.items.length ? data.items : FALLBACK); })
+    .catch(function () { render(FALLBACK); });
 })();
 </script>
 </body>
