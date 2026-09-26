@@ -287,7 +287,9 @@
   .reveal[data-d="3"] { transition-delay: 0.3s; } .reveal[data-d="4"] { transition-delay: 0.4s; }
 
   @media (max-width: 860px) {
-    .nav a.nl { display: none; } .nav a.nl.keep { display: block; }
+    .nav { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a.nl { display: block; flex-shrink: 0; }
     .stats, .cards, .work-grid { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr 1fr; }
     section.block { padding: 90px 20px; }
