@@ -1,53 +1,53 @@
 {
- "updated": "2026-09-25",
- "items": [
-  {
-   "title": "CISA adds actively exploited WSO2 and Adobe Commerce flaws to KEV catalog",
-   "summary": "CVE-2026-5430 (CVSS 9.8, WSO2 products, file upload leading to RCE) and CVE-2026-71362 (CVSS 9.1, Adobe Commerce/Magento account takeover) are under active attack; federal agencies must patch by September 27.",
-   "source": "The Hacker News",
-   "url": "http://thehackernews.com/2026/09/wso2-and-adobe-commerce-flaws-exploited.html",
-   "published": "2026-09-25",
-   "tag": "VULNERABILITY"
-  },
-  {
-   "title": "F5 patches critical BIG-IP APM zero-day under active exploitation",
-   "summary": "CVE-2026-94127 (CVSS 9.8) is a heap-based buffer overflow in BIG-IP APM OAuth setups. CISA added it to the KEV catalog with a Friday patch deadline for federal agencies.",
-   "source": "SC Media",
-   "url": "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
-   "published": "2026-09-24",
-   "tag": "ZERO-DAY"
-  },
-  {
-   "title": "September 2026 Patch Tuesday: fixes for two zero-days among ~1,000 updates",
-   "summary": "Microsoft's September Patch Tuesday fixed two zero-day flaws plus hundreds of other vulnerabilities across Windows and services.",
-   "source": "CSO Online",
-   "url": "https://www.csoonline.com/article/4219846/september-2026-patch-tuesday-roundup-plugs-for-two-zero-day-holes-among-almost-1000-fixes-in-windows.html",
-   "published": "2026-09-25",
-   "tag": "PATCH"
-  },
-  {
-   "title": "GitLab critical patch release fixes 11 flaws, two CVSS 9.9 RCEs",
-   "summary": "CVE-2026-89078 and CVE-2026-93577 allow authenticated RCE via malformed regex. Self-managed admins urged to upgrade to 19.4.1, 19.3.3, or 19.2.7 immediately.",
-   "source": "SecurityOnline",
-   "url": "https://securityonline.info/gitlab-critical-patch-release-rce/",
-   "published": "2026-09-23",
-   "tag": "PATCH"
-  },
-  {
-   "title": "Check Point patches zero-day CVE-2026-93616 exploited in July attacks",
-   "summary": "CVSS 9.8 unauthenticated remote code execution in the Security Management Server, abused via path traversal and file upload. LivePatch does not fix it \u2014 a full security hotfix is required.",
-   "source": "DeafNews",
-   "url": "https://deafnews.it/en/news/cybersecurity/check-point-patches-zero-day-cve-2026-93616-in-management-server-cvss-98",
-   "published": "2026-09-22",
-   "tag": "ZERO-DAY"
-  },
-  {
-   "title": "ShinyHunters hacked the Clop ransomware leak site",
-   "summary": "The extortion group breached Clop's Tor data-leak site via a Grav CMS file-upload flaw, defaced it, and claims to have stolen server data including the site's onion private keys \u2014 enabling long-term impersonation of the rival gang.",
-   "source": "CyberRecaps",
-   "url": "https://cyberrecaps.com/news/cybersecurity-news-september-20-2026",
-   "published": "2026-09-20",
-   "tag": "RANSOMWARE"
-  }
- ]
+  "updated": "2026-09-26",
+  "items": [
+    {
+      "title": "Critical WordPress flaw CVE-2026-87902 exploited within hours of disclosure",
+      "summary": "A critical unauthenticated path-traversal flaw (CVSS 9.2) in WordPress versions 4.7.0\u20137.1.1 lets attackers trick the template loader into including arbitrary PHP files, enabling remote code execution on some configurations. WordPress patched it in 7.1.2 on Sep 22 and backported the fix; Patchstack saw exploitation attempts within hours, including abuse of pearcmd.php.",
+      "source": "Kaspersky",
+      "url": "https://www.kaspersky.co.za/blog/cve-2026-87902-wordpress-vulnerability/36492/",
+      "published": "2026-09-25",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "ShinyHunters resumes mass exploitation of Oracle PeopleSoft flaw after bypassing WAF rules",
+      "summary": "Google Threat Intelligence/Mandiant said the ShinyHunters group is mass-exploiting CVE-2026-35273 in Oracle PeopleSoft, URL-encoding a single path character to evade string-based WAF rules while hitting unpatched servers. Dozens of systems across education, healthcare, tech and government are affected; Oracle's June 10 out-of-band patch remains the required fix.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/legal/government/shinyhunters-hackers-expanded-attacks-oracles-peoplesoft-google-says-2026-09-26/",
+      "published": "2026-09-26",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Chrome 154 patches 108 security flaws, 11 rated Critical",
+      "summary": "Google's Chrome 154.0.8037.57 stable release fixes 108 security issues, including 11 Critical flaws such as ANGLE buffer overflows, a GPU out-of-bounds write and ServiceWorker/Fullscreen use-after-free bugs. Google is withholding some details until more users update; none are currently listed as exploited in the wild.",
+      "source": "TechRepublic",
+      "url": "https://www.techrepublic.com/article/news-google-chrome-154-108-security-flaws/",
+      "published": "2026-09-25",
+      "tag": "PATCH"
+    },
+    {
+      "title": "Kiteworks urges customers to shut down servers amid 'imminent' cyberattack threat",
+      "summary": "Kiteworks, the secure file-transfer vendor formerly Accellion, told customers to take servers offline for a six-hour weekend window after receiving credible law-enforcement threat intelligence of a potentially imminent attack. The company says it is not aware of any compromise and points customers to release 9.5.1, which contains fixes for all known vulnerabilities.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/25/kiteworks-urges-customers-to-shut-down-their-servers-amid-imminent-threat-of-cyberattack/",
+      "published": "2026-09-25",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Orval mass disclosure: three CVSS 9.8 code-injection flaws in generated clients",
+      "summary": "Researchers disclosed three critical code-injection vulnerabilities (CVE-2026-96754, CVE-2026-96755, CVE-2026-96759) in Orval, a tool that generates TypeScript clients from OpenAPI specs. Attacker-controlled spec values are embedded unescaped into generated code, so a malicious spec can execute during build or import. Orval 8.29.0 patches all three; users are told to audit specs from untrusted sources.",
+      "source": "ThreatAft",
+      "url": "https://threataft.com/articles/orval-mass-disclosure-cve-2026-96754-96755-96759",
+      "published": "2026-09-25",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "Stevens Point city network breached; no evidence of resident data compromise yet",
+      "summary": "Officials in Stevens Point, Wisconsin said unauthorized access to the city's computer network detected Sep 23 was cut off, with forensic teams and state and federal agencies investigating. The city reports no evidence that citizen or employee data was compromised, though phone and email services remain intermittently disrupted.",
+      "source": "Stevens Point Journal",
+      "url": "https://www.stevenspointjournal.com/story/news/local/2026/09/25/stevens-point-network-breached-no-evidence-resident-data-compromised/91938760007/",
+      "published": "2026-09-25",
+      "tag": "BREACH"
+    }
+  ]
 }
