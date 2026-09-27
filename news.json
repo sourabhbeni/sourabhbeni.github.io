@@ -1,53 +1,45 @@
 {
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "items": [
     {
-      "title": "Critical WordPress flaw CVE-2026-87902 exploited within hours of disclosure",
-      "summary": "A critical unauthenticated path-traversal flaw (CVSS 9.2) in WordPress versions 4.7.0\u20137.1.1 lets attackers trick the template loader into including arbitrary PHP files, enabling remote code execution on some configurations. WordPress patched it in 7.1.2 on Sep 22 and backported the fix; Patchstack saw exploitation attempts within hours, including abuse of pearcmd.php.",
-      "source": "Kaspersky",
-      "url": "https://www.kaspersky.co.za/blog/cve-2026-87902-wordpress-vulnerability/36492/",
-      "published": "2026-09-25",
-      "tag": "VULNERABILITY"
+      "title": "F5 patches critical BIG-IP APM zero-day (CVE-2026-94127) under active exploitation",
+      "summary": "F5 released a patch for a heap-based buffer overflow (CVSS v4.0 9.3) in BIG-IP APM configured as an OAuth Authorization Server, which threat actors are actively exploiting for remote code execution. CISA added the flaw to its Known Exploited Vulnerabilities catalog with a Friday deadline for federal agencies.",
+      "source": "SC Media",
+      "url": "https://www.scworld.com/brief/f5-patches-critical-zero-day-flaw-exploited-in-big-ip-apm",
+      "published": "2026-09-24",
+      "tag": "ZERO-DAY"
     },
     {
-      "title": "ShinyHunters resumes mass exploitation of Oracle PeopleSoft flaw after bypassing WAF rules",
-      "summary": "Google Threat Intelligence/Mandiant said the ShinyHunters group is mass-exploiting CVE-2026-35273 in Oracle PeopleSoft, URL-encoding a single path character to evade string-based WAF rules while hitting unpatched servers. Dozens of systems across education, healthcare, tech and government are affected; Oracle's June 10 out-of-band patch remains the required fix.",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/legal/government/shinyhunters-hackers-expanded-attacks-oracles-peoplesoft-google-says-2026-09-26/",
-      "published": "2026-09-26",
-      "tag": "THREAT-INTEL"
-    },
-    {
-      "title": "Chrome 154 patches 108 security flaws, 11 rated Critical",
-      "summary": "Google's Chrome 154.0.8037.57 stable release fixes 108 security issues, including 11 Critical flaws such as ANGLE buffer overflows, a GPU out-of-bounds write and ServiceWorker/Fullscreen use-after-free bugs. Google is withholding some details until more users update; none are currently listed as exploited in the wild.",
-      "source": "TechRepublic",
-      "url": "https://www.techrepublic.com/article/news-google-chrome-154-108-security-flaws/",
-      "published": "2026-09-25",
+      "title": "Check Point ships emergency hotfix for actively exploited CVE-2026-93616 flaw",
+      "summary": "Check Point released the R82.20 Security Hotfix for a critical path traversal flaw (CVSS 9.8) in its Security Management Server that lets unauthenticated attackers upload and execute scripts, and confirmed a handful of customers have already been attacked. IOCs are published for teams hunting for compromise.",
+      "source": "Security Affairs",
+      "url": "https://securityaffairs.com/199549/security/check-point-fixes-a-new-actively-exploited-critical-security-flaw.html",
+      "published": "2026-09-22",
       "tag": "PATCH"
     },
     {
-      "title": "Kiteworks urges customers to shut down servers amid 'imminent' cyberattack threat",
-      "summary": "Kiteworks, the secure file-transfer vendor formerly Accellion, told customers to take servers offline for a six-hour weekend window after receiving credible law-enforcement threat intelligence of a potentially imminent attack. The company says it is not aware of any compromise and points customers to release 9.5.1, which contains fixes for all known vulnerabilities.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/25/kiteworks-urges-customers-to-shut-down-their-servers-amid-imminent-threat-of-cyberattack/",
-      "published": "2026-09-25",
-      "tag": "THREAT-INTEL"
-    },
-    {
-      "title": "Orval mass disclosure: three CVSS 9.8 code-injection flaws in generated clients",
-      "summary": "Researchers disclosed three critical code-injection vulnerabilities (CVE-2026-96754, CVE-2026-96755, CVE-2026-96759) in Orval, a tool that generates TypeScript clients from OpenAPI specs. Attacker-controlled spec values are embedded unescaped into generated code, so a malicious spec can execute during build or import. Orval 8.29.0 patches all three; users are told to audit specs from untrusted sources.",
-      "source": "ThreatAft",
-      "url": "https://threataft.com/articles/orval-mass-disclosure-cve-2026-96754-96755-96759",
-      "published": "2026-09-25",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Stevens Point city network breached; no evidence of resident data compromise yet",
-      "summary": "Officials in Stevens Point, Wisconsin said unauthorized access to the city's computer network detected Sep 23 was cut off, with forensic teams and state and federal agencies investigating. The city reports no evidence that citizen or employee data was compromised, though phone and email services remain intermittently disrupted.",
-      "source": "Stevens Point Journal",
-      "url": "https://www.stevenspointjournal.com/story/news/local/2026/09/25/stevens-point-network-breached-no-evidence-resident-data-compromised/91938760007/",
-      "published": "2026-09-25",
+      "title": "FBI confirms 'cybersecurity incident' after ShinyHunters claims FBIJobs.gov breach",
+      "summary": "The FBI confirmed it is investigating a reported compromise of its FBIJobs.gov recruitment portal after ShinyHunters claimed to have stolen sensitive personnel data. Samples reviewed by media reportedly included names, addresses, SSNs, and emergency-contact details, though the full scope is not yet confirmed.",
+      "source": "National Cyber Security",
+      "url": "https://nationalcybersecurity.com/fbi-confirms-cybersecurity-incident-after-reported-hack-compromised-employee-info-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
+      "published": "2026-09-27",
       "tag": "BREACH"
+    },
+    {
+      "title": "Gyazo confirms unauthorized access exposed 23.6 million user records",
+      "summary": "Gyazo disclosed that on September 11 a third party exploited a vulnerability in its image-upload infrastructure, gaining unauthorized access to its database and exposing email addresses, password hashes, session info, and metadata for hundreds of millions of images. Separately, researchers detailed TASKSTOMP, a Windows backdoor abusing legitimate tools like Task Scheduler and PowerShell to steal documents, Wi-Fi passwords, and clipboard contents.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/gyazos-236-million-user-exposure-and-taskstomp-two-cybersecurity-incidents-putting-data-at-risk-video/",
+      "published": "2026-09-27",
+      "tag": "BREACH"
+    },
+    {
+      "title": "Storm ransomware reportedly hits Applied Composites, U.S. aerospace and defense supplier",
+      "summary": "The Storm ransomware operation allegedly targeted Applied Composites, a manufacturer of advanced composite components for aerospace, defense, and space programs, raising concerns about disruption to engineering and production workflows. The claim remains unverified by the company or independent investigators.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/storm-ransomware-reportedly-hits-applied-composites-raising-concerns-for-us-aerospace-and-defense-operations-video/",
+      "published": "2026-09-27",
+      "tag": "RANSOMWARE"
     }
   ]
 }
