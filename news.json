@@ -1,53 +1,45 @@
 {
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
-      "title": "Ransomware groups now exploiting JetBrains TeamCity flaw as 160+ servers remain unpatched",
-      "summary": "JetBrains patched an unauthenticated remote code execution flaw (CVE-2026-63077) in TeamCity On-Premises, which lets attackers bypass authentication and run OS commands over HTTP/HTTPS. As of September 28, ransomware groups are actively exploiting it while Shadowserver tracks over 160 exposed servers still unpatched.",
-      "source": "Health-ISAC",
-      "url": "https://www.aha.org/h-isac-white-reports/2026-09-28-threat-bulletins-tlp-white-update-critical-remote-code-execution-vulnerability-jetbrains",
-      "published": "2026-09-28",
-      "tag": "RANSOMWARE"
-    },
-    {
-      "title": "Pentagon breach exposes unknown number of troops' Social Security numbers",
-      "summary": "The Defense Manpower Data Center found that unauthorized users accessed unencrypted personnel files between October 2025 and July 2026. Two people familiar with the incident estimated roughly 4 million Defense Department personnel may be affected, though the Pentagon has not confirmed a count.",
-      "source": "Military.com",
-      "url": "https://www.military.com/pentagon-data-breach-exposes-unknown-number-troops-social-security-numbers",
-      "published": "2026-09-28",
+      "title": "Pentagon breach hit 2.76 million living personnel after 9-month undetected access",
+      "summary": "Unauthorized users exploited a flaw in a Defense Manpower Data Center file-sharing system from October 2025 to July 2026, accessing unencrypted records with Social Security numbers, dates of birth, and military occupational specialties.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/pentagon-personnel-agency-data-breach-impacts-3-million-people/",
+      "published": "2026-09-29",
       "tag": "BREACH"
     },
     {
-      "title": "Qilin and Doommageddon add fresh victims as ransomware claims surface",
-      "summary": "Threat-intel monitors recorded new alleged victims on September 28: NISSHO Electric Manufacturing (Japan) claimed by Qilin and Goodrich Logistics claimed by Doommageddon. The listings remain threat-actor claims with no independent confirmation yet.",
-      "source": "Undercode News",
-      "url": "https://undercodenews.com/qilin-and-doommageddon-add-two-new-victims-as-fresh-ransomware-claims-surface-video/",
-      "published": "2026-09-28",
-      "tag": "RANSOMWARE"
+      "title": "Apple patches CoreGraphics zero-day used in 'extremely sophisticated' targeted attacks",
+      "summary": "CVE-2026-86950 is an out-of-bounds write allowing arbitrary code execution when a device processes a crafted file; reported by Meta's product security team. Fixed in iOS 26.7.1, iPadOS 26.7.1, macOS Tahoe 26.7.1, and macOS Sequoia 15.8.1.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/apple-patches-meta-reported-zero-day-linked-to-extremely-sophisticated-attack/",
+      "published": "2026-09-29",
+      "tag": "ZERO-DAY"
     },
     {
-      "title": "WordPress core flaw (CVE-2026-87902) exploited within hours of patch",
-      "summary": "WordPress patched a critical unauthenticated local-file-inclusion flaw on September 22 that affects versions 4.7.0 through 7.1.1 and can lead to remote code execution. Attackers began probing sites within hours of the fix landing, prompting an immediate update to 7.1.2.",
-      "source": "Kaspersky",
-      "url": "https://www.kaspersky.co.za/blog/cve-2026-87902-wordpress-vulnerability/36492/",
-      "published": "2026-09-25",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Check Point VPN RCE went from patch to exploit in three days",
-      "summary": "Check Point confirmed active attacks against CVE-2026-85102, a pre-authentication CVSS 9.8 remote code execution flaw in VPN certificate handling on Security Gateways, just three days after releasing patches on September 9. CISA added it to the KEV catalog on September 22 with a September 25 federal remediation deadline.",
-      "source": "DeafNews",
-      "url": "https://deafnews.it/en/news/cybersecurity/cve-2026-85102-three-days-from-patch-to-exploit-on-check-point-vpn",
-      "published": "2026-09-27",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Revolut customers hit by second data breach this month via DriveWealth",
-      "summary": "Attackers socially engineered their way into US brokerage DriveWealth on September 4-5 and stole historic customer data, including names, emails, phone numbers, and postal addresses. Revolut says its own systems were not compromised and funds remain safe.",
+      "title": "Citrix patches actively exploited NetScaler zero-days after a weekend of unofficial warnings",
+      "summary": "CVE-2026-88771 and CVE-2026-88772 (both CVSS 9.5) allow remote code execution and were observed under attack before Citrix published its Sunday advisory; a CISA alert followed.",
       "source": "The Register",
-      "url": "https://www.theregister.com/cyber-crime/2026/09/25/another-week-another-data-breach-for-revolut-customers/5299092",
-      "published": "2026-09-25",
-      "tag": "BREACH"
+      "url": "https://www.theregister.com/security/2026/09/28/certainties-in-life-death-taxes-and-critical-citrix-vulns-under-attack/5299369",
+      "published": "2026-09-28",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "Japan's Keio Corp confirms ransomware attack disrupted business systems",
+      "summary": "The railway and hotel operator isolated its network after discovering hacked servers on September 26; police have been notified and external experts are investigating the breach route and data impact.",
+      "source": "ReconBee",
+      "url": "https://www.reconbee.com/japans-keio-confirms-ransomware-attack-disrupted-business-systems/",
+      "published": "2026-09-29",
+      "tag": "RANSOMWARE"
+    },
+    {
+      "title": "6 million Mi Argentina citizen records allegedly offered for sale on dark web",
+      "summary": "An unverified forum listing claims a database with DNI numbers, passwords, fingerprint data, and addresses tied to Argentina's government digital identity platform; no independent confirmation of a breach exists.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/mi-argentina-data-breach-alert-6-million-citizen-records-allegedly-offered-for-sale-raising-fears-of-identity-theft-and-biometric-exposure-video/",
+      "published": "2026-09-29",
+      "tag": "THREAT-INTEL"
     }
   ]
 }
