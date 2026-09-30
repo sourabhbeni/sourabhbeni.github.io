@@ -1,45 +1,53 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "items": [
     {
-      "title": "Pentagon breach hit 2.76 million living personnel after 9-month undetected access",
-      "summary": "Unauthorized users exploited a flaw in a Defense Manpower Data Center file-sharing system from October 2025 to July 2026, accessing unencrypted records with Social Security numbers, dates of birth, and military occupational specialties.",
-      "source": "SecurityWeek",
-      "url": "https://www.securityweek.com/pentagon-personnel-agency-data-breach-impacts-3-million-people/",
+      "title": "FTAPI confirms breach after 'The Gentlemen' ransomware gang claims data theft",
+      "summary": "The German secure file-transfer platform said attackers reached one internal server, not customer systems or transferred data. The gang's leak-site countdown shows about 5 days before the alleged leak entry activates.",
+      "source": "Cybernews",
+      "url": "https://cybernews.com/security/ftapi-eu-data-transfer-platform-data-breach/",
       "published": "2026-09-29",
       "tag": "BREACH"
     },
     {
-      "title": "Apple patches CoreGraphics zero-day used in 'extremely sophisticated' targeted attacks",
-      "summary": "CVE-2026-86950 is an out-of-bounds write allowing arbitrary code execution when a device processes a crafted file; reported by Meta's product security team. Fixed in iOS 26.7.1, iPadOS 26.7.1, macOS Tahoe 26.7.1, and macOS Sequoia 15.8.1.",
-      "source": "SecurityWeek",
-      "url": "https://www.securityweek.com/apple-patches-meta-reported-zero-day-linked-to-extremely-sophisticated-attack/",
-      "published": "2026-09-29",
-      "tag": "ZERO-DAY"
-    },
-    {
-      "title": "Citrix patches actively exploited NetScaler zero-days after a weekend of unofficial warnings",
-      "summary": "CVE-2026-88771 and CVE-2026-88772 (both CVSS 9.5) allow remote code execution and were observed under attack before Citrix published its Sunday advisory; a CISA alert followed.",
-      "source": "The Register",
-      "url": "https://www.theregister.com/security/2026/09/28/certainties-in-life-death-taxes-and-critical-citrix-vulns-under-attack/5299369",
-      "published": "2026-09-28",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Japan's Keio Corp confirms ransomware attack disrupted business systems",
-      "summary": "The railway and hotel operator isolated its network after discovering hacked servers on September 26; police have been notified and external experts are investigating the breach route and data impact.",
-      "source": "ReconBee",
-      "url": "https://www.reconbee.com/japans-keio-confirms-ransomware-attack-disrupted-business-systems/",
+      "title": "BrainCipher ransomware attack on Gold Star Mortgage triggers customer lawsuit within 48 hours",
+      "summary": "The Michigan mortgage lender was hit on September 23 with data theft followed by database encryption; a borrower sued on September 26 alleging her SSN and personal data appeared on the dark web.",
+      "source": "Cybersecurity Insiders",
+      "url": "https://www.cybersecurity-insiders.com/ransomware-attack-on-financial-lender-triggers-customer-lawsuit-within-48-hours/",
       "published": "2026-09-29",
       "tag": "RANSOMWARE"
     },
     {
-      "title": "6 million Mi Argentina citizen records allegedly offered for sale on dark web",
-      "summary": "An unverified forum listing claims a database with DNI numbers, passwords, fingerprint data, and addresses tied to Argentina's government digital identity platform; no independent confirmation of a breach exists.",
-      "source": "Undercode News",
-      "url": "https://undercodenews.com/mi-argentina-data-breach-alert-6-million-citizen-records-allegedly-offered-for-sale-raising-fears-of-identity-theft-and-biometric-exposure-video/",
-      "published": "2026-09-29",
+      "title": "MI5 issues first public espionage alert over Chinese spy web targeting 100 UK academics",
+      "summary": "The agency warned universities to end all engagement with the China Academy of General Technology, saying research collaborations in AI, cybersecurity and steganography were feeding China's intelligence services.",
+      "source": "The Sun",
+      "url": "https://www.thesun.co.uk/news/40540904/mi5-uncovers-chinese-spies-targeting-british-academics/",
+      "published": "2026-09-30",
       "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Critical WordPress core RCE (CVE-2026-87902) actively exploited days after patch",
+      "summary": "Versions 4.7.0 through 7.1.1 are affected by the unauthenticated template-inclusion flaw; WordPress released fixes on September 22 and exploitation attempts began within hours.",
+      "source": "Kaspersky",
+      "url": "https://www.kaspersky.com/blog/cve-2026-87902-wordpress-vulnerability/56459/",
+      "published": "2026-09-25",
+      "tag": "PATCH"
+    },
+    {
+      "title": "Ransomware groups exploiting TeamCity auth-bypass CVE-2026-63077; 160+ servers still unpatched",
+      "summary": "JetBrains' unauthenticated remote code execution flaw in TeamCity On-Premises is now being exploited by ransomware crews, with Shadowserver tracking over 160 exposed, unpatched servers as of September 28.",
+      "source": "AHA / Health-ISAC",
+      "url": "https://www.aha.org/h-isac-white-reports/2026-09-28-threat-bulletins-tlp-white-update-critical-remote-code-execution-vulnerability-jetbrains",
+      "published": "2026-09-28",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "MedImpact notifies breach victims 11 months after Qilin ransomware attack",
+      "summary": "The pharmacy benefit manager began mailing individual notices on September 23 for unauthorized activity detected October 18, 2025; exposed data includes names, Social Security numbers and health information.",
+      "source": "DeafNews",
+      "url": "https://deafnews.it/en/news/ransomware/medimpact-data-breach-11-months-of-silence-and-the-shadow-of-qilin",
+      "published": "2026-09-28",
+      "tag": "BREACH"
     }
   ]
 }
