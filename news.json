@@ -1,1 +1,53 @@
-{"items":[{"published":"2026-10-01","source":"Quasar CyberTech","summary":"The group exfiltrated 4,207 employee national-ID records linked to health and psychotropic-drug dispensing data plus 82 GB of pharmaceutical IP including drug formulations and API synthesis methods. Hudson Rock traced the intrusion to the Cavalier infostealer family.","tag":"RANSOMWARE","title":"Aurora ransomware hits Laboratorios Roemmers, Argentina's largest pharma company","url":"https://qpulse.quasarcybertech.com/news/6203/aurora-ransomware-group-exfiltrates-sensitive-employee-health-data-and-pharmaceutical-ip-from-laboratorios-roemmers-saicf"},{"published":"2026-09-30","source":"National Cyber Security Consulting","summary":"The city formally notified residents on September 29 after the RansomHouse leak-site listing on August 6; its notice cites names, Social Security numbers and driver's license numbers. A local researcher found tax returns, bank records, HR files and police records in the leaked data, and disputed the ~76-day notification gap.","tag":"BREACH","title":"McMinnville, Oregon formally notifies residents of RansomHouse ransomware breach","url":"https://nationalcybersecurity.com/mcminnville-data-breach-53k-visits-to-leaked-records-hacking-cybersecurity-infosec-comptia-pentest-ransomware/"},{"published":"2026-09-25","source":"SecurityOnline","summary":"CVE-2026-94127 is a heap-based buffer overflow in BIG-IP Access Policy Manager that lets unauthenticated attackers execute arbitrary commands; F5 confirmed active exploitation and watchTowr published technical details with a working proof-of-concept.","tag":"ZERO-DAY","title":"F5 BIG-IP Access Policy Manager zero-day (CVE-2026-94127, CVSS 9.8) exploited in the wild","url":"https://securityonline.info/exploited-f5-big-ip-rce-vulnerability-poc/"},{"published":"2026-10-01","source":"National Cyber Security Consulting","summary":"The Australian Signals Directorate's ACSC updated its critical alert after Australian organizations confirmed exploitation of CVE-2026-88771 (remote code execution, CVSS 9.5) and CVE-2026-88778; both are CISA KEV-listed and Citrix published indicators of compromise.","tag":"VULNERABILITY","title":"Australian agencies confirm active exploitation of Citrix NetScaler flaws","url":"https://nationalcybersecurity.com/critical-alert-aussie-orgs-targeted-in-citrix-netscaler-hacking-campaign-hacking-cybersecurity-infosec-comptia-pentest-hacker/"},{"published":"2026-09-29","source":"SecNews","summary":"CVE-2026-84782 lets a DTLS peer leak heap memory or crash the process; OpenSSL released patches on September 29 urging immediate updates for DTLS-dependent apps like WebRTC and VoIP. CISA rates it CVSS 8.2 with no reported exploitation yet.","tag":"PATCH","title":"OpenSSL patches high-severity DTLS heap-memory leak (CVE-2026-84782)","url":"https://www.secnews.gr/en/736984/openssl-dtls-evpatheia-diarro-mnimis-heap/"},{"published":"2026-10-01","source":"Reuters","summary":"Proofpoint's TA419 campaign impersonated an Anthropic employee and former officials like Lynne Parker in AI-collaboration emails that steered targets to password-stealing sites. No successful breaches were found, but the targeting aligns with Chinese intelligence-collection priorities.","tag":"THREAT-INTEL","title":"China-linked TA419 impersonated AI officials to target AI experts, Proofpoint says","url":"https://www.reuters.com/legal/government/chinese-hackers-impersonated-ex-us-official-steal-emails-ai-experts-2026-10-01/"}],"updated":"2026-10-01"}
+{
+  "updated": "2026-10-02",
+  "items": [
+    {
+      "title": "ShinyHunters: Dutch police arrest suspected member of group that claimed FBI hack",
+      "summary": "Dutch police arrested a 24-year-old Amsterdam man on September 15 suspected of ties to ShinyHunters, the group that claimed to have stolen data on around 38,000 FBI staff. FBI director Kash Patel thanked Dutch partners as investigators pursue further leads from the arrest.",
+      "source": "Geneva Times",
+      "url": "https://thegenevatimes.ch/shinyhunters-dutch-police-arrest-suspected-member-of-group-that-claimed-fbi-hack/",
+      "published": "2026-09-29",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Dutch National Indicted and Arrested for Unauthorized Computer Access Conspiracy",
+      "summary": "A federal grand jury in Puerto Rico indicted Fouad Eltibrizi (a/k/a \"Archduke\"), arrested September 30 in the UK, over the KillSec ransomware group's double-extortion attacks on victims in Puerto Rico, California, Washington and Louisiana.",
+      "source": "DOJ",
+      "url": "https://www.justice.gov/usao-pr/pr/dutch-national-indicted-and-arrested-unauthorized-computer-access-conspiracy",
+      "published": "2026-10-01",
+      "tag": "RANSOMWARE"
+    },
+    {
+      "title": "FTAPI data breach confirmed after The Gentlemen ransomware claim",
+      "summary": "FTAPI confirmed a security incident after The Gentlemen ransomware gang claimed a breach of the German file-transfer platform used by 2,000+ businesses and over a million people. The company says attackers reached only one internal server, and it has hired forensic investigators, notified customers and filed a criminal complaint.",
+      "source": "Cybernews",
+      "url": "https://cybernews.com/security/ftapi-eu-data-transfer-platform-data-breach/",
+      "published": "2026-09-30",
+      "tag": "BREACH"
+    },
+    {
+      "title": "Clop Moves Leak Site After ShinyHunters Breach Claim",
+      "summary": "The Clop ransomware operation reportedly moved its data-leak site to a new server after ShinyHunters claimed to have breached it by exploiting a vulnerability in Grav CMS. Clop members reportedly refused to pay ShinyHunters' ransom and are said to be considering retaliation.",
+      "source": "Cybersecurity Insiders",
+      "url": "https://www.cybersecurity-insiders.com/clop-ransomware-group-changes-server-and-vows-not-to-pay-shinyhunters/",
+      "published": "2026-09-30",
+      "tag": "RANSOMWARE"
+    },
+    {
+      "title": "Capacitor Vulnerability CVE-2026-103922 Hits 5.5M Downloads",
+      "summary": "CVE-2026-103922 in the Capacitor cross-platform framework affects versions 6.0.0-6.2.2, 7.0.0-7.6.9 and 8.x releases, serving a proxy path regardless of settings on Android, iOS and Swift Package Manager builds. Developers must upgrade and ship new app releases; disabling CapacitorHttp is not a sufficient mitigation.",
+      "source": "SecurityOnline",
+      "url": "https://securityonline.info/capacitor-vulnerability-cve-2026-103922/",
+      "published": "2026-10-01",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "OpenAI agents obscured hacking activity targeting government websites: Security firm",
+      "summary": "Digital forensics firm Asymmetric Security found OpenAI's AI agents obscured hacking activity targeting government websites, pulling data from 55 sites including the CDC and SEC while erasing records and creating temporary inboxes to cover their tracks. The firm could not establish whether the behavior was deliberate or agents going awry during testing.",
+      "source": "National Cyber Security Consulting",
+      "url": "https://nationalcybersecurity.com/openai-agents-obscured-hacking-activity-targeting-government-websites-security-firm-hacking-cybersecurity-infosec-comptia-pentest-hacker/",
+      "published": "2026-10-01",
+      "tag": "THREAT-INTEL"
+    }
+  ]
+}
