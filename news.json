@@ -1,45 +1,45 @@
 {
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "items": [
     {
-      "title": "GitLab warns of critical RCE vulnerability in AI Gateway service",
-      "summary": "GitLab released patched AI Gateway versions 19.2.4, 19.3.2 and 19.4.1 for CVE-2026-90970 (CVSS 9.9), which lets authenticated users with Duo Agent Platform access escape the prompt-template sandbox and run arbitrary commands on self-hosted instances. GitLab.com and GitLab-hosted gateways are already remediated.",
-      "source": "BleepingComputer",
-      "url": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-critical-rce-vulnerability-in-ai-gateway-service/",
+      "title": "FortiMail zero-day under active attack: unauthenticated file write (CVE-2026-104286)",
+      "summary": "Fortinet confirmed active exploitation of a critical 9.8-rated path-traversal/NULL-byte chaining flaw in FortiMail that lets unauthenticated attackers write files anywhere the service can reach; CISA added it to the KEV catalog on Oct 1 with a federal patch deadline of Oct 4. Patching alone doesn't evict footholds already planted, so internet-facing appliances need forensic triage.",
+      "source": "ZeroHunt",
+      "url": "https://zerohunt.ai/blog/fortimail-cve-2026-104286-zero-day-file-write/",
       "published": "2026-10-02",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Cisco patches actively exploited Catalyst SD-WAN Manager zero-day",
-      "summary": "Cisco rolled out urgent patches for CVE-2026-76504 (CVSS 9.8), an authentication bypass in Catalyst SD-WAN Manager that lets unauthenticated attackers gain admin API access via improper URI-encoding handling. CISA added it to its Known Exploited Vulnerabilities catalog on September 30; there is no workaround.",
-      "source": "SecurityWeek",
-      "url": "https://www.securityweek.com/cisco-patches-exploited-catalyst-sd-wan-zero-day-vulnerability/",
-      "published": "2026-09-30",
       "tag": "ZERO-DAY"
     },
     {
-      "title": "Warlock ransomware breaches SharePoint in water, telecom operator attacks",
-      "summary": "The China-linked Warlock ransomware group exploited SharePoint vulnerabilities to breach a water utility, a telecom provider, a regional government body and a university, targeting Portuguese- and Spanish-speaking countries. In one intrusion, the attackers used an EDR-killing tool to disable protection on at least 40 hosts within about two hours.",
-      "source": "BleepingComputer",
-      "url": "https://www.bleepingcomputer.com/news/security/warlock-ransomware-breach-sharepoint-in-water-telecom-operator-attacks/",
-      "published": "2026-10-02",
-      "tag": "RANSOMWARE"
+      "title": "WordPress core LFI flaw exploited within hours of patch (CVE-2026-87902)",
+      "summary": "A 9.2-rated unauthenticated local-file-inclusion bug in get_page_template() affects WordPress 4.7.0 through 7.1.1 and was being probed in the wild almost immediately after WordPress shipped fixes on Sep 22; it can expose configs and credentials and enable remote code execution on some setups.",
+      "source": "Falcon Internet",
+      "url": "https://www.falconinternet.net/blog/cve-2026-87902-wordpress-lfi-rce-exploitation-hours-after-patch",
+      "published": "2026-09-30",
+      "tag": "VULNERABILITY"
     },
     {
-      "title": "McMinnville confirms data breach after RansomHouse leak; notification timeline questioned",
-      "summary": "The city of McMinnville, Oregon issued a formal public notice on September 29 after the RansomHouse ransomware group listed it on its dark-web leak site in August. The exposed records reportedly include names, Social Security numbers, driver's license numbers, tax returns, bank records and police files; the ~76-day gap before notification drew local scrutiny.",
-      "source": "National Cyber Security Consulting",
-      "url": "https://nationalcybersecurity.com/mcminnville-data-breach-53k-visits-to-leaked-records-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
-      "published": "2026-10-01",
-      "tag": "BREACH"
-    },
-    {
-      "title": "Biometrics firm Aware listed on ransomware leak site by thegentlemen group",
-      "summary": "The ransomware group thegentlemen claimed an attack on Aware, Inc., the US biometrics software company behind FBI fingerprint standards whose technology serves around 80 government agencies. The incident report cites a September 30 breach date with the claim surfacing October 3.",
-      "source": "HookPhish",
-      "url": "https://www.hookphish.com/blog/ransomware-group-thegentlemen-hits-aware/",
+      "title": "Cisco Secure Firewall flaw under active attack forces emergency updates (CVE-2026-20349)",
+      "summary": "CISA-listed CVE-2026-20349 lets unauthenticated attackers crash Cisco ASA and Firepower Threat Defense appliances via crafted requests to the Remote Access SSL VPN service, knocking firewalls and VPNs offline; Cisco released patches with no available workarounds.",
+      "source": "System Force",
+      "url": "https://systemforce.co.uk/blog/2026/10/03/cisco-asa-ftd-cve-2026-20349-actively-exploited/",
       "published": "2026-10-03",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "Australian volunteer emergency service Mandurah SES hit by TheGentlemen ransomware",
+      "summary": "The Mandurah State Emergency Service, a volunteer rescue organization in Western Australia, was reportedly struck by the TheGentlemen ransomware group, raising concern about its ability to keep 24/7 rescue and cadet-support operations running; the full scope and data-theft details are not yet confirmed.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/mandurah-state-emergency-service-hit-by-thegentlemen-ransomware-raising-concerns-over-24-7-volunteer-rescue-operations-in-australia-video/",
+      "published": "2026-10-04",
       "tag": "RANSOMWARE"
+    },
+    {
+      "title": "AI-discovered auth bypass in Rejetto HFS exploited within 24 hours of disclosure",
+      "summary": "Anthropic's Mythos model found CVE-2026-61500, a critical 9.8 authentication-bypass flaw in Rejetto HFS, by reversing a PRNG with an SMT solver; VulnCheck observed in-the-wild exploitation the day after disclosure, hitting canary hosts in the US and Japan from Chinese infrastructure.",
+      "source": "DeafNews",
+      "url": "https://deafnews.it/en/news/cybersecurity/anthropics-mythos-bug-hunter-finds-critical-cve-exploited-within-24-hours",
+      "published": "2026-10-03",
+      "tag": "THREAT-INTEL"
     }
   ]
 }
