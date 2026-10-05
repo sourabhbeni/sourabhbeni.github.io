@@ -1,45 +1,45 @@
 {
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "items": [
     {
-      "title": "FortiMail zero-day under active attack: unauthenticated file write (CVE-2026-104286)",
-      "summary": "Fortinet confirmed active exploitation of a critical 9.8-rated path-traversal/NULL-byte chaining flaw in FortiMail that lets unauthenticated attackers write files anywhere the service can reach; CISA added it to the KEV catalog on Oct 1 with a federal patch deadline of Oct 4. Patching alone doesn't evict footholds already planted, so internet-facing appliances need forensic triage.",
-      "source": "ZeroHunt",
-      "url": "https://zerohunt.ai/blog/fortimail-cve-2026-104286-zero-day-file-write/",
-      "published": "2026-10-02",
+      "title": "Citrix NetScaler flaw (CVE-2026-88779) under active attack, lands on CISA's KEV list",
+      "summary": "Citrix warned that CVE-2026-88779, a CVSS 8.7 memory-buffer flaw in NetScaler ADC and Gateway appliances configured as SAML service or identity providers, is being actively exploited with no authentication or user interaction required. CISA added it to the Known Exploited Vulnerabilities catalog on Oct 4, ordering federal agencies to patch by Oct 7; fixed builds are 14.1-73.41 and 13.1-64.28.",
+      "source": "GBHackers",
+      "url": "https://gbhackers.com/cisa-flags-citrix-netscaler-flaw/",
+      "published": "2026-10-04",
       "tag": "ZERO-DAY"
     },
     {
-      "title": "WordPress core LFI flaw exploited within hours of patch (CVE-2026-87902)",
-      "summary": "A 9.2-rated unauthenticated local-file-inclusion bug in get_page_template() affects WordPress 4.7.0 through 7.1.1 and was being probed in the wild almost immediately after WordPress shipped fixes on Sep 22; it can expose configs and credentials and enable remote code execution on some setups.",
-      "source": "Falcon Internet",
-      "url": "https://www.falconinternet.net/blog/cve-2026-87902-wordpress-lfi-rce-exploitation-hours-after-patch",
-      "published": "2026-09-30",
-      "tag": "VULNERABILITY"
+      "title": "Pentagon confirms personnel data breach affecting more than 3 million people",
+      "summary": "The Pentagon confirmed unauthorized access to a Defense Manpower Data Center information system via a file-sharing vulnerability, exposing records of 2.76 million living people and about 294,000 deceased individuals between Oct 2025 and July 2026. Compromised files contained unencrypted data that could include names, Social Security numbers, and birth dates; affected individuals are being offered a year of credit monitoring.",
+      "source": "Cybersecurity News",
+      "url": "https://cybersecuritynews.com/cybersecurity-newsletter-weekly-october-2/",
+      "published": "2026-10-02",
+      "tag": "BREACH"
     },
     {
-      "title": "Cisco Secure Firewall flaw under active attack forces emergency updates (CVE-2026-20349)",
-      "summary": "CISA-listed CVE-2026-20349 lets unauthenticated attackers crash Cisco ASA and Firepower Threat Defense appliances via crafted requests to the Remote Access SSL VPN service, knocking firewalls and VPNs offline; Cisco released patches with no available workarounds.",
-      "source": "System Force",
-      "url": "https://systemforce.co.uk/blog/2026/10/03/cisco-asa-ftd-cve-2026-20349-actively-exploited/",
-      "published": "2026-10-03",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Australian volunteer emergency service Mandurah SES hit by TheGentlemen ransomware",
-      "summary": "The Mandurah State Emergency Service, a volunteer rescue organization in Western Australia, was reportedly struck by the TheGentlemen ransomware group, raising concern about its ability to keep 24/7 rescue and cadet-support operations running; the full scope and data-theft details are not yet confirmed.",
-      "source": "Undercode News",
-      "url": "https://undercodenews.com/mandurah-state-emergency-service-hit-by-thegentlemen-ransomware-raising-concerns-over-24-7-volunteer-rescue-operations-in-australia-video/",
+      "title": "PoC released for macOS HFS+ kernel heap overflow (CVE-2026-43682)",
+      "summary": "A public proof-of-concept landed for CVE-2026-43682, a kernel heap overflow in macOS's HFS+ driver where the kernel copies extended-attribute keys from disk without validating their length against the in-memory buffer. Any Mac below macOS Tahoe 26.6, Sequoia 15.7.8, or Sonoma 14.8.8 is exposed; Apple's fix is improved memory handling, and users should avoid mounting disk images from unknown sources until patched.",
+      "source": "Security Online",
+      "url": "https://securityonline.info/macos-hfs-vulnerability-cve-2026-43682-poc/",
       "published": "2026-10-04",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "Mississippi city shuts down network after ransomware incident; FBI and DHS called in",
+      "summary": "The city of Vicksburg, Mississippi, disconnected its municipal network from the internet on Oct 1 after detecting a ransomware incident, disrupting in-person utility bill payments while 911, police, and fire operations stayed online. The FBI, the Department of Homeland Security, and Mississippi state officials are investigating; whether personal data was compromised is still undetermined.",
+      "source": "CosmicBytez Labs",
+      "url": "https://labs.cosmicbytez.ca/news/2026-10-02-mississippi-mayor-says-ransomware-incident-led-city-to-shut-down-systems",
+      "published": "2026-10-02",
       "tag": "RANSOMWARE"
     },
     {
-      "title": "AI-discovered auth bypass in Rejetto HFS exploited within 24 hours of disclosure",
-      "summary": "Anthropic's Mythos model found CVE-2026-61500, a critical 9.8 authentication-bypass flaw in Rejetto HFS, by reversing a PRNG with an SMT solver; VulnCheck observed in-the-wild exploitation the day after disclosure, hitting canary hosts in the US and Japan from Chinese infrastructure.",
-      "source": "DeafNews",
-      "url": "https://deafnews.it/en/news/cybersecurity/anthropics-mythos-bug-hunter-finds-critical-cve-exploited-within-24-hours",
+      "title": "Wallstreet ransomware group claims St. Francis Healthcare Systems of Hawaii",
+      "summary": "The Wallstreet ransomware group added St. Francis Healthcare Systems of Hawaii, a Catholic nonprofit serving Hawaii families since 1927, to its leak site on Oct 3. The listing marks another healthcare-sector hit by the group; scope of data theft and the ransom demand have not been disclosed.",
+      "source": "HookPhish",
+      "url": "https://www.hookphish.com/blog/ransomware-group-wallstreet-hits-st-francis-healthcare-systems-of-hawaii/",
       "published": "2026-10-03",
-      "tag": "THREAT-INTEL"
+      "tag": "RANSOMWARE"
     }
   ]
 }
