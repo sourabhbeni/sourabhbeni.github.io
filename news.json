@@ -1,44 +1,44 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "items": [
     {
-      "title": "Citrix NetScaler flaw (CVE-2026-88779) under active attack, lands on CISA's KEV list",
-      "summary": "Citrix warned that CVE-2026-88779, a CVSS 8.7 memory-buffer flaw in NetScaler ADC and Gateway appliances configured as SAML service or identity providers, is being actively exploited with no authentication or user interaction required. CISA added it to the Known Exploited Vulnerabilities catalog on Oct 4, ordering federal agencies to patch by Oct 7; fixed builds are 14.1-73.41 and 13.1-64.28.",
-      "source": "GBHackers",
-      "url": "https://gbhackers.com/cisa-flags-citrix-netscaler-flaw/",
-      "published": "2026-10-04",
-      "tag": "ZERO-DAY"
-    },
-    {
-      "title": "Pentagon confirms personnel data breach affecting more than 3 million people",
-      "summary": "The Pentagon confirmed unauthorized access to a Defense Manpower Data Center information system via a file-sharing vulnerability, exposing records of 2.76 million living people and about 294,000 deceased individuals between Oct 2025 and July 2026. Compromised files contained unencrypted data that could include names, Social Security numbers, and birth dates; affected individuals are being offered a year of credit monitoring.",
-      "source": "Cybersecurity News",
-      "url": "https://cybersecuritynews.com/cybersecurity-newsletter-weekly-october-2/",
-      "published": "2026-10-02",
+      "title": "ASOS app pushed 'Snowflake instance compromised' hack message to thousands of shoppers",
+      "summary": "Thousands of ASOS customers received a push notification claiming attackers had 'fully compromised' its Snowflake instance, with a link to a Telegram channel named Xuanye group. ASOS says it is investigating; the company has not confirmed that customer data was accessed.",
+      "source": "The Sun",
+      "url": "https://www.thesun.co.uk/money/40593779/asos-customers-alarmed-app-compromised/",
+      "published": "2026-10-06",
       "tag": "BREACH"
     },
     {
-      "title": "PoC released for macOS HFS+ kernel heap overflow (CVE-2026-43682)",
-      "summary": "A public proof-of-concept landed for CVE-2026-43682, a kernel heap overflow in macOS's HFS+ driver where the kernel copies extended-attribute keys from disk without validating their length against the in-memory buffer. Any Mac below macOS Tahoe 26.6, Sequoia 15.7.8, or Sonoma 14.8.8 is exposed; Apple's fix is improved memory handling, and users should avoid mounting disk images from unknown sources until patched.",
+      "title": "South Korea's president says AI appears to have been used in recent bank hacks",
+      "summary": "President Lee Jae Myung said AI models are believed to have been used in recent hacking incidents against South Korean commercial banks that exposed customers' personal information. Police launched a full-scale investigation; banks including Shinhan, KB Kookmin, Hana and Woori were reported affected.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/south-koreas-lee-says-ai-appears-have-been-used-bank-hacks-2026-10-06/",
+      "published": "2026-10-06",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Atlassian patches critical CVE-2026-21589 (CVSS 9.3) affecting Jira, Confluence, Bitbucket Data Center",
+      "summary": "Atlassian disclosed an unauthenticated arbitrary file access flaw via path traversal affecting eight self-managed Data Center products, including Jira, Confluence, Bitbucket, Bamboo, Crowd, Crucible and Fisheye. Cloud customers are already patched; self-managed admins should update now. No confirmed exploitation yet.",
       "source": "Security Online",
-      "url": "https://securityonline.info/macos-hfs-vulnerability-cve-2026-43682-poc/",
-      "published": "2026-10-04",
-      "tag": "VULNERABILITY"
+      "url": "https://securityonline.info/atlassian-data-center-vulnerability-cve-2026-21589/",
+      "published": "2026-10-05",
+      "tag": "PATCH"
     },
     {
-      "title": "Mississippi city shuts down network after ransomware incident; FBI and DHS called in",
-      "summary": "The city of Vicksburg, Mississippi, disconnected its municipal network from the internet on Oct 1 after detecting a ransomware incident, disrupting in-person utility bill payments while 911, police, and fire operations stayed online. The FBI, the Department of Homeland Security, and Mississippi state officials are investigating; whether personal data was compromised is still undetermined.",
-      "source": "CosmicBytez Labs",
-      "url": "https://labs.cosmicbytez.ca/news/2026-10-02-mississippi-mayor-says-ransomware-incident-led-city-to-shut-down-systems",
-      "published": "2026-10-02",
-      "tag": "RANSOMWARE"
+      "title": "Dell urges patching of critical DSU flaw (CVE-2026-86360) that could give attackers root access",
+      "summary": "A path traversal bug in Dell System Update (versions before 2.3.0.0), CVSS 9.6, lets an unauthenticated remote attacker execute arbitrary code with root privileges on PowerEdge servers. Dell advises upgrading immediately as DSU is widely used for BIOS, firmware and software updates.",
+      "source": "Security Affairs",
+      "url": "https://securityaffairs.com/200458/security/dell-urges-customers-to-patch-critical-dsu-flaw-that-can-give-attackers-root-access.html",
+      "published": "2026-10-05",
+      "tag": "PATCH"
     },
     {
-      "title": "Wallstreet ransomware group claims St. Francis Healthcare Systems of Hawaii",
-      "summary": "The Wallstreet ransomware group added St. Francis Healthcare Systems of Hawaii, a Catholic nonprofit serving Hawaii families since 1927, to its leak site on Oct 3. The listing marks another healthcare-sector hit by the group; scope of data theft and the ransom demand have not been disclosed.",
-      "source": "HookPhish",
-      "url": "https://www.hookphish.com/blog/ransomware-group-wallstreet-hits-st-francis-healthcare-systems-of-hawaii/",
-      "published": "2026-10-03",
+      "title": "Ransomware crews now exploiting critical JetBrains TeamCity flaw CVE-2026-63077",
+      "summary": "CISA confirmed active exploitation of CVE-2026-63077, a CVSS 9.8 unauthenticated remote-code-execution bug in JetBrains TeamCity used by 30,000+ dev teams. The flaw lets attackers run OS commands as the TeamCity process; JetBrains patched it in July but unpatched servers are being hit two months later.",
+      "source": "National Cyber Security Consulting",
+      "url": "https://nationalcybersecurity.com/ransomware-hits-jetbrains-teamcity-flaw-cve-2026-63077-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
+      "published": "2026-10-05",
       "tag": "RANSOMWARE"
     }
   ]
