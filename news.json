@@ -1,1 +1,45 @@
-{"items":[{"published":"2026-10-08","source":"BleepingComputer","summary":"IDC Frontier disclosed a ransomware attack that began October 7, forcing a shutdown of its IDCF Cloud East Japan Region 1 cluster and impacting 495 companies and local governments. The threat actor claims it encrypted 225 databases (3.6 PB) and 16,000 VM disks; customer management consoles remain disabled while the company verifies security.","tag":"RANSOMWARE","title":"Ransomware attack disrupts Japan's IDCF Cloud used by govt clients","url":"https://www.bleepingcomputer.com/news/security/ransomware-attack-disrupts-japans-idcf-cloud-used-by-govt-clients/"},{"published":"2026-10-06","source":"SC Media","summary":"Atlassian released patches for CVE-2026-21589, a CVSS 9.3 unauthenticated arbitrary file access flaw affecting eight Data Center products (Jira, Confluence, Bitbucket, Bamboo, Crowd, Crucible, Fisheye). Exploitation attempts hit honeypots within two hours of technical details going public; Cloud customers are already patched.","tag":"VULNERABILITY","title":"Atlassian urges datacenter product users to patch critical file access vulnerability","url":"https://www.scworld.com/brief/atlassian-urges-datacenter-product-users-to-patch-critical-file-access-vulnerability"},{"published":"2026-10-08","source":"U.S. Department of Justice","summary":"The DOJ and FBI announced court-authorized seizures of seven domains used to run 'Microscan' and 'FishHub,' intrusion tools used by China-linked Integrity Technology Group (Flax Typhoon) to scan and hack U.S. and foreign critical infrastructure. This is the second public disruption of Integrity Tech's infrastructure after the 2024 Flax Typhoon botnet takedown.","tag":"THREAT-INTEL","title":"Justice Department and FBI seize vulnerability scanning and spear phishing tools operated by China-state sponsored hackers","url":"https://www.justice.gov/usao-wdpa/pr/justice-department-and-fbi-seize-vulnerability-scanning-and-spear-phishing-tools"},{"published":"2026-10-08","source":"GuidePoint Security","summary":"The GuidePoint Research and Intelligence Team recorded 2,760 ransomware victims in Q3 2026, a record quarter up 21% from Q2 and 75% year over year, across 112 active groups. Ransom payment rates fell by more than half year over year, but the average payment among those who paid rose 34%.","tag":"RANSOMWARE","title":"Record-high ransomware activity in Q3 2026: victims up 75% year over year","url":"https://www.businesswire.com/news/home/20261008558530/en/GuidePoint-Security-Reports-Record-High-Ransomware-Activity-as-Victims-Rise-75-Year-Over-Year"},{"published":"2026-10-07","source":"DailyCVE","summary":"CVE-2026-105845 is a critical SQL injection (CVSS 9.8) in Payload CMS 3.x through 3.87.x (SQLite/Postgres adapters) via unsanitized dynamic query filters, exploitable with no authentication in some configurations. Patches were released October 6 in 3.88.0 and 4.0.0-canary.27; users should restrict untrusted dynamic filters until patched.","tag":"VULNERABILITY","title":"Payload CMS SQL injection (CVE-2026-105845) rated critical, CVSS 9.8","url":"https://dailycve.com/payload-cms-sql-injection-cve-2026-105845-critical-dc-oct2026-2763/"}],"updated":"2026-10-09"}
+{
+  "updated": "2026-10-10",
+  "items": [
+    {
+      "title": "ASOS links data breach to social engineering attack, credential theft",
+      "summary": "ASOS confirmed on Oct 8 that the breach behind its hijacked app notifications began with a social engineering attack: an attacker impersonated a trusted contact to steal an employee's login credentials, then used them to pull names, contact details, and account info from third-party platforms. Snowflake says its own platform was not compromised.",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/asos-links-data-breach-to-social-engineering-attack-credential-theft/",
+      "published": "2026-10-08",
+      "tag": "BREACH"
+    },
+    {
+      "title": "CISA sets Oct. 11 deadline for 5 CVEs exploited by Flax Typhoon",
+      "summary": "CISA added five vulnerabilities exploited by the China-linked Flax Typhoon group \u2014 affecting ProFTPD, ONLYOFFICE Docs, Strapi, Apache Struts, and ISC BIND \u2014 to its Known Exploited Vulnerabilities catalog on Oct 8. Federal civilian agencies have a 72-hour window until Oct 11 to patch or decommission affected systems.",
+      "source": "DeafNews",
+      "url": "https://deafnews.it/en/news/cybersecurity/cisa-sets-oct-11-deadline-for-5-cves-exploited-by-flax-typhoon",
+      "published": "2026-10-08",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "SonicWall SMA1000 flaw exploited just three days after patch release",
+      "summary": "Attackers began exploiting CVE-2026-102255, a maximum-severity flaw in SonicWall SMA1000 secure remote access appliances, only three days after the patch was released on Oct 6. The unauthenticated request-handling weakness in the Appliance WorkPlace interface lets remote attackers reach internal functionality without logging in.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/sonicwall-sma1000-zero-day-under-attack-critical-vulnerability-exploited-just-three-days-after-patch-release-video/",
+      "published": "2026-10-09",
+      "tag": "ZERO-DAY"
+    },
+    {
+      "title": "2,100 GPU servers expose NVIDIA DCGM Exporter with high-severity flaw",
+      "summary": "Lava Security researchers found roughly 2,100 GPU servers exposing NVIDIA's DCGM Exporter to the internet without authentication, leaking telemetry from 12,000+ GPUs worth about $100M. A high-severity flaw (CVE-2026-47483, CVSS 8.2) lets unauthenticated attackers crash the monitoring service via profiling requests; upgrade to 4.8.2.",
+      "source": "Help Net Security",
+      "url": "https://www.helpnetsecurity.com/2026/10/09/nvidia-dcgm-exporter-vulnerability-cve-2026-47483/",
+      "published": "2026-10-09",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "AhsayCBS flaws exploited to deploy webshells and mine crypto",
+      "summary": "Threat actors are exploiting one critical and one medium-severity vulnerability in the AhsayCBS backup management platform to achieve remote code execution, deploy webshells, and install XMRig cryptocurrency miners. Defenders should restrict access to internet-facing AhsayCBS management interfaces and check for compromise.",
+      "source": "Undercode News",
+      "url": "https://undercodenews.com/cisa-adds-five-flax-typhoon-linked-vulnerabilities-to-kev-as-ahsaycbs-flaws-enable-remote-code-execution-video/",
+      "published": "2026-10-09",
+      "tag": "THREAT-INTEL"
+    }
+  ]
+}
