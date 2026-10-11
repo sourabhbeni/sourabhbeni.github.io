@@ -1,45 +1,53 @@
 {
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "items": [
     {
-      "title": "ASOS links data breach to social engineering attack, credential theft",
-      "summary": "ASOS confirmed on Oct 8 that the breach behind its hijacked app notifications began with a social engineering attack: an attacker impersonated a trusted contact to steal an employee's login credentials, then used them to pull names, contact details, and account info from third-party platforms. Snowflake says its own platform was not compromised.",
-      "source": "BleepingComputer",
-      "url": "https://www.bleepingcomputer.com/news/security/asos-links-data-breach-to-social-engineering-attack-credential-theft/",
-      "published": "2026-10-08",
-      "tag": "BREACH"
-    },
-    {
-      "title": "CISA sets Oct. 11 deadline for 5 CVEs exploited by Flax Typhoon",
-      "summary": "CISA added five vulnerabilities exploited by the China-linked Flax Typhoon group \u2014 affecting ProFTPD, ONLYOFFICE Docs, Strapi, Apache Struts, and ISC BIND \u2014 to its Known Exploited Vulnerabilities catalog on Oct 8. Federal civilian agencies have a 72-hour window until Oct 11 to patch or decommission affected systems.",
-      "source": "DeafNews",
-      "url": "https://deafnews.it/en/news/cybersecurity/cisa-sets-oct-11-deadline-for-5-cves-exploited-by-flax-typhoon",
-      "published": "2026-10-08",
-      "tag": "THREAT-INTEL"
-    },
-    {
-      "title": "SonicWall SMA1000 flaw exploited just three days after patch release",
-      "summary": "Attackers began exploiting CVE-2026-102255, a maximum-severity flaw in SonicWall SMA1000 secure remote access appliances, only three days after the patch was released on Oct 6. The unauthenticated request-handling weakness in the Appliance WorkPlace interface lets remote attackers reach internal functionality without logging in.",
-      "source": "Undercode News",
-      "url": "https://undercodenews.com/sonicwall-sma1000-zero-day-under-attack-critical-vulnerability-exploited-just-three-days-after-patch-release-video/",
+      "title": "Ransomware attack knocks IDC Frontier's IDCF Cloud offline, disrupting 495 customers",
+      "summary": "IDC Frontier, a SoftBank subsidiary, confirmed on October 7 that a ransomware attack forced it to isolate its East Japan Region 1 data center in Fukushima. The company says 495 companies and local governments hold contracts tied to the affected region, and whether data was exfiltrated remains unconfirmed.",
+      "source": "Cybernews",
+      "url": "https://nationalcybersecurity.com/idc-frontier-ransomware-hits-idcf-cloud-495-down-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
       "published": "2026-10-09",
-      "tag": "ZERO-DAY"
+      "tag": "RANSOMWARE"
     },
     {
-      "title": "2,100 GPU servers expose NVIDIA DCGM Exporter with high-severity flaw",
-      "summary": "Lava Security researchers found roughly 2,100 GPU servers exposing NVIDIA's DCGM Exporter to the internet without authentication, leaking telemetry from 12,000+ GPUs worth about $100M. A high-severity flaw (CVE-2026-47483, CVSS 8.2) lets unauthenticated attackers crash the monitoring service via profiling requests; upgrade to 4.8.2.",
-      "source": "Help Net Security",
-      "url": "https://www.helpnetsecurity.com/2026/10/09/nvidia-dcgm-exporter-vulnerability-cve-2026-47483/",
+      "title": "Citrix urges immediate patching of critical NetScaler flaw (CVE-2026-107406, CVSS 9.5)",
+      "summary": "The memory-overflow vulnerability in NetScaler ADC and Gateway appliances configured as SAML SP/IdP can lead to remote code execution or denial of service. Patches are available, and Citrix says it knows of no active exploitation yet.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/",
       "published": "2026-10-09",
+      "tag": "PATCH"
+    },
+    {
+      "title": "Splunk patches critical 9.8 flaw allowing unauthenticated remote command execution",
+      "summary": "Tracked as CVE-2026-76268 and disclosed October 7, the missing-authentication flaw in the Patroni REST API of Splunk Enterprise search head cluster members lets network-reachable attackers run OS commands with no login required.",
+      "source": "Cyber Security News",
+      "url": "https://cybersecuritynews.com/splunk-patches-critical-flaw/",
+      "published": "2026-10-08",
       "tag": "VULNERABILITY"
     },
     {
-      "title": "AhsayCBS flaws exploited to deploy webshells and mine crypto",
-      "summary": "Threat actors are exploiting one critical and one medium-severity vulnerability in the AhsayCBS backup management platform to achieve remote code execution, deploy webshells, and install XMRig cryptocurrency miners. Defenders should restrict access to internet-facing AhsayCBS management interfaces and check for compromise.",
-      "source": "Undercode News",
-      "url": "https://undercodenews.com/cisa-adds-five-flax-typhoon-linked-vulnerabilities-to-kev-as-ahsaycbs-flaws-enable-remote-code-execution-video/",
+      "title": "Ransomware group BYOD claims Trump Mobile data breach, leaks records of 3,615 customers",
+      "summary": "The RaaS operation says it stole names, email addresses, phone numbers, home addresses and order details after infecting a Liberty Mobile employee with an infostealer, and claims neither company used MFA. Neither company has publicly responded.",
+      "source": "The Register",
+      "url": "https://nationalcybersecurity.com/ransomware-group-byod-claims-trump-mobile-data-breach-brief-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
+      "published": "2026-10-10",
+      "tag": "BREACH"
+    },
+    {
+      "title": "FBI seizes 7 domains, disrupts Flax Typhoon-linked hacking tools targeting critical infrastructure",
+      "summary": "The court-authorized seizures denied China-linked Integrity Technology Group access to the Microscan and FishHub tools used against a South Carolina power company, airports in Japan and Poland, and Taiwanese energy organizations and universities. The agencies also issued a joint cybersecurity advisory.",
+      "source": "Homeland Security Today",
+      "url": "https://www.hstoday.us/subject-matter-areas/cybersecurity/fbi-seize-phishing-tools-used-by-china-state-sponsored-hackers/",
       "published": "2026-10-09",
       "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Canadian ransomware negotiator arrested amid FBI hacker crackdown",
+      "summary": "Edward Dubrovsky, who marketed threat-actor negotiation services via CyberSteward, was arrested Thursday on extortion-related conspiracy charges in the Eastern District of Pennsylvania as the FBI targets a group that stole information about its employees.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/legal/government/canadian-ransomware-negotiator-arrested-amid-fbi-hacker-crackdown-2026-10-11/",
+      "published": "2026-10-11",
+      "tag": "RANSOMWARE"
     }
   ]
 }
