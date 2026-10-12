@@ -1,53 +1,37 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-12",
   "items": [
     {
-      "title": "Ransomware attack knocks IDC Frontier's IDCF Cloud offline, disrupting 495 customers",
-      "summary": "IDC Frontier, a SoftBank subsidiary, confirmed on October 7 that a ransomware attack forced it to isolate its East Japan Region 1 data center in Fukushima. The company says 495 companies and local governments hold contracts tied to the affected region, and whether data was exfiltrated remains unconfirmed.",
-      "source": "Cybernews",
-      "url": "https://nationalcybersecurity.com/idc-frontier-ransomware-hits-idcf-cloud-495-down-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
-      "published": "2026-10-09",
-      "tag": "RANSOMWARE"
-    },
-    {
-      "title": "Citrix urges immediate patching of critical NetScaler flaw (CVE-2026-107406, CVSS 9.5)",
-      "summary": "The memory-overflow vulnerability in NetScaler ADC and Gateway appliances configured as SAML SP/IdP can lead to remote code execution or denial of service. Patches are available, and Citrix says it knows of no active exploitation yet.",
-      "source": "SecurityWeek",
-      "url": "https://www.securityweek.com/citrix-urges-immediate-patching-of-critical-netscaler-vulnerability/",
-      "published": "2026-10-09",
-      "tag": "PATCH"
-    },
-    {
-      "title": "Splunk patches critical 9.8 flaw allowing unauthenticated remote command execution",
-      "summary": "Tracked as CVE-2026-76268 and disclosed October 7, the missing-authentication flaw in the Patroni REST API of Splunk Enterprise search head cluster members lets network-reachable attackers run OS commands with no login required.",
-      "source": "Cyber Security News",
-      "url": "https://cybersecuritynews.com/splunk-patches-critical-flaw/",
-      "published": "2026-10-08",
+      "title": "GitLab warns of max severity code execution flaw in CI/CD regex compiler",
+      "summary": "Tracked as CVE-2026-97229 and reported via GitLab's HackerOne bounty, the integer overflow bug could let an unauthenticated user execute arbitrary code on the GitLab server via a crafted regular expression in a pipeline configuration. Fixed in GitLab CE/EE 19.2.8, 19.3.4, and 19.4.2.",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/gitlab-warns-of-max-severity-rce-flaw-in-regex-compiler-engine/",
+      "published": "2026-10-12",
       "tag": "VULNERABILITY"
     },
     {
-      "title": "Ransomware group BYOD claims Trump Mobile data breach, leaks records of 3,615 customers",
-      "summary": "The RaaS operation says it stole names, email addresses, phone numbers, home addresses and order details after infecting a Liberty Mobile employee with an infostealer, and claims neither company used MFA. Neither company has publicly responded.",
-      "source": "The Register",
-      "url": "https://nationalcybersecurity.com/ransomware-group-byod-claims-trump-mobile-data-breach-brief-hacking-cybersecurity-infosec-comptia-pentest-ransomware/",
-      "published": "2026-10-10",
-      "tag": "BREACH"
+      "title": "Critical SonicWall SMA 1000 flaw targeted in 135 exploitation attempts after patch",
+      "summary": "CVE-2026-102255 (CVSS 10.0), a pre-authenticated SSRF flaw in SonicWall SMA 1000 appliances, is under active exploitation: Previdian and Defused Cyber observed 135 attempts from two US IP addresses starting October 8, days after SonicWall's October 6 patch release.",
+      "source": "The Hacker News",
+      "url": "https://realhacker.news/critical-sonicwall-sma-1000-flaw-targeted-in-135-exploitation-attempts-after-patch/",
+      "published": "2026-10-12",
+      "tag": "VULNERABILITY"
     },
     {
-      "title": "FBI seizes 7 domains, disrupts Flax Typhoon-linked hacking tools targeting critical infrastructure",
-      "summary": "The court-authorized seizures denied China-linked Integrity Technology Group access to the Microscan and FishHub tools used against a South Carolina power company, airports in Japan and Poland, and Taiwanese energy organizations and universities. The agencies also issued a joint cybersecurity advisory.",
-      "source": "Homeland Security Today",
-      "url": "https://www.hstoday.us/subject-matter-areas/cybersecurity/fbi-seize-phishing-tools-used-by-china-state-sponsored-hackers/",
-      "published": "2026-10-09",
-      "tag": "THREAT-INTEL"
-    },
-    {
-      "title": "Canadian ransomware negotiator arrested amid FBI hacker crackdown",
-      "summary": "Edward Dubrovsky, who marketed threat-actor negotiation services via CyberSteward, was arrested Thursday on extortion-related conspiracy charges in the Eastern District of Pennsylvania as the FBI targets a group that stole information about its employees.",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/legal/government/canadian-ransomware-negotiator-arrested-amid-fbi-hacker-crackdown-2026-10-11/",
-      "published": "2026-10-11",
+      "title": "Advantest confirms personal information stolen in February ransomware attack",
+      "summary": "The semiconductor test equipment maker disclosed in an October 6 breach notification that the February 2026 ransomware attack exfiltrated PII including SSNs, passport and driver's license numbers, and financial and medical information. State filings confirm at least several hundred affected US residents.",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/advantest-confirms-personal-information-stolen-in-ransomware-attack/",
+      "published": "2026-10-07",
       "tag": "RANSOMWARE"
+    },
+    {
+      "title": "Atlassian patches critical vulnerability affecting 8 products",
+      "summary": "Tracked as CVE-2026-21589 (CVSS 9.3), the arbitrary file access flaw can be exploited without authentication to read specific files in the web application root. All versions of Bitbucket, Confluence, Jira, Bamboo, Crowd, Crucible, Fisheye, and JSM Data Center/Center are affected.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/atlassian-patches-critical-vulnerability-affecting-8-products/",
+      "published": "2026-10-07",
+      "tag": "PATCH"
     }
   ]
 }
