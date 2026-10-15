@@ -1,1 +1,53 @@
-{"items":[{"published":"2026-10-14","source":"Help Net Security","summary":"Microsoft's October Patch Tuesday fixed over 1,400 security bugs, including CVE-2026-96951, a Mark of the Web bypass exploited in the wild that lets a malicious file skip Protected View warnings when opened.","tag":"PATCH","title":"Microsoft fixes exploited Mark of the Web bypass in record Patch Tuesday","url":"https://www.helpnetsecurity.com/2026/10/14/microsoft-patch-tuesday-cve-2026-96951-motw-bypass/"},{"published":"2026-10-14","source":"Reuters","summary":"South Korea's financial regulator said hacking incidents have been confirmed at 16 financial firms, with around 100,000 cases of leaked personal data so far, and it is investigating whether AI was involved in the attacks.","tag":"BREACH","title":"South Korea confirms hacking at 16 financial firms, 100,000 data leaks","url":"https://www.reuters.com/world/south-korea-finds-hacking-incidents-total-16-financial-firms-2026-10-14/"},{"published":"2026-10-12","source":"Rapid7","summary":"GitLab shipped emergency releases 19.4.2, 19.3.5 and 19.2.8 to fix CVE-2026-97229, an integer overflow in the CI/CD regex compiler that lets an unauthenticated attacker run arbitrary code on self-managed servers; Rapid7 independently reproduced the exploit.","tag":"VULNERABILITY","title":"GitLab patches CVSS 10.0 unauthenticated remote code execution flaw","url":"https://www.rapid7.com/blog/post/etr-cve-2026-97229-critical-unauthenticated-remote-code-execution-in-gitlab/"},{"published":"2026-10-13","source":"The Hacker News","summary":"CISA is urging immediate Ivanti Connect Secure updates as honeypots logged 105 exploit attempts against CVE-2026-104935; Volexity observed criminal group UTA0576 achieving unauthenticated root-level code execution on October 3.","tag":"THREAT-INTEL","title":"CISA urges Ivanti Connect Secure updates as honeypots log 105 exploit attempts","url":"http://thehackernews.com/2026/10/cisa-urges-immediate-ivanti-connect.html"},{"published":"2026-10-13","source":"Analytics Insight","summary":"Meta notified around 1,500 people, mostly employees, after hackers accessed some of its GitHub repositories using stolen employee logins; the company says no Meta products had security flaws and internal systems were not breached.","tag":"BREACH","title":"Meta warns 1,500 people after hackers accessed GitHub repos via stolen logins","url":"https://www.analyticsinsight.net/news/meta-hack-exposes-data-of-1500-people-why-stolen-logins-remain-a-major-risk?utm_source=website&utm_medium=related-stories"},{"published":"2026-10-08","source":"Cybernews","summary":"Ransomware group SafePay has been trying to extort T-Systems since October 5; Deutsche Telekom says only a small test system was affected and the stolen data, mostly presentation slides and log files, contains no sensitive information.","tag":"RANSOMWARE","title":"SafePay ransomware targets Deutsche Telekom's T-Systems in alleged breach","url":"https://nationalcybersecurity.com/safepay-ransomware-targets-t-systems-in-alleged-breach-hacking-cybersecurity-infosec-comptia-pentest-ransomware/"}],"updated":"2026-10-14"}
+{
+  "updated": "2026-10-15",
+  "items": [
+    {
+      "title": "Cisco patches Secure Email Gateway zero-day exploited in attacks",
+      "summary": "Cisco patched CVE-2026-76519 (CVSS 9.8), a path traversal flaw in the Secure Email Gateway's AMP File Reputation path that let unauthenticated attackers write arbitrary files and execute commands with root privileges. Updating Content Scanner Tools to 25.3.0.5525 or later fixes it without a restart.",
+      "source": "SOCRadar",
+      "url": "https://socradar.io/blog/cisco-secure-email-pan-os-0-days/",
+      "published": "2026-10-14",
+      "tag": "ZERO-DAY"
+    },
+    {
+      "title": "SAP patches CVSS 10.0 SSRF in Cloud SDK for Python",
+      "summary": "SAP fixed CVE-2026-89111, a maximum-severity SSRF in the Cloud SDK for Python that let unauthenticated attackers hijack OAuth2 token requests via the tenant_subdomain parameter and steal client credentials from multi-tenant BTP apps. Patch is in version 0.45.2; all prior versions are vulnerable.",
+      "source": "DeafNews",
+      "url": "https://deafnews.it/en/news/news/cve-2026-89111-critical-ssrf-in-sap-cloud-sdk-for-python-exfiltrates-credentials",
+      "published": "2026-10-13",
+      "tag": "VULNERABILITY"
+    },
+    {
+      "title": "Qilin ransomware group claims attack on Brame Telecom",
+      "summary": "The Qilin ransomware group publicly claimed an attack on Brame Telecom on October 15, with the exposure report indicating two passwords and two cookies were compromised. The victim's Microsoft 365 and Proofpoint Essentials accounts are flagged as at risk of takeover.",
+      "source": "Quasar Cyber Tech",
+      "url": "https://qpulse.quasarcybertech.com/news/6836/qilin-ransomware-group-claims-attack-on-brame-telecom",
+      "published": "2026-10-15",
+      "tag": "RANSOMWARE"
+    },
+    {
+      "title": "Whistles pauses online orders after parent TFG London hit by cyber attack",
+      "summary": "TFG London, parent of fashion brands Whistles, Hobbs and Phase Eight, confirmed a cybersecurity incident on October 11 affecting IT systems; Whistles paused website ordering while stores stay open. The company says it has no reason to believe payment information is at risk.",
+      "source": "The Scottish Sun",
+      "url": "https://www.thescottishsun.co.uk/money/16944428/british-fashion-brand-pauses-orders-cyber-attack/",
+      "published": "2026-10-15",
+      "tag": "BREACH"
+    },
+    {
+      "title": "0patch micropatches critical Windows Server DNS RCE on legacy systems",
+      "summary": "0patch released micropatches for CVE-2026-62878, a stack-based buffer overflow in Windows DNS Server allowing unauthenticated remote code execution, bringing Microsoft's August recursion-depth fix to unsupported Server 2008 R2, 2012 and 2012 R2 installs with no restart required.",
+      "source": "Windows Report",
+      "url": "https://windowsreport.com/0patch-fixes-critical-windows-server-dns-vulnerability-on-older-systems/",
+      "published": "2026-10-14",
+      "tag": "PATCH"
+    },
+    {
+      "title": "Critical command injection in Komodo Periphery (CVE-2026-110005)",
+      "summary": "CERT/CC disclosed CVE-2026-110005 in Komodo Periphery, where container names and log queries were passed into sh -c without escaping, letting users with Read/Logs permissions run commands as root. Fixed in 2.3.0; all earlier versions should update immediately.",
+      "source": "SecurityOnline.info",
+      "url": "https://securityonline.info/komodo-periphery-command-injection-cve-2026-110005/",
+      "published": "2026-10-14",
+      "tag": "VULNERABILITY"
+    }
+  ]
+}
