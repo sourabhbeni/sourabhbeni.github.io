@@ -364,6 +364,7 @@
   .on-dark .card p { color: rgba(245,245,247,0.62); }
   .cards a.card { text-decoration: none; color: inherit; }
   .x-go { font-size: 16px; font-weight: 600; color: #7dc4ff; margin-top: auto; padding-top: 10px; }
+  #hosted .x-go { color: var(--blue); }
   .brand-link { text-decoration: none; color: inherit; }
   .page-back { margin-top: 56px; }
 </style>
@@ -380,6 +381,7 @@
   <a class="nl" href="writeups.html">Write-ups</a>
   <a class="nl" href="#method">Method</a>
   <a class="nl" href="#field-note">Notes</a>
+  <a class="nl" href="#hosted">Hosted</a>
   <span class="clock"><b></b><span id="live-clock">--:--:--</span></span>
 </nav>
 
@@ -520,6 +522,40 @@
         <p>Short technical notes on real bugs I&apos;ve found and fixed &mdash; what broke, why, and what the patch looked like.</p>
         <span class="x-go">Read write-ups &#8250;</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<section class="block light" id="hosted">
+  <div class="wrap-wide">
+    <p class="kicker reveal">Hosted</p>
+    <h2 class="stitle reveal" data-d="1">Live projects,<br />on my subdomains.</h2>
+    <p class="lede reveal" data-d="2">Everything below runs on its own beniwal.me subdomain &mdash; open one to use it.</p>
+    <div class="cards">
+      <a class="card glass-light reveal" data-d="1" href="https://takeoverlens.beniwal.me" target="_blank" rel="noopener">
+        <div class="icon">&#9673;</div>
+        <h3>TakeoverLens</h3>
+        <p>Subdomain-takeover verification plus quick SQLi/XSS probes and crawl mode &mdash; the live bug-bounty workbench.</p>
+        <span class="x-go">Open app &#8250;</span>
+      </a>
+      <a class="card glass-light reveal" data-d="2" href="https://epic.beniwal.me" target="_blank" rel="noopener">
+        <div class="icon">&#9654;</div>
+        <h3>Epic Claw</h3>
+        <p>Weekly Epic Games freebie auto-claimer &mdash; status page, claim history, and game library.</p>
+        <span class="x-go">Open app &#8250;</span>
+      </a>
+      <a class="card glass-light reveal" data-d="3" href="https://app.beniwal.me" target="_blank" rel="noopener">
+        <div class="icon">&#9635;</div>
+        <h3>Crystal Clear</h3>
+        <p>Receipt and work-order tools for Crystal Clear Installations LLC.</p>
+        <span class="x-go">Open app &#8250;</span>
+      </a>
+      <div class="card glass-light reveal" data-d="4">
+        <div class="icon">&#9678;</div>
+        <h3>ReconPipe</h3>
+        <p>Passive recon pipeline &mdash; subdomain enum, live probing, JS secret scan, Wayback harvest.</p>
+        <span class="tags"><i>DNS pending</i></span>
+      </div>
     </div>
   </div>
 </section>
