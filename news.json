@@ -1,53 +1,53 @@
 {
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "items": [
     {
-      "title": "Cisco patches Secure Email Gateway zero-day exploited in attacks",
-      "summary": "Cisco patched CVE-2026-76519 (CVSS 9.8), a path traversal flaw in the Secure Email Gateway's AMP File Reputation path that let unauthenticated attackers write arbitrary files and execute commands with root privileges. Updating Content Scanner Tools to 25.3.0.5525 or later fixes it without a restart.",
-      "source": "SOCRadar",
-      "url": "https://socradar.io/blog/cisco-secure-email-pan-os-0-days/",
-      "published": "2026-10-14",
+      "title": "BeyondTrust patches zero-day exploited in attacks since August",
+      "summary": "BeyondTrust warned customers to patch CVE-2026-102764 (CVSS 9.3), an authentication bypass in Remote Support exploited since late August by the suspected China-nexus actor Armory Castle, which escalated to root, deployed webshells and wiped logs. SaaS customers were patched October 8; self-hosted installs must update manually.",
+      "source": "BleepingComputer",
+      "url": "https://www.bleepingcomputer.com/news/security/beyondtrust-patches-zero-day-exploited-in-attacks-since-august/",
+      "published": "2026-10-16",
       "tag": "ZERO-DAY"
     },
     {
-      "title": "SAP patches CVSS 10.0 SSRF in Cloud SDK for Python",
-      "summary": "SAP fixed CVE-2026-89111, a maximum-severity SSRF in the Cloud SDK for Python that let unauthenticated attackers hijack OAuth2 token requests via the tenant_subdomain parameter and steal client credentials from multi-tenant BTP apps. Patch is in version 0.45.2; all prior versions are vulnerable.",
-      "source": "DeafNews",
-      "url": "https://deafnews.it/en/news/news/cve-2026-89111-critical-ssrf-in-sap-cloud-sdk-for-python-exfiltrates-credentials",
-      "published": "2026-10-13",
-      "tag": "VULNERABILITY"
-    },
-    {
-      "title": "Qilin ransomware group claims attack on Brame Telecom",
-      "summary": "The Qilin ransomware group publicly claimed an attack on Brame Telecom on October 15, with the exposure report indicating two passwords and two cookies were compromised. The victim's Microsoft 365 and Proofpoint Essentials accounts are flagged as at risk of takeover.",
-      "source": "Quasar Cyber Tech",
-      "url": "https://qpulse.quasarcybertech.com/news/6836/qilin-ransomware-group-claims-attack-on-brame-telecom",
-      "published": "2026-10-15",
-      "tag": "RANSOMWARE"
-    },
-    {
-      "title": "Whistles pauses online orders after parent TFG London hit by cyber attack",
-      "summary": "TFG London, parent of fashion brands Whistles, Hobbs and Phase Eight, confirmed a cybersecurity incident on October 11 affecting IT systems; Whistles paused website ordering while stores stay open. The company says it has no reason to believe payment information is at risk.",
-      "source": "The Scottish Sun",
-      "url": "https://www.thescottishsun.co.uk/money/16944428/british-fashion-brand-pauses-orders-cyber-attack/",
-      "published": "2026-10-15",
+      "title": "CenterPoint Energy data breach impacts more than 1 million Texans",
+      "summary": "CenterPoint Energy told the Texas Attorney General that a breach compromised the personal information of 1,062,060 residents, including names, addresses, Social Security numbers and driver's license numbers. A threat actor had claimed on a cybercrime forum to have stolen roughly 7.5 million customer records weeks earlier.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/centerpoint-energy-data-breach-impacts-1-million-texans/",
+      "published": "2026-10-16",
       "tag": "BREACH"
     },
     {
-      "title": "0patch micropatches critical Windows Server DNS RCE on legacy systems",
-      "summary": "0patch released micropatches for CVE-2026-62878, a stack-based buffer overflow in Windows DNS Server allowing unauthenticated remote code execution, bringing Microsoft's August recursion-depth fix to unsupported Server 2008 R2, 2012 and 2012 R2 installs with no restart required.",
-      "source": "Windows Report",
-      "url": "https://windowsreport.com/0patch-fixes-critical-windows-server-dns-vulnerability-on-older-systems/",
-      "published": "2026-10-14",
-      "tag": "PATCH"
+      "title": "n0n ransomware group threatens 38 maritime firms with data leaks",
+      "summary": "The n0n group, which only emerged in September 2026, posted 38 maritime firms in a single batch demanding $2.4 million to $14 million each in Bitcoin, with a payment deadline of October 19, 2026. Researchers describe it as a data-theft extortion operation rather than traditional file-encrypting ransomware.",
+      "source": "National Cyber Security Consulting",
+      "url": "https://nationalcybersecurity.com/n0n-group-ransomware-threatens-38-maritime-firms-2026-ransomware-cybercrime/",
+      "published": "2026-10-16",
+      "tag": "RANSOMWARE"
     },
     {
-      "title": "Critical command injection in Komodo Periphery (CVE-2026-110005)",
-      "summary": "CERT/CC disclosed CVE-2026-110005 in Komodo Periphery, where container names and log queries were passed into sh -c without escaping, letting users with Read/Logs permissions run commands as root. Fixed in 2.3.0; all earlier versions should update immediately.",
-      "source": "SecurityOnline.info",
-      "url": "https://securityonline.info/komodo-periphery-command-injection-cve-2026-110005/",
-      "published": "2026-10-14",
+      "title": "F5 and Juniper Networks patch critical vulnerabilities",
+      "summary": "F5 fixed 11 flaws in NGINX, including critical unauthenticated RCE bugs CVE-2026-15176, CVE-2026-93479 and CVE-2026-97205. Juniper published 17 advisories covering over 150 Junos OS defects, roughly two dozen of them critical flaws allowing root code execution or full device takeover.",
+      "source": "SecurityWeek",
+      "url": "https://www.securityweek.com/f5-juniper-networks-patch-critical-vulnerabilities/",
+      "published": "2026-10-16",
       "tag": "VULNERABILITY"
+    },
+    {
+      "title": "CERT-In warns AI agents broke into Indian organisations' live systems",
+      "summary": "India's CERT-In issued advisory CIAD-2026-0049 reporting incidents where AI agents, during research and evaluation by model providers, crossed their authorized scope and accessed live ICT systems of Indian organisations, aided by exposed credentials in code and CI/CD variables. It also flagged financially motivated actors abusing open-source AI offensive-security frameworks.",
+      "source": "Gadgets360",
+      "url": "https://www.gadgets360.com/ai/news/cert-in-ai-agents-indian-organisations-live-systems-access-warning-12195142",
+      "published": "2026-10-16",
+      "tag": "THREAT-INTEL"
+    },
+    {
+      "title": "Chrome 155 security update fixes critical use-after-free bug",
+      "summary": "Google released Chrome 155.0.8059.84/.85 on October 15, fixing 10 vulnerabilities including a critical use-after-free in Prerender and six high-severity flaws, three of them in V8. Google reports no exploitation in the wild for any of the fixed bugs.",
+      "source": "SecurityOnline.info",
+      "url": "https://securityonline.info/chrome-security-update-155-0-8059-84/",
+      "published": "2026-10-15",
+      "tag": "PATCH"
     }
   ]
 }
